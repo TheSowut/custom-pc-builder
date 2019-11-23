@@ -1,0 +1,26 @@
+registerForm:
+	I. Make a working registration form.
+	II. Link it to either a file (java I/O) or database (sqlite)
+
+loginForm:
+	I. Working login form.
+	III. Link it with the same file/db as the registrationForm.
+
+Create a menu
+	I.Panels
+		1. Browse Setups
+		2. Create new Setup
+	II. About (FAQ)
+	III. Manual
+	IV. Help
+	
+Bugtest
+	I. All buttons, methods, invalid input (parsing).
+	II. Distribute for feedback.
+
+Style the app
+	I. Backgrounds.
+	II. Fonts.
+	III. Custom images.
+	IV. Key combinations.
+	

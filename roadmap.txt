@@ -5,31 +5,40 @@ registerForm:
 loginForm:
 	I. Working login form.
 	III. Link it with the same file/db as the registrationForm.
+	
+Additional Features:
+	I. All the forms should have a confirm dialog, whether the user wants to exit the app or not.
+	II. Key shortcuts for buttons.
+	III. Key shortctuts for the menu.
 
 Create a menu
 	I.Panels
 		1. Setups
 			1. Browse setups.
-			2. Create new Setup
+			2. Create a new setup.
+			3. Delete an existing setup.
 		2. Hardware
-			3. Take hardware from a website (embedd)
-			4. Create new hardware (embedd)
+			1. Check a component.
+			2. Add new component.
 	II. About (FAQ)
+		1. Fill with information.
 	III. Manual
+		1. Fill with instructions how to use the app.
 	IV. Help
 	
-Bugtest
+Bugtest:
 	I. All buttons, methods, invalid input (parsing).
 	II. Distribute for feedback.
 
-Style the app
+Style the app:
 	I. Backgrounds.
 	II. Fonts.
 	III. Custom images.
-	IV. Key combinations.
-	V. Night mode
+	IV. Night mode.
+	V. Custom icons for labels.
 	
-Optional
-	I. Different language support
+Optional:
+	I. Different language support.
+	2. Get the hardware elements from a web db.
 	
 	

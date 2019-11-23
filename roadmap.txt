@@ -8,8 +8,12 @@ loginForm:
 
 Create a menu
 	I.Panels
-		1. Browse Setups
-		2. Create new Setup
+		1. Setups
+			1. Browse setups.
+			2. Create new Setup
+		2. Hardware
+			3. Take hardware from a website (embedd)
+			4. Create new hardware (embedd)
 	II. About (FAQ)
 	III. Manual
 	IV. Help
@@ -23,4 +27,9 @@ Style the app
 	II. Fonts.
 	III. Custom images.
 	IV. Key combinations.
+	V. Night mode
+	
+Optional
+	I. Different language support
+	
 	

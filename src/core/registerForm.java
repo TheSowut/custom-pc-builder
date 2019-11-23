@@ -165,8 +165,7 @@ public class registerForm extends javax.swing.JFrame {
         int choice = JOptionPane.showOptionDialog(this, "Would you like to go back to the login form or quit ?", "Exit",
         JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, img, options, options[0]);
         if (choice == 0){
-            this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-            this.dispose();
+            this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             loginForm login = new loginForm();
             login.setVisible(true);
         }

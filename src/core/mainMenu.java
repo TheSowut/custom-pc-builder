@@ -182,6 +182,7 @@ public class mainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         addNewComponent add = new addNewComponent();
         add.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
@@ -204,7 +205,7 @@ public class mainMenu extends javax.swing.JFrame {
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
-        
+        askOnQuit.askForExit(this);
     }//GEN-LAST:event_formWindowClosing
 
     /**

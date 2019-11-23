@@ -189,13 +189,7 @@ public class loginForm extends javax.swing.JFrame {
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
-        int choice = JOptionPane.showConfirmDialog(this, "Are you sure you would like to quit ?", "Exit", 2);
-        if (choice == 0){
-            this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        }
-        else{
-            this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        }
+        askOnQuit.askForExit(this);
     }//GEN-LAST:event_formWindowClosing
 
     private void jBtnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnRegisterActionPerformed

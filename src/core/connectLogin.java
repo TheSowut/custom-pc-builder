@@ -28,7 +28,7 @@ public class connectLogin {
             // The string fullPath gets the absolute path to the DB
             String filePath = new File("").getAbsolutePath();
             String filePathChanged = filePath.replaceAll("\\\\", "/");
-            String path = "/db/sqlite/db/logins.db";
+            String path = "/db/logins.db";
             String fullPath = "jdbc:sqlite:" + filePathChanged + path;
             System.out.println("Path to DB: " + fullPath);
             
@@ -38,6 +38,8 @@ public class connectLogin {
             
             // Query which which shows the usernames
             String queryBrowseUsernames = ("SELECT username FROM accounts");
+            System.out.println("Query executed: " + queryBrowseUsernames);
+            
             try (Connection openConn = conn;
                 Statement stmt  = openConn.createStatement();
                 ResultSet rs    = stmt.executeQuery(queryBrowseUsernames)){

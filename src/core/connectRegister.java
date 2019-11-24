@@ -17,18 +17,18 @@ import java.util.ArrayList;
  *
  * @author sqlitetutorial.net
  */
-public class connectAccount {
+public class connectRegister {
      /**
      * Connect to a sample database
      */
-    public static ArrayList<String> connect(String term) {
+    public static ArrayList<String> connect(String username, String password) {
         ArrayList<String> result = new ArrayList<String>();
         Connection conn = null;
         try {
             // The string fullPath gets the absolute path to the DB
             String filePath = new File("").getAbsolutePath();
             String filePathChanged = filePath.replaceAll("\\\\", "/");
-            String path = "/db/sqlite/db/logins.db";
+            String path = "/db/logins.db";
             String fullPath = "jdbc:sqlite:" + filePathChanged + path;
             System.out.println("Path to DB: " + fullPath);
             
@@ -37,14 +37,18 @@ public class connectAccount {
             System.out.println("Connection to SQLite has been established.");
             
             // Query which inserts the new details of the account in the accounts table
-            String queryCreateAcc = "INSERT INTO 'accounts'('username', 'password') VALUES (?,?)";
-            try (Connection openConn = conn;
+            String queryCreateAcc = "INSERT INTO accounts (username, password) values ('" + username + "', '" + password + "')";
+            System.out.println("Query executed: " + queryCreateAcc);
+            
+            // Add a check whether the account exists
+            //
+            //
+           try (Connection openConn = conn;
                 Statement stmt  = openConn.createStatement();
                 ResultSet rs    = stmt.executeQuery(queryCreateAcc)){
- 
-                // loop through the result set
                 while (rs.next()) {
                     result.add(rs.getString("username"));
+                    result.add(rs.getString("password"));
                 }
             } catch (SQLException e) {
                 System.out.println(e.getMessage());

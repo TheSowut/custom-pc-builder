@@ -22,9 +22,6 @@ public class registerForm extends javax.swing.JFrame {
     public registerForm() {
         initComponents();
         setLocationRelativeTo(null);
-        connectAccount conn = new connectAccount();
-        ArrayList<String> output = new ArrayList<String>();
-        output = conn.connect("");
     }
 
     /**
@@ -194,6 +191,9 @@ public class registerForm extends javax.swing.JFrame {
         String password = jPassword.getText();
         String passwordConfirm = jPasswordConfirm.getText();
         
+//        connectRegister conn = new connectRegister();
+//        ArrayList<String> output = new ArrayList<String>();
+        
         final ImageIcon imgDoor = new ImageIcon(".\\images\\icons\\loginSmall.png");
         boolean usernameCheck = true;
         boolean passwordCheck = true;
@@ -202,7 +202,7 @@ public class registerForm extends javax.swing.JFrame {
         if (username.length() < 3){
             usernameCheck = false;
         }
-        else if (password == null || (password.length() < 5)){
+        else if (password == null || (password.length() < 5) || (!password.equals(passwordConfirm))){
             passwordCheck = false;
         }
         if (!usernameCheck){
@@ -216,10 +216,9 @@ public class registerForm extends javax.swing.JFrame {
             successfulRegistration = false;
         }
         if (successfulRegistration){
-//             ADD QUERY WHICH INSERTS THE DATA IN THE TABLE
-//            
-//            
-            
+            connectRegister conn = new connectRegister();
+            ArrayList<String> output = new ArrayList<String>();
+            output = conn.connect(username, password);
             JOptionPane.showMessageDialog(null, "User successfuly registered !", "Registration complete", JOptionPane.INFORMATION_MESSAGE, imgDoor);
             this.dispose();
             loginForm login = new loginForm();

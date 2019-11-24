@@ -4,8 +4,9 @@
 Java GUI Application with SQL connectivity dedicated to building a custom PC with user chosen hardware.
 
 <b>Current Features:</b><br>
-Login with an admin account and browse the planned menus.
+Create and Login with an account on a local DB.<br>
+
+<img src="images/demo/loginScreen.JPG" width="600">
 
 <b>Planned Features:</b><br>
-Create and Login with an account on a local DB.<br>
 Create a Custom PC with a variety of hardware components.

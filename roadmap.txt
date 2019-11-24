@@ -1,10 +1,10 @@
 registerForm:
 	I. Make a working registration form.
-	II. Link it to either a file (java I/O) or database (sqlite)
+	II. Link it to either a file (java I/O) or database.
 
 loginForm:
 	I. Working login form.
-	III. Link it with the same file/db as the registrationForm.
+	II. Link it with the same file/db as the registrationForm.
 	
 Additional Features:
 	I. All the forms should have a confirm dialog, whether the user wants to exit the app or not.
@@ -38,7 +38,4 @@ Style the app:
 	V. Custom icons for labels.
 	
 Optional:
-	I. Different language support.
-	2. Get the hardware elements from a web db.
-	
-	
+	1. Get hardware elements directly in the db with an API.

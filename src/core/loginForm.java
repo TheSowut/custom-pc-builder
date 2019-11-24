@@ -5,6 +5,8 @@
  */
 package core;
 
+import java.io.File;
+import java.util.ArrayList;
 import javax.swing.*;
 
 /**
@@ -19,6 +21,12 @@ public class loginForm extends javax.swing.JFrame {
     public loginForm() {
         initComponents();
         setLocationRelativeTo(null);
+        connectLogin conn = new connectLogin();
+        ArrayList<String> output = new ArrayList<String>();
+        output = conn.connect("");
+        for (int i = 0; i < output.size(); i++) {
+            jComboUsername.addItem(output.get(i));
+        }
     }
     
     /**
@@ -34,7 +42,6 @@ public class loginForm extends javax.swing.JFrame {
         jLblPanelTitle = new javax.swing.JLabel();
         jBtnLogin = new javax.swing.JButton();
         jBtnRegister = new javax.swing.JButton();
-        jTxtUsername = new javax.swing.JTextField();
         jPassword = new javax.swing.JPasswordField();
         jLblUsername = new javax.swing.JLabel();
         jLblPassword = new javax.swing.JLabel();
@@ -42,6 +49,7 @@ public class loginForm extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jComboUsername = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -104,15 +112,17 @@ public class loginForm extends javax.swing.JFrame {
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                     .addGap(27, 27, 27)
                                     .addComponent(jBtnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(62, 62, 62)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTxtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
+                                .addGap(62, 62, 62)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                                    .addComponent(jComboUsername, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(73, 73, 73)
                                 .addComponent(jBtnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(249, 249, 249)
+                        .addGap(258, 258, 258)
                         .addComponent(jLblPanelTitle)))
                 .addGap(73, 73, 73))
         );
@@ -134,20 +144,16 @@ public class loginForm extends javax.swing.JFrame {
                         .addGap(57, 57, 57)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLblUsername)
-                            .addComponent(jTxtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(71, 71, 71)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 126, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jBtnLogin)
-                                    .addComponent(jBtnRegister))
-                                .addGap(61, 61, 61))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLblPassword)
-                                    .addComponent(jPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                            .addComponent(jComboUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(70, 70, 70)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLblPassword)
+                            .addComponent(jPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jBtnRegister)
+                            .addComponent(jBtnLogin))
+                        .addGap(73, 73, 73))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -181,19 +187,31 @@ public class loginForm extends javax.swing.JFrame {
 
     private void jBtnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnLoginActionPerformed
         // TODO add your handling code here:
-        String username = jTxtUsername.getText();
+        String username = jComboUsername.getSelectedItem().toString();
         String password = jPassword.getText();
 
-        if (username.equals("admin") && (password.equals("admin"))){ //&& (jPassword.equals("admin"))){
+        if (username.equals("root") && password.equals("toor")){
             System.out.println("User successfuly logged in.");
             mainMenu menu = new mainMenu();
             menu.setVisible(true);
             this.hide();
         }
-        else if ((username.equals("admin")) && (!password.equals("admin"))){
-            JOptionPane.showMessageDialog(this, "Wrong password, please try again.", "Error while logging in", 2);
-            System.out.println("User inputted a wrong password.");
+        else if (username.equals("admin") && password.equals("admin")){
+            System.out.println("User successfuly logged in.");
+            mainMenu menu = new mainMenu();
+            menu.setVisible(true);
+            this.hide();
         }
+//        if (username.equals("admin") && (password.equals("admin"))){ //&& (jPassword.equals("admin"))){
+//            System.out.println("User successfuly logged in.");
+//            mainMenu menu = new mainMenu();
+//            menu.setVisible(true);
+//            this.hide();
+//        }
+//        else if ((username.equals("admin")) && (!password.equals("admin"))){
+//            JOptionPane.showMessageDialog(this, "Wrong password, please try again.", "Error while logging in", 2);
+//            System.out.println("User inputted a wrong password.");
+//        }
         else {
             JOptionPane.showMessageDialog(this, "Wrong login credentials, please enter a correct account.", "Error while logging in", 2);
             System.out.println("User failed to login.");
@@ -240,6 +258,7 @@ public class loginForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnLogin;
     private javax.swing.JButton jBtnRegister;
+    private javax.swing.JComboBox<String> jComboUsername;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -249,6 +268,5 @@ public class loginForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLblUsername;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPassword;
-    private javax.swing.JTextField jTxtUsername;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,6 +6,8 @@
 package core;
 
 import java.awt.Image;
+import java.beans.Statement;
+import java.util.ArrayList;
 import javax.swing.*;
 
 /**
@@ -20,6 +22,9 @@ public class registerForm extends javax.swing.JFrame {
     public registerForm() {
         initComponents();
         setLocationRelativeTo(null);
+        connectAccount conn = new connectAccount();
+        ArrayList<String> output = new ArrayList<String>();
+        output = conn.connect("");
     }
 
     /**
@@ -211,6 +216,10 @@ public class registerForm extends javax.swing.JFrame {
             successfulRegistration = false;
         }
         if (successfulRegistration){
+//             ADD QUERY WHICH INSERTS THE DATA IN THE TABLE
+//            
+//            
+            
             JOptionPane.showMessageDialog(null, "User successfuly registered !", "Registration complete", JOptionPane.INFORMATION_MESSAGE, imgDoor);
             this.dispose();
             loginForm login = new loginForm();

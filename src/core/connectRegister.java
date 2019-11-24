@@ -66,7 +66,7 @@ public class connectRegister {
             }
         }
         return result;
-    }
+   }
 }
     /**
      * @param args the command line arguments

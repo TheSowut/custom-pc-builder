@@ -13,6 +13,7 @@
 # Package Files #
 *.jar
 !libs/**/*.jar
+!nbproject/**/*.jar
 *.war
 *.nar
 *.ear

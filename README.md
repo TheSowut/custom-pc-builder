@@ -1,8 +1,9 @@
 # custom-pc-builder
 <!--<strong>Version: 1.0</strong>-->
-<!-- <img src="images/icons/logoFullSize.png" width="100%"> -->
+<img src="images/icons/logoFullSize.png" width="100%">
+
 ## ℹ About:
-**Java GUI Application with SQL connectivity dedicated to building a custom PC with user chosen hardware.**
+- **Java GUI Application with SQL connectivity dedicated to building a custom PC with user chosen hardware.**
 
 ## ✔ Current Features:
 - Create an account on a local DB.

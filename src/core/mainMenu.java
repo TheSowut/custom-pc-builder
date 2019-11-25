@@ -5,6 +5,7 @@
  */
 package core;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +20,8 @@ public class mainMenu extends javax.swing.JFrame {
     public mainMenu() {
         initComponents();
         setLocationRelativeTo(null);
+        final ImageIcon logoSmall = new ImageIcon(".\\images\\icons\\cpblogoSmallFull.png");
+        jLblLogoSmall.setIcon(logoSmall);
     }
 
     /**
@@ -31,161 +34,115 @@ public class mainMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jMenuBar2 = new javax.swing.JMenuBar();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        jLblLogoSmall = new javax.swing.JLabel();
+        jMenu = new javax.swing.JMenuBar();
+        jMenuSetups = new javax.swing.JMenu();
+        jMenuSetupsBrowse = new javax.swing.JMenuItem();
+        jMenuSetupsCreate = new javax.swing.JMenuItem();
+        jMenuSetupsDelete = new javax.swing.JMenuItem();
+        jMenuHardware = new javax.swing.JMenu();
+        jMenuManual = new javax.swing.JMenu();
+        jMenuAbout = new javax.swing.JMenu();
+        jMenuHelp = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(670, 540));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
             }
         });
 
-        jLabel2.setText("watermark//logo");
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
+        jLblLogoSmall.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\cpblogoSmallFull.png")); // NOI18N
+        jLblLogoSmall.setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(542, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+                .addContainerGap(461, Short.MAX_VALUE)
+                .addComponent(jLblLogoSmall)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(413, Short.MAX_VALUE)
-                .addComponent(jLabel2))
+                .addContainerGap(408, Short.MAX_VALUE)
+                .addComponent(jLblLogoSmall))
         );
 
-        jMenuBar2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jMenu3.setText("PC Setups");
-        jMenu3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuSetups.setText("PC Setups");
+        jMenuSetups.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jMenuItem1.setText("Browse setups");
-        jMenuItem1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu3.add(jMenuItem1);
-
-        jMenuItem2.setText("Create a new setup");
-        jMenuItem2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu3.add(jMenuItem2);
-
-        jMenuItem3.setText("Delete a setup");
-        jMenuItem3.setContentAreaFilled(false);
-        jMenuItem3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu3.add(jMenuItem3);
-
-        jMenuBar2.add(jMenu3);
-
-        jMenu1.setText("Manual");
-        jMenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenuBar2.add(jMenu1);
-
-        jMenu2.setText("About");
-        jMenu2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu2MouseClicked(evt);
-            }
-        });
-        jMenuBar2.add(jMenu2);
-
-        jMenu5.setText("Help");
-        jMenu5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenuBar2.add(jMenu5);
-
-        jMenu4.setText("Hardware");
-        jMenu4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jMenu6.setText("Check a component");
-        jMenu6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jMenuItem8.setText("RAM");
-        jMenuItem8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu6.add(jMenuItem8);
-
-        jMenuItem6.setText("Graphics Card");
-        jMenuItem6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu6.add(jMenuItem6);
-
-        jMenuItem7.setText("Processor");
-        jMenuItem7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu6.add(jMenuItem7);
-
-        jMenuItem4.setText("Motherboard");
-        jMenuItem4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu6.add(jMenuItem4);
-
-        jMenuItem9.setText("HDD");
-        jMenuItem9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu6.add(jMenuItem9);
-
-        jMenuItem10.setText("SSD");
-        jMenuItem10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu6.add(jMenuItem10);
-
-        jMenu4.add(jMenu6);
-
-        jMenuItem5.setText("Add a new component");
-        jMenuItem5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+        jMenuSetupsBrowse.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, 0));
+        jMenuSetupsBrowse.setText("Browse setups");
+        jMenuSetupsBrowse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuSetupsBrowse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
+                jMenuSetupsBrowseActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem5);
+        jMenuSetups.add(jMenuSetupsBrowse);
 
-        jMenuBar2.add(jMenu4);
+        jMenuSetupsCreate.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, 0));
+        jMenuSetupsCreate.setText("Create a new setup");
+        jMenuSetupsCreate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuSetups.add(jMenuSetupsCreate);
 
-        setJMenuBar(jMenuBar2);
+        jMenuSetupsDelete.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, 0));
+        jMenuSetupsDelete.setText("Delete a setup");
+        jMenuSetupsDelete.setContentAreaFilled(false);
+        jMenuSetupsDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuSetups.add(jMenuSetupsDelete);
+
+        jMenu.add(jMenuSetups);
+
+        jMenuHardware.setText("Hardware");
+        jMenuHardware.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuHardware.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuHardwareMouseClicked(evt);
+            }
+        });
+        jMenu.add(jMenuHardware);
+
+        jMenuManual.setText("Manual");
+        jMenuManual.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenu.add(jMenuManual);
+
+        jMenuAbout.setText("About");
+        jMenuAbout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuAbout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuAboutMouseClicked(evt);
+            }
+        });
+        jMenu.add(jMenuAbout);
+
+        jMenuHelp.setText("Help");
+        jMenuHelp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenu.add(jMenuHelp);
+
+        setJMenuBar(jMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        // TODO add your handling code here:
-        addNewComponent add = new addNewComponent();
-        add.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
-
-    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
+    private void jMenuAboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuAboutMouseClicked
         // TODO add your handling code here:
             JOptionPane.showMessageDialog(this, "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
                 + "Integer posuere odio sem, eu auctor nisl molestie in.\n"
@@ -201,12 +158,23 @@ public class mainMenu extends javax.swing.JFrame {
                 + "Proin laoreet quam non varius accumsan.\n"
                 + "Suspendisse auctor orci a aliquam viverra.\n"
                 + "Proin sollicitudin vitae leo ut ultrices.\n", "About", 1);
-    }//GEN-LAST:event_jMenu2MouseClicked
+    }//GEN-LAST:event_jMenuAboutMouseClicked
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
         askOnQuit.askForExit(this);
     }//GEN-LAST:event_formWindowClosing
+
+    private void jMenuSetupsBrowseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSetupsBrowseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuSetupsBrowseActionPerformed
+
+    private void jMenuHardwareMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuHardwareMouseClicked
+        // TODO add your handling code here:
+        addNewComponent add = new addNewComponent();
+        add.setVisible(true);
+        this.dispose();                     
+    }//GEN-LAST:event_jMenuHardwareMouseClicked
 
     /**
      * @param args the command line arguments
@@ -233,8 +201,7 @@ public class mainMenu extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(mainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
+        //</editor-jMenuChec
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -244,24 +211,16 @@ public class mainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JLabel jLblLogoSmall;
+    private javax.swing.JMenuBar jMenu;
+    private javax.swing.JMenu jMenuAbout;
+    private javax.swing.JMenu jMenuHardware;
+    private javax.swing.JMenu jMenuHelp;
+    private javax.swing.JMenu jMenuManual;
+    private javax.swing.JMenu jMenuSetups;
+    private javax.swing.JMenuItem jMenuSetupsBrowse;
+    private javax.swing.JMenuItem jMenuSetupsCreate;
+    private javax.swing.JMenuItem jMenuSetupsDelete;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -40,9 +40,6 @@ public class connectRegister {
             String queryCreateAcc = "INSERT INTO accounts (username, password) values ('" + username + "', '" + password + "')";
             System.out.println("Query executed: " + queryCreateAcc);
             
-            // Add a check whether the account exists
-            //
-            //
            try (Connection openConn = conn;
                 Statement stmt  = openConn.createStatement();
                 ResultSet rs    = stmt.executeQuery(queryCreateAcc)){

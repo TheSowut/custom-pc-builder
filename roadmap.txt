@@ -1,7 +1,7 @@
 registerForm:
 	I. Make a working registration form (Check if the new details of the user can be inserted into the table)
 	II. Link it to either a file (java I/O) or database.
-	III. Check if the username exists in the DB.
+----III. Check if the username exists in the DB.
 
 loginForm:
 	I. Working login form (Check if the password is the correct one for the username)
@@ -35,7 +35,7 @@ Style the app:
 	I. Backgrounds.
 	II. Fonts.
 	III. Custom images.
-	IV. Night mode.
+	IV. Night mode. (flag check in all forms inits linked with a class function for background change)
 	V. Custom icons for labels.
 	
 Optional:

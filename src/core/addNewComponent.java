@@ -5,6 +5,7 @@
  */
 package core;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +20,24 @@ public class addNewComponent extends javax.swing.JFrame {
     public addNewComponent() {
         initComponents();
         setLocationRelativeTo(jPanel1);
+        
+        final ImageIcon logoBrowse = new ImageIcon(".\\images\\icons\\browseComponents.png");
+        final ImageIcon logoSmall = new ImageIcon(".\\images\\icons\\cpblogoSmallFull.png");
+        final ImageIcon ram = new ImageIcon(".\\images\\components\\ram2.jpg");
+        final ImageIcon graphicscard = new ImageIcon(".\\images\\components\\graphicscard.jpg");
+        final ImageIcon processor = new ImageIcon(".\\images\\components\\processor.jpg");
+        final ImageIcon motherboard = new ImageIcon(".\\images\\components\\motherboard.jpg");
+        final ImageIcon hdd = new ImageIcon(".\\images\\components\\hdd.jpg");
+        final ImageIcon ssd = new ImageIcon(".\\images\\components\\ssd.jpg");
+        
+        jLblTitle.setIcon(logoBrowse);
+        jBtnRam.setIcon(ram);
+        jBtnGraphicsCard.setIcon(graphicscard);
+        jBtnProcessor.setIcon(processor);
+        jBtnMotherboard.setIcon(motherboard);
+        jBtnHdd.setIcon(hdd);
+        jBtnSsd.setIcon(ssd);
+        jLblLogo.setIcon(logoSmall);
     }
 
     /**
@@ -31,84 +50,127 @@ public class addNewComponent extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        jLblTitle = new javax.swing.JLabel();
+        jBtnRam = new javax.swing.JButton();
+        jBtnMotherboard = new javax.swing.JButton();
+        jBtnGraphicsCard = new javax.swing.JButton();
+        jBtnHdd = new javax.swing.JButton();
+        jBtnProcessor = new javax.swing.JButton();
+        jBtnSsd = new javax.swing.JButton();
+        jLblLogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(695, 570));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel1.setText("Add a new component");
+        jPanel1.setPreferredSize(new java.awt.Dimension(695, 570));
 
-        jButton1.setText("RAM");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLblTitle.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLblTitle.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\browseComponents.png")); // NOI18N
 
-        jButton2.setText("Motherboard");
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnRam.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\ram2.jpg")); // NOI18N
+        jBtnRam.setToolTipText("");
+        jBtnRam.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnRam.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnRamMouseClicked(evt);
+            }
+        });
 
-        jButton3.setText("Graphics Card");
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnMotherboard.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\motherboard.jpg")); // NOI18N
+        jBtnMotherboard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnMotherboard.setPreferredSize(new java.awt.Dimension(230, 141));
+        jBtnMotherboard.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnMotherboardMouseClicked(evt);
+            }
+        });
 
-        jButton4.setText("HDD");
-        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnGraphicsCard.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\graphics card.jpg")); // NOI18N
+        jBtnGraphicsCard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnGraphicsCard.setPreferredSize(new java.awt.Dimension(230, 141));
+        jBtnGraphicsCard.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnGraphicsCardMouseClicked(evt);
+            }
+        });
 
-        jButton5.setText("Processor");
-        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnHdd.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\hdd.jpg")); // NOI18N
+        jBtnHdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnHdd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnHddMouseClicked(evt);
+            }
+        });
 
-        jButton6.setText("SSD");
-        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnProcessor.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\processor.jpg")); // NOI18N
+        jBtnProcessor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnProcessor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnProcessorMouseClicked(evt);
+            }
+        });
+
+        jBtnSsd.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\ssd.jpg")); // NOI18N
+        jBtnSsd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnSsd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnSsdMouseClicked(evt);
+            }
+        });
+
+        jLblLogo.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\cpblogoSmallFull.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(90, 90, 90)
-                        .addComponent(jButton3))
+                        .addGap(50, 50, 50)
+                        .addComponent(jLblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(jButton2)
-                        .addGap(93, 93, 93)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5))
-                .addGap(62, 62, 62))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(183, 183, 183))
+                        .addGap(10, 10, 10)
+                        .addComponent(jBtnRam, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jBtnGraphicsCard, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jBtnProcessor, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jBtnMotherboard, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jBtnHdd, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jBtnSsd, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLblLogo)))
+                .addGap(25, 25, 25))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton3)
-                    .addComponent(jButton5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton4)
-                    .addComponent(jButton6))
-                .addGap(88, 88, 88))
+                .addGap(40, 40, 40)
+                .addComponent(jLblTitle)
+                .addGap(60, 60, 60)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jBtnRam, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBtnGraphicsCard, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBtnProcessor, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jBtnMotherboard, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBtnHdd, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBtnSsd, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLblLogo)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -116,16 +178,12 @@ public class addNewComponent extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -143,6 +201,36 @@ public class addNewComponent extends javax.swing.JFrame {
             this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         }
     }//GEN-LAST:event_formWindowClosing
+
+    private void jBtnRamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnRamMouseClicked
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "RAM");
+    }//GEN-LAST:event_jBtnRamMouseClicked
+
+    private void jBtnGraphicsCardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnGraphicsCardMouseClicked
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "Graphics Card");
+    }//GEN-LAST:event_jBtnGraphicsCardMouseClicked
+
+    private void jBtnProcessorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnProcessorMouseClicked
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "Processor");
+    }//GEN-LAST:event_jBtnProcessorMouseClicked
+
+    private void jBtnMotherboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnMotherboardMouseClicked
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "Motherboard");
+    }//GEN-LAST:event_jBtnMotherboardMouseClicked
+
+    private void jBtnHddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnHddMouseClicked
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "HDD");
+    }//GEN-LAST:event_jBtnHddMouseClicked
+
+    private void jBtnSsdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnSsdMouseClicked
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "SSD");
+    }//GEN-LAST:event_jBtnSsdMouseClicked
 
     /**
      * @param args the command line arguments
@@ -180,13 +268,14 @@ public class addNewComponent extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jBtnGraphicsCard;
+    private javax.swing.JButton jBtnHdd;
+    private javax.swing.JButton jBtnMotherboard;
+    private javax.swing.JButton jBtnProcessor;
+    private javax.swing.JButton jBtnRam;
+    private javax.swing.JButton jBtnSsd;
+    private javax.swing.JLabel jLblLogo;
+    private javax.swing.JLabel jLblTitle;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

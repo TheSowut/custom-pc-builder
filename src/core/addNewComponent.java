@@ -23,7 +23,7 @@ public class addNewComponent extends javax.swing.JFrame {
         
         final ImageIcon logoBrowse = new ImageIcon(".\\images\\icons\\browseComponents.png");
         final ImageIcon logoSmall = new ImageIcon(".\\images\\icons\\cpblogoSmallFull.png");
-        final ImageIcon ram = new ImageIcon(".\\images\\components\\ram2.jpg");
+        final ImageIcon ram = new ImageIcon(".\\images\\components\\ram.jpg");
         final ImageIcon graphicscard = new ImageIcon(".\\images\\components\\graphicscard.jpg");
         final ImageIcon processor = new ImageIcon(".\\images\\components\\processor.jpg");
         final ImageIcon motherboard = new ImageIcon(".\\images\\components\\motherboard.jpg");
@@ -39,7 +39,19 @@ public class addNewComponent extends javax.swing.JFrame {
         jBtnSsd.setIcon(ssd);
         jLblLogo.setIcon(logoSmall);
     }
-
+    
+    private void goToMenu(){
+        int choice = JOptionPane.showConfirmDialog(this, "Are you sure you would like to quit ?", "Exit", 2);
+        if (choice == 0){
+            this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            mainMenu menu = new mainMenu();
+            menu.setVisible(true);
+            this.dispose();
+        }
+        else {
+            this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -58,6 +70,7 @@ public class addNewComponent extends javax.swing.JFrame {
         jBtnProcessor = new javax.swing.JButton();
         jBtnSsd = new javax.swing.JButton();
         jLblLogo = new javax.swing.JLabel();
+        jBtnBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(695, 570));
@@ -72,7 +85,7 @@ public class addNewComponent extends javax.swing.JFrame {
         jLblTitle.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLblTitle.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\browseComponents.png")); // NOI18N
 
-        jBtnRam.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\ram2.jpg")); // NOI18N
+        jBtnRam.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\ram.jpg")); // NOI18N
         jBtnRam.setToolTipText("");
         jBtnRam.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBtnRam.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -90,7 +103,7 @@ public class addNewComponent extends javax.swing.JFrame {
             }
         });
 
-        jBtnGraphicsCard.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\graphics card.jpg")); // NOI18N
+        jBtnGraphicsCard.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\graphicscard.jpg")); // NOI18N
         jBtnGraphicsCard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBtnGraphicsCard.setPreferredSize(new java.awt.Dimension(230, 141));
         jBtnGraphicsCard.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -125,6 +138,14 @@ public class addNewComponent extends javax.swing.JFrame {
 
         jLblLogo.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\cpblogoSmallFull.png")); // NOI18N
 
+        jBtnBack.setText("Back");
+        jBtnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnBackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -150,6 +171,8 @@ public class addNewComponent extends javax.swing.JFrame {
                         .addComponent(jBtnSsd, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jBtnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(82, 82, 82)
                         .addComponent(jLblLogo)))
                 .addGap(25, 25, 25))
         );
@@ -169,8 +192,10 @@ public class addNewComponent extends javax.swing.JFrame {
                     .addComponent(jBtnHdd, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBtnSsd, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLblLogo)
-                .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLblLogo)
+                    .addComponent(jBtnBack))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -183,7 +208,7 @@ public class addNewComponent extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE)
         );
 
         pack();
@@ -191,15 +216,7 @@ public class addNewComponent extends javax.swing.JFrame {
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
-        int choice = JOptionPane.showConfirmDialog(this, "Are you sure you would like to quit ?", "Exit", 2);
-        if (choice == 0){
-            this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-            mainMenu menu = new mainMenu();
-            menu.setVisible(true);
-        }
-        else {
-            this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        }
+        goToMenu();
     }//GEN-LAST:event_formWindowClosing
 
     private void jBtnRamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnRamMouseClicked
@@ -231,6 +248,11 @@ public class addNewComponent extends javax.swing.JFrame {
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(this, "SSD");
     }//GEN-LAST:event_jBtnSsdMouseClicked
+
+    private void jBtnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBackActionPerformed
+        // TODO add your handling code here:
+        goToMenu();
+    }//GEN-LAST:event_jBtnBackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -268,6 +290,7 @@ public class addNewComponent extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnBack;
     private javax.swing.JButton jBtnGraphicsCard;
     private javax.swing.JButton jBtnHdd;
     private javax.swing.JButton jBtnMotherboard;

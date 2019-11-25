@@ -37,7 +37,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
+          <Component id="jPanel1" alignment="1" pref="539" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -76,6 +76,8 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jBtnBack" min="-2" pref="125" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                           <Component id="jLblLogo" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -101,8 +103,11 @@
                       <Component id="jBtnSsd" min="-2" pref="140" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jLblLogo" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLblLogo" min="-2" max="-2" attributes="0"/>
+                      <Component id="jBtnBack" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -121,7 +126,7 @@
         <Component class="javax.swing.JButton" name="jBtnRam">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Codes\Github\custom-pc-builder\images\components\ram2.jpg"/>
+              <Image iconType="2" name="D:\Codes\Github\custom-pc-builder\images\components\ram.jpg"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -151,7 +156,7 @@
         <Component class="javax.swing.JButton" name="jBtnGraphicsCard">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Codes\Github\custom-pc-builder\images\components\graphics card.jpg"/>
+              <Image iconType="2" name="D:\Codes\Github\custom-pc-builder\images\components\graphicscard.jpg"/>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
@@ -209,6 +214,17 @@
               <Image iconType="2" name="D:\Codes\Github\custom-pc-builder\images\icons\cpblogoSmallFull.png"/>
             </Property>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jBtnBack">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Back"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnBackActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

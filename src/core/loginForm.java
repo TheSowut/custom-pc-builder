@@ -27,7 +27,7 @@ public class loginForm extends javax.swing.JFrame {
         for (int i = 0; i < output.size(); i++) {
             jComboUsername.addItem(output.get(i));
         }
-        final ImageIcon logoMedium = new ImageIcon(".\\images\\icons\\logoMedium.png");
+        final ImageIcon logoMedium = new ImageIcon(".\\images\\icons\\loginLogo.png");
         jLblLogo.setIcon(logoMedium);
     }
     
@@ -86,7 +86,7 @@ public class loginForm extends javax.swing.JFrame {
         jLblPassword.setText("Password:");
 
         jLblLogo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLblLogo.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\logoMedium.png")); // NOI18N
+        jLblLogo.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\loginLogo.png")); // NOI18N
         jLblLogo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -113,16 +113,16 @@ public class loginForm extends javax.swing.JFrame {
                                         .addComponent(jBtnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(20, 20, 20))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(113, 113, 113)
+                        .addGap(72, 72, 72)
                         .addComponent(jLblLogo)))
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addContainerGap(78, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(40, 40, 40)
                 .addComponent(jLblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(91, 91, 91)
+                .addGap(76, 76, 76)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLblUsername))

@@ -180,28 +180,12 @@ public class loginForm extends javax.swing.JFrame {
         String username = jComboUsername.getSelectedItem().toString();
         String password = jPassword.getText();
 
-        if (username.equals("root") && password.equals("toor")){
+        if (username.equals("admin") && password.equals("admin")){
             System.out.println("User successfuly logged in.");
             mainMenu menu = new mainMenu();
             menu.setVisible(true);
-            this.hide();
+            this.dispose();
         }
-        else if (username.equals("admin") && password.equals("admin")){
-            System.out.println("User successfuly logged in.");
-            mainMenu menu = new mainMenu();
-            menu.setVisible(true);
-            this.hide();
-        }
-//        if (username.equals("admin") && (password.equals("admin"))){ //&& (jPassword.equals("admin"))){
-//            System.out.println("User successfuly logged in.");
-//            mainMenu menu = new mainMenu();
-//            menu.setVisible(true);
-//            this.hide();
-//        }
-//        else if ((username.equals("admin")) && (!password.equals("admin"))){
-//            JOptionPane.showMessageDialog(this, "Wrong password, please try again.", "Error while logging in", 2);
-//            System.out.println("User inputted a wrong password.");
-//        }
         else {
             JOptionPane.showMessageDialog(this, "Wrong login credentials, please enter a correct account.", "Error while logging in", 2);
             System.out.println("User failed to login.");

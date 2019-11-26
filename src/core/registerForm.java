@@ -224,8 +224,14 @@ public class registerForm extends javax.swing.JFrame {
         //        ArrayList<String> output = new ArrayList<String>();
 
         final ImageIcon imgDoor = new ImageIcon(".\\images\\icons\\loginSmall.png");
+        
+        // flag for username validation
         boolean usernameCheck = true;
+        
+        // flag for password validation
         boolean passwordCheck = true;
+        
+        //flag to validate if all checks are passed
         boolean successfulRegistration = true;
 
         if (username.length() < 3){
@@ -234,37 +240,48 @@ public class registerForm extends javax.swing.JFrame {
         else if (password == null || (password.length() < 5) || (!password.equals(passwordConfirm))){
             passwordCheck = false;
         }
+        
+        // check if the username is invalid
         if (!usernameCheck){
             JOptionPane.showMessageDialog(null, "Username taken or too short !", "Error while registering", 0);
             System.out.println("User failed to register !");
             successfulRegistration = false;
         }
+        
+        // check if the password is invalid
         if (!passwordCheck){
             JOptionPane.showMessageDialog(null, "Passwords too short or not matching !", "Error while registering", 0);
             System.out.println("User failed to register !");
             successfulRegistration = false;
         }
+        
+        // check if the username is unique (doesn't exist)
         if (successfulRegistration){
             boolean exceptionTest = true;
-            try {
+                String testForUser = "null";
+                checkUsername checkUser = new checkUsername();
+                checkUsername.check(username);
+                testForUser = checkUsername.check(username);
+                
+                // if to handle if the username is already used
+                if (testForUser.equals(username))
+                {
+                    JOptionPane.showMessageDialog(this, "User already exists !\nPlease choose a different username.", "Registration failed", 2);
+                    exceptionTest = false;
+                }
+                
+            // if to handle new account creation
+            if (exceptionTest){
                 connectRegister conn = new connectRegister();
                 ArrayList<String> output = new ArrayList<String>();
                 output = conn.connect(username, password);
-                if (username.equals("admin") || (username.equals("root"))){
-                    throw new SQLiteException(username, SQLiteErrorCode.SQLITE_CONSTRAINT_UNIQUE);
-                }
-            }
-            catch (SQLiteException e){
-                JOptionPane.showMessageDialog(this, "User already exists !\nPlease choose a different username.", "Registration failed", 2);
-                System.out.println("Exception caugh: " + e);
-                exceptionTest = false;
-            }
-            if (exceptionTest){
                 JOptionPane.showMessageDialog(null, "User successfuly registered !", "Registration complete", JOptionPane.INFORMATION_MESSAGE, imgDoor);
-                this.dispose();
                 loginForm login = new loginForm();
                 login.show();
+                this.dispose();
             }
+            
+            // delete all invalid fields
             else{
                 jTxtUsername.setText("");
                 jPassword.setText("");

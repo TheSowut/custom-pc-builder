@@ -179,21 +179,30 @@ public class loginForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         String username = jComboUsername.getSelectedItem().toString();
         String password = jPassword.getText();
-
-        if (username.equals("admin") && password.equals("admin")){
+        
+        // create a check, whether the password is correct
+        connectLoginPassword checkPassword = new connectLoginPassword();
+        connectLoginPassword.checkPassword(username);
+        String passwordCheck = connectLoginPassword.checkPassword(username);
+        
+        // if to handle if the inputted password matches the one for the username
+        if (password.equals(passwordCheck)){
             System.out.println("User successfuly logged in.");
             mainMenu menu = new mainMenu();
             menu.setVisible(true);
             this.dispose();
         }
+        
+        // else to handle the event of incorrect password
         else {
             JOptionPane.showMessageDialog(this, "Wrong login credentials, please enter a correct account.", "Error while logging in", 2);
+            jPassword.setText("");
             System.out.println("User failed to login.");
         }
     }//GEN-LAST:event_jBtnLoginActionPerformed
 
     /**
-     * @param args the command line arguments
+ * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

@@ -28,12 +28,12 @@ import java.util.ArrayList;
  *
  * @author sqlitetutorial.net
  */
-public class connectRegister {
+public class connectLoginPassword {
      /**
      * Connect to a sample database
      */
-    public static ArrayList<String> connect(String username, String password) {
-        ArrayList<String> result = new ArrayList<String>();
+    public static String checkPassword(String usernameInput) {
+        String result = "";
         Connection conn = null;
         try {
             // The string fullPath gets the absolute path to the DB
@@ -47,12 +47,18 @@ public class connectRegister {
             conn = DriverManager.getConnection(fullPath);
             System.out.println("Connection to SQLite has been established.");
             
-            // Query which inserts the new details of the account in the accounts table
-            String queryCreateAcc = "INSERT INTO accounts (username, password) values ('" + username + "', '" + password + "')";
+            // Query which which shows the usernames
+            String queryBrowseUsernames = ("SELECT password FROM accounts WHERE username = '" + usernameInput + "'");
+            System.out.println("Query executed: " + queryBrowseUsernames);
             
-           try (Connection openConn = conn;
+            try (Connection openConn = conn;
                 Statement stmt  = openConn.createStatement();
-                ResultSet rs    = stmt.executeQuery(queryCreateAcc)){
+                ResultSet rs    = stmt.executeQuery(queryBrowseUsernames)){
+ 
+                // loop through the result set
+                while (rs.next()) {
+                    result = (rs.getString("password"));
+                }
             } catch (SQLException e) {
                 System.out.println(e.getMessage());
             }
@@ -69,7 +75,7 @@ public class connectRegister {
             }
         }
         return result;
-   }
+    }
 }
     /**
      * @param args the command line arguments

@@ -6,8 +6,7 @@
 - **Java GUI Application with SQL connectivity dedicated to building a custom PC with user chosen hardware.**
 
 ## ✔ Current Features:
-- Create an account on a local DB.
-- Login with an admin account to browse the planned features.
+- Create and Login with an account on a local db and browse the planned features.
 
 <div><img src="images/demo/loginScreen.JPG" width="311">
 <img src="images/demo/registrationScreen.JPG" width="300"></div>

@@ -1,11 +1,11 @@
 ✔️registerForm:
-----I. Make a working registration form (Check if the new details of the user can be inserted into the table)
-----II. Link it to either a file (java I/O) or database.
-----III. Check if the username exists in the DB.
+--------I. Make a working registration form (Check if the new details of the user can be inserted into the table)
+--------II. Link it to either a file (java I/O) or database.
+--------III. Check if the username exists in the DB.
 
 ✔️loginForm:
-----I. Working login form (Check if the password is the correct one for the username)
-----II. Link it with the same file/db as the registrationForm.
+--------I. Working login form (Check if the password is the correct one for the username)
+--------II. Link it with the same file/db as the registrationForm.
 	
 Additional Features:
 	I. All the forms should have a confirm dialog, whether the user wants to exit the app or not.
@@ -21,11 +21,11 @@ Create a menu
 		2. Hardware
 			1. Check a component.
 			2. Add new component.
-	II. About (FAQ)
-		1. Fill with information.
-	III. Manual
+✔️About:
+--------1. Fill with information.
+	II. Manual
 		1. Fill with instructions how to use the app.
-	IV. Help
+	III. Help
 	
 Bugtest:
 	I. All buttons, methods, invalid input (parsing).

@@ -23,12 +23,12 @@ import javax.swing.JOptionPane;
  *
  * @author TheSowut
  */
-public class addNewComponent extends javax.swing.JFrame {
+public class browseComponents extends javax.swing.JFrame {
 
     /**
      * Creates new form addNewComponent
      */
-    public addNewComponent() {
+    public browseComponents() {
         initComponents();
         setLocationRelativeTo(jPanel1);
         
@@ -40,6 +40,7 @@ public class addNewComponent extends javax.swing.JFrame {
         final ImageIcon motherboard = new ImageIcon(".\\images\\components\\motherboard.jpg");
         final ImageIcon hdd = new ImageIcon(".\\images\\components\\hdd.jpg");
         final ImageIcon ssd = new ImageIcon(".\\images\\components\\ssd.jpg");
+        final ImageIcon background = new ImageIcon(".\\images\\backgrounds\\componentsScreen.jpg");
         
         jLblTitle.setIcon(logoBrowse);
         jBtnRam.setIcon(ram);
@@ -49,6 +50,7 @@ public class addNewComponent extends javax.swing.JFrame {
         jBtnHdd.setIcon(hdd);
         jBtnSsd.setIcon(ssd);
         jLblLogo.setIcon(logoSmall);
+        jLblBackground.setIcon(background);
     }
     
     private void goToMenu(){
@@ -82,9 +84,11 @@ public class addNewComponent extends javax.swing.JFrame {
         jBtnSsd = new javax.swing.JButton();
         jLblLogo = new javax.swing.JLabel();
         jBtnBack = new javax.swing.JButton();
+        jLblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(695, 570));
+        setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -92,9 +96,12 @@ public class addNewComponent extends javax.swing.JFrame {
         });
 
         jPanel1.setPreferredSize(new java.awt.Dimension(695, 570));
+        jPanel1.setLayout(null);
 
         jLblTitle.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLblTitle.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\browseComponents.png")); // NOI18N
+        jPanel1.add(jLblTitle);
+        jLblTitle.setBounds(50, 40, 560, 100);
 
         jBtnRam.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\ram.jpg")); // NOI18N
         jBtnRam.setToolTipText("");
@@ -104,6 +111,8 @@ public class addNewComponent extends javax.swing.JFrame {
                 jBtnRamMouseClicked(evt);
             }
         });
+        jPanel1.add(jBtnRam);
+        jBtnRam.setBounds(10, 210, 200, 120);
 
         jBtnMotherboard.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\motherboard.jpg")); // NOI18N
         jBtnMotherboard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -113,6 +122,8 @@ public class addNewComponent extends javax.swing.JFrame {
                 jBtnMotherboardMouseClicked(evt);
             }
         });
+        jPanel1.add(jBtnMotherboard);
+        jBtnMotherboard.setBounds(10, 350, 200, 130);
 
         jBtnGraphicsCard.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\graphicscard.jpg")); // NOI18N
         jBtnGraphicsCard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -122,6 +133,8 @@ public class addNewComponent extends javax.swing.JFrame {
                 jBtnGraphicsCardMouseClicked(evt);
             }
         });
+        jPanel1.add(jBtnGraphicsCard);
+        jBtnGraphicsCard.setBounds(220, 210, 220, 120);
 
         jBtnHdd.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\hdd.jpg")); // NOI18N
         jBtnHdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -130,6 +143,8 @@ public class addNewComponent extends javax.swing.JFrame {
                 jBtnHddMouseClicked(evt);
             }
         });
+        jPanel1.add(jBtnHdd);
+        jBtnHdd.setBounds(220, 350, 220, 130);
 
         jBtnProcessor.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\processor.jpg")); // NOI18N
         jBtnProcessor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -138,6 +153,8 @@ public class addNewComponent extends javax.swing.JFrame {
                 jBtnProcessorMouseClicked(evt);
             }
         });
+        jPanel1.add(jBtnProcessor);
+        jBtnProcessor.setBounds(450, 210, 220, 120);
 
         jBtnSsd.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\ssd.jpg")); // NOI18N
         jBtnSsd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -146,8 +163,12 @@ public class addNewComponent extends javax.swing.JFrame {
                 jBtnSsdMouseClicked(evt);
             }
         });
+        jPanel1.add(jBtnSsd);
+        jBtnSsd.setBounds(450, 350, 220, 130);
 
         jLblLogo.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\cpblogoSmallFull.png")); // NOI18N
+        jPanel1.add(jLblLogo);
+        jLblLogo.setBounds(490, 500, 183, 35);
 
         jBtnBack.setText("Back");
         jBtnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -156,66 +177,18 @@ public class addNewComponent extends javax.swing.JFrame {
                 jBtnBackActionPerformed(evt);
             }
         });
+        jPanel1.add(jBtnBack);
+        jBtnBack.setBounds(280, 498, 125, 32);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jLblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jBtnRam, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jBtnGraphicsCard, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jBtnProcessor, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jBtnMotherboard, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jBtnHdd, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jBtnSsd, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jBtnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(82, 82, 82)
-                        .addComponent(jLblLogo)))
-                .addGap(25, 25, 25))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLblTitle)
-                .addGap(60, 60, 60)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jBtnRam, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtnGraphicsCard, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtnProcessor, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jBtnMotherboard, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtnHdd, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBtnSsd, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLblLogo)
-                    .addComponent(jBtnBack))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\componentsScreen.jpg")); // NOI18N
+        jPanel1.add(jLblBackground);
+        jLblBackground.setBounds(0, 0, 700, 540);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 701, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,20 +255,21 @@ public class addNewComponent extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(addNewComponent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browseComponents.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(addNewComponent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browseComponents.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(addNewComponent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browseComponents.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(addNewComponent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browseComponents.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new addNewComponent().setVisible(true);
+                new browseComponents().setVisible(true);
             }
         });
     }
@@ -308,6 +282,7 @@ public class addNewComponent extends javax.swing.JFrame {
     private javax.swing.JButton jBtnProcessor;
     private javax.swing.JButton jBtnRam;
     private javax.swing.JButton jBtnSsd;
+    private javax.swing.JLabel jLblBackground;
     private javax.swing.JLabel jLblLogo;
     private javax.swing.JLabel jLblTitle;
     private javax.swing.JPanel jPanel1;

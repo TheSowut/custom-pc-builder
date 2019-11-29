@@ -45,13 +45,9 @@ public class checkUsername {
             
             // Establishing connection with the DB
             conn = DriverManager.getConnection(fullPath);
-            System.out.println("Connection to SQLite has been established.");
             
             // Query which which shows the usernames
             String queryCheckForUsername = ("SELECT * FROM accounts WHERE username = '" + username + "'");
-            System.out.println(queryCheckForUsername);
-            //String queryCheckForUsername = "SELECT COUNT(*) FROM accounts WHERE username LIKE '"+ username +"' ";
-            System.out.println("Query executed: " + queryCheckForUsername);
             
             try (Connection openConn = conn;
                 Statement stmt  = openConn.createStatement();

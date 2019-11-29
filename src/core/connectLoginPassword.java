@@ -45,11 +45,9 @@ public class connectLoginPassword {
             
             // Establishing connection with the DB
             conn = DriverManager.getConnection(fullPath);
-            System.out.println("Connection to SQLite has been established.");
             
             // Query which which shows the usernames
             String queryBrowseUsernames = ("SELECT password FROM accounts WHERE username = '" + usernameInput + "'");
-            System.out.println("Query executed: " + queryBrowseUsernames);
             
             try (Connection openConn = conn;
                 Statement stmt  = openConn.createStatement();

@@ -16,6 +16,7 @@
 
 package core;
 
+import java.awt.event.FocusEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -57,7 +58,6 @@ public class mainMenu extends javax.swing.JFrame {
         jMenuHelp = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(670, 540));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -72,7 +72,7 @@ public class mainMenu extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(461, Short.MAX_VALUE)
+                .addContainerGap(442, Short.MAX_VALUE)
                 .addComponent(jLblLogoSmall)
                 .addContainerGap())
         );
@@ -155,20 +155,8 @@ public class mainMenu extends javax.swing.JFrame {
 
     private void jMenuAboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuAboutMouseClicked
         // TODO add your handling code here:
-            JOptionPane.showMessageDialog(this, "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
-                + "Integer posuere odio sem, eu auctor nisl molestie in.\n"
-                + "Etiam tempus laoreet leo posuere tempor.\n"
-                + "Morbi vitae elementum sem, sed pulvinar magna.\n"
-                + "Proin ut blandit eros. Cras gravida, turpis et eleifend dictum, neque tortor porta nisl, quis aliquam mi arcu ut quam.\n"
-                + "Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n"
-                + "Nullam consequat leo eu dapibus tincidunt.\n" + "\n"
-                + "Suspendisse lacinia elit et consectetur posuere.\n"
-                + "Integer non bibendum lacus.\n"
-                + "Aenean et risus sit amet risus cursus pellentesque.\n"
-                + "Phasellus sit amet blandit odio. Sed nec magna ut purus volutpat fringilla sit amet et leo.\n"
-                + "Proin laoreet quam non varius accumsan.\n"
-                + "Suspendisse auctor orci a aliquam viverra.\n"
-                + "Proin sollicitudin vitae leo ut ultrices.\n", "About", 1);
+        About about = new About();
+        about.showAbout();
     }//GEN-LAST:event_jMenuAboutMouseClicked
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
@@ -182,9 +170,9 @@ public class mainMenu extends javax.swing.JFrame {
 
     private void jMenuHardwareMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuHardwareMouseClicked
         // TODO add your handling code here:
-        addNewComponent add = new addNewComponent();
+        this.dispose(); 
+        browseComponents add = new browseComponents();
         add.setVisible(true);
-        this.dispose();                     
     }//GEN-LAST:event_jMenuHardwareMouseClicked
 
     /**

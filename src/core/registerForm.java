@@ -37,8 +37,10 @@ public class registerForm extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         final ImageIcon registration = new ImageIcon(".\\images\\icons\\registerAccount.png");
         final ImageIcon logoSmall = new ImageIcon(".\\images\\icons\\cpblogoSmallFull.png");
+        final ImageIcon background = new ImageIcon(".\\images\\backgrounds\\registrationScreen.png");
         jLblRegistration.setIcon(registration);
         jLblLogoSmall.setIcon(logoSmall);
+        jLblBackground.setIcon(background);
     }
 
     /**
@@ -61,6 +63,7 @@ public class registerForm extends javax.swing.JFrame {
         jPasswordConfirm = new javax.swing.JPasswordField();
         jLblRegistration = new javax.swing.JLabel();
         jLblLogoSmall = new javax.swing.JLabel();
+        jLblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -71,15 +74,28 @@ public class registerForm extends javax.swing.JFrame {
         });
 
         jPanel1.setPreferredSize(new java.awt.Dimension(670, 550));
+        jPanel1.setLayout(null);
 
+        jLblUsername.setForeground(new java.awt.Color(255, 255, 255));
         jLblUsername.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\username.png")); // NOI18N
+        jLblUsername.setLabelFor(jLblUsername);
         jLblUsername.setText("Enter a new username: ");
+        jPanel1.add(jLblUsername);
+        jLblUsername.setBounds(147, 186, 162, 24);
 
+        jLblPassword.setForeground(new java.awt.Color(255, 255, 255));
         jLblPassword.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\passwd.png")); // NOI18N
+        jLblPassword.setLabelFor(jLblPassword);
         jLblPassword.setText("Enter a  new password: ");
+        jPanel1.add(jLblPassword);
+        jLblPassword.setBounds(147, 256, 164, 24);
 
+        jLblPasswordConfirm.setForeground(new java.awt.Color(255, 255, 255));
         jLblPasswordConfirm.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\passwd.png")); // NOI18N
+        jLblPasswordConfirm.setLabelFor(jLblPasswordConfirm);
         jLblPasswordConfirm.setText("Reenter the password:");
+        jPanel1.add(jLblPasswordConfirm);
+        jLblPasswordConfirm.setBounds(147, 326, 157, 24);
 
         jBtnSubmit.setText("Submit");
         jBtnSubmit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -88,6 +104,8 @@ public class registerForm extends javax.swing.JFrame {
                 jBtnSubmitActionPerformed(evt);
             }
         });
+        jPanel1.add(jBtnSubmit);
+        jBtnSubmit.setBounds(161, 434, 113, 32);
 
         jBtnCancel.setText("Cancel");
         jBtnCancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -96,89 +114,38 @@ public class registerForm extends javax.swing.JFrame {
                 jBtnCancelActionPerformed(evt);
             }
         });
+        jPanel1.add(jBtnCancel);
+        jBtnCancel.setBounds(402, 434, 94, 32);
+        jPanel1.add(jTxtUsername);
+        jTxtUsername.setBounds(389, 186, 125, 24);
+        jPanel1.add(jPassword);
+        jPassword.setBounds(389, 257, 125, 22);
 
         jPasswordConfirm.setToolTipText("");
+        jPanel1.add(jPasswordConfirm);
+        jPasswordConfirm.setBounds(389, 327, 125, 22);
 
         jLblRegistration.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\registerAccount.png")); // NOI18N
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(161, 161, 161)
-                        .addComponent(jBtnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(128, 128, 128)
-                        .addComponent(jBtnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLblPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLblUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(78, 78, 78)
-                                        .addComponent(jTxtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLblPasswordConfirm)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jPasswordConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(jLblRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLblRegistration)
-                .addGap(66, 66, 66)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLblUsername)
-                    .addComponent(jTxtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLblPassword)
-                    .addComponent(jPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLblPasswordConfirm)
-                    .addComponent(jPasswordConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(84, 84, 84)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jBtnSubmit)
-                    .addComponent(jBtnCancel)))
-        );
+        jPanel1.add(jLblRegistration);
+        jLblRegistration.setBounds(75, 20, 509, 100);
 
         jLblLogoSmall.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\cpblogoSmallFull.png")); // NOI18N
+        jPanel1.add(jLblLogoSmall);
+        jLblLogoSmall.setBounds(480, 490, 183, 35);
+
+        jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\registrationScreen.png")); // NOI18N
+        jPanel1.add(jLblBackground);
+        jLblBackground.setBounds(0, 0, 680, 530);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 658, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 487, Short.MAX_VALUE)
-                .addComponent(jLblLogoSmall, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 679, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE)
-                .addGap(21, 21, 21)
-                .addComponent(jLblLogoSmall))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
         );
 
         pack();
@@ -328,6 +295,7 @@ public class registerForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnCancel;
     private javax.swing.JButton jBtnSubmit;
+    private javax.swing.JLabel jLblBackground;
     private javax.swing.JLabel jLblLogoSmall;
     private javax.swing.JLabel jLblPassword;
     private javax.swing.JLabel jLblPasswordConfirm;

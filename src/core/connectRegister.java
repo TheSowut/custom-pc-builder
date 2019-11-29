@@ -45,7 +45,6 @@ public class connectRegister {
             
             // Establishing connection with the DB
             conn = DriverManager.getConnection(fullPath);
-            System.out.println("Connection to SQLite has been established.");
             
             // Query which inserts the new details of the account in the accounts table
             String queryCreateAcc = "INSERT INTO accounts (username, password) values ('" + username + "', '" + password + "')";

@@ -49,11 +49,10 @@ public class mainMenu extends javax.swing.JFrame {
         jLblLogoSmall = new javax.swing.JLabel();
         jMenu = new javax.swing.JMenuBar();
         jMenuSetups = new javax.swing.JMenu();
-        jMenuSetupsBrowse = new javax.swing.JMenuItem();
         jMenuSetupsCreate = new javax.swing.JMenuItem();
+        jMenuSetupsBrowse = new javax.swing.JMenuItem();
         jMenuSetupsDelete = new javax.swing.JMenuItem();
         jMenuHardware = new javax.swing.JMenu();
-        jMenuManual = new javax.swing.JMenu();
         jMenuAbout = new javax.swing.JMenu();
         jMenuHelp = new javax.swing.JMenu();
 
@@ -72,21 +71,27 @@ public class mainMenu extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(442, Short.MAX_VALUE)
+                .addContainerGap(510, Short.MAX_VALUE)
                 .addComponent(jLblLogoSmall)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(408, Short.MAX_VALUE)
-                .addComponent(jLblLogoSmall))
+                .addContainerGap(439, Short.MAX_VALUE)
+                .addComponent(jLblLogoSmall)
+                .addContainerGap())
         );
 
         jMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jMenuSetups.setText("PC Setups");
         jMenuSetups.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jMenuSetupsCreate.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, 0));
+        jMenuSetupsCreate.setText("Create a new setup");
+        jMenuSetupsCreate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuSetups.add(jMenuSetupsCreate);
 
         jMenuSetupsBrowse.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, 0));
         jMenuSetupsBrowse.setText("Browse setups");
@@ -97,11 +102,6 @@ public class mainMenu extends javax.swing.JFrame {
             }
         });
         jMenuSetups.add(jMenuSetupsBrowse);
-
-        jMenuSetupsCreate.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, 0));
-        jMenuSetupsCreate.setText("Create a new setup");
-        jMenuSetupsCreate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenuSetups.add(jMenuSetupsCreate);
 
         jMenuSetupsDelete.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, 0));
         jMenuSetupsDelete.setText("Delete a setup");
@@ -120,10 +120,6 @@ public class mainMenu extends javax.swing.JFrame {
         });
         jMenu.add(jMenuHardware);
 
-        jMenuManual.setText("Manual");
-        jMenuManual.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu.add(jMenuManual);
-
         jMenuAbout.setText("About");
         jMenuAbout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenuAbout.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -135,6 +131,11 @@ public class mainMenu extends javax.swing.JFrame {
 
         jMenuHelp.setText("Help");
         jMenuHelp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuHelp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuHelpMouseClicked(evt);
+            }
+        });
         jMenu.add(jMenuHelp);
 
         setJMenuBar(jMenu);
@@ -166,6 +167,7 @@ public class mainMenu extends javax.swing.JFrame {
 
     private void jMenuSetupsBrowseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSetupsBrowseActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jMenuSetupsBrowseActionPerformed
 
     private void jMenuHardwareMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuHardwareMouseClicked
@@ -174,6 +176,12 @@ public class mainMenu extends javax.swing.JFrame {
         browseComponents add = new browseComponents();
         add.setVisible(true);
     }//GEN-LAST:event_jMenuHardwareMouseClicked
+
+    private void jMenuHelpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuHelpMouseClicked
+        // TODO add your handling code here:
+        Help help = new Help();
+        help.showHelp();
+    }//GEN-LAST:event_jMenuHelpMouseClicked
 
     /**
      * @param args the command line arguments
@@ -215,7 +223,6 @@ public class mainMenu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuAbout;
     private javax.swing.JMenu jMenuHardware;
     private javax.swing.JMenu jMenuHelp;
-    private javax.swing.JMenu jMenuManual;
     private javax.swing.JMenu jMenuSetups;
     private javax.swing.JMenuItem jMenuSetupsBrowse;
     private javax.swing.JMenuItem jMenuSetupsCreate;

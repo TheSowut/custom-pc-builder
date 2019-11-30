@@ -41,7 +41,6 @@ public class connectLogin {
             String filePathChanged = filePath.replaceAll("\\\\", "/");
             String path = "/db/logins.db";
             String fullPath = "jdbc:sqlite:" + filePathChanged + path;
-            System.out.println("Path to DB: " + fullPath);
             
             // Establishing connection with the DB
             conn = DriverManager.getConnection(fullPath);

@@ -67,7 +67,7 @@ public class loginForm extends javax.swing.JFrame {
         jLblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(670, 540));
+        setPreferredSize(new java.awt.Dimension(660, 519));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -76,7 +76,7 @@ public class loginForm extends javax.swing.JFrame {
         });
 
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.setPreferredSize(new java.awt.Dimension(670, 540));
+        jPanel1.setPreferredSize(new java.awt.Dimension(660, 519));
         jPanel1.setLayout(null);
 
         jBtnLogin.setText("Login");
@@ -87,7 +87,7 @@ public class loginForm extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnLogin);
-        jBtnLogin.setBounds(177, 434, 77, 32);
+        jBtnLogin.setBounds(180, 420, 77, 32);
 
         jBtnRegister.setText("Register");
         jBtnRegister.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -97,7 +97,7 @@ public class loginForm extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnRegister);
-        jBtnRegister.setBounds(377, 434, 91, 32);
+        jBtnRegister.setBounds(380, 420, 91, 32);
         jPanel1.add(jPassword);
         jPassword.setBounds(363, 301, 125, 22);
 
@@ -134,11 +134,11 @@ public class loginForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();

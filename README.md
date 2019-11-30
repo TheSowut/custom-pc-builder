@@ -8,7 +8,7 @@
 ## ✔ Current Features:
 - Create and Login with an account on a local db and browse the planned features.
 
-<div><img src="images/demo/loginScreen.JPG" width="311">
+<div><img src="images/demo/loginScreen.JPG" width="305">
 <img src="images/demo/registrationScreen.JPG" width="300"></div>
 
 - Browse the hardware components menu.

@@ -33,7 +33,9 @@ public class mainMenu extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         final ImageIcon logoSmall = new ImageIcon(".\\images\\icons\\cpblogoSmallFull.png");
+        final ImageIcon background = new ImageIcon(".\\images\\backgrounds\\menuBackground.jpg");
         jLblLogoSmall.setIcon(logoSmall);
+        jLblBackground.setIcon(background);
     }
 
     /**
@@ -47,6 +49,7 @@ public class mainMenu extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLblLogoSmall = new javax.swing.JLabel();
+        jLblBackground = new javax.swing.JLabel();
         jMenu = new javax.swing.JMenuBar();
         jMenuSetups = new javax.swing.JMenu();
         jMenuSetupsCreate = new javax.swing.JMenuItem();
@@ -57,31 +60,25 @@ public class mainMenu extends javax.swing.JFrame {
         jMenuHelp = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(700, 540));
+        setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
             }
         });
 
-        jLblLogoSmall.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\cpblogoSmallFull.png")); // NOI18N
-        jLblLogoSmall.setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
+        jPanel1.setPreferredSize(new java.awt.Dimension(700, 540));
+        jPanel1.setLayout(null);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(510, Short.MAX_VALUE)
-                .addComponent(jLblLogoSmall)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(439, Short.MAX_VALUE)
-                .addComponent(jLblLogoSmall)
-                .addContainerGap())
-        );
+        jLblLogoSmall.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\cpblogoSmallFull.png")); // NOI18N
+        jLblLogoSmall.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.add(jLblLogoSmall);
+        jLblLogoSmall.setBounds(500, 440, 183, 35);
+
+        jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\mainMenuScreen.jpg")); // NOI18N
+        jPanel1.add(jLblBackground);
+        jLblBackground.setBounds(0, 0, 700, 480);
 
         jMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -148,7 +145,7 @@ public class mainMenu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -218,6 +215,7 @@ public class mainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLblBackground;
     private javax.swing.JLabel jLblLogoSmall;
     private javax.swing.JMenuBar jMenu;
     private javax.swing.JMenu jMenuAbout;

@@ -23,9 +23,8 @@ Create a menu
 			2. Add new component.
 ✔️About:
 --------1. Fill with information.
-	II. Manual
-		1. Fill with instructions how to use the app.
-	III. Help
+✔️Help:
+--------2. Add instructions on how to use the program.
 	
 Bugtest:
 	I. All buttons, methods, invalid input (parsing).

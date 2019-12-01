@@ -75,8 +75,6 @@ public class mainMenu extends javax.swing.JFrame {
         jLblLogoSmall.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.add(jLblLogoSmall);
         jLblLogoSmall.setBounds(500, 440, 183, 35);
-
-        jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\mainMenuScreen.jpg")); // NOI18N
         jPanel1.add(jLblBackground);
         jLblBackground.setBounds(0, 0, 700, 480);
 

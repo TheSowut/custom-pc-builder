@@ -39,7 +39,7 @@ public class connectLogin {
             // The string fullPath gets the absolute path to the DB
             String filePath = new File("").getAbsolutePath();
             String filePathChanged = filePath.replaceAll("\\\\", "/");
-            String path = "/db/logins.db";
+            String path = "/db/cpb-db.db";
             String fullPath = "jdbc:sqlite:" + filePathChanged + path;
             
             // Establishing connection with the DB

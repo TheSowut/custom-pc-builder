@@ -5,8 +5,10 @@
  */
 package core;
 
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -17,6 +19,9 @@ public class browseMotherboard extends javax.swing.JFrame {
     /**
      * Creates new form browseMotherboard
      */
+    public final motherboardConnect c = new motherboardConnect();
+    // инициализираме модел, който ще използваме при попълването на таблицата
+    public DefaultTableModel t;
     public browseMotherboard() {
         initComponents();
         setLocationRelativeTo(null);
@@ -26,6 +31,9 @@ public class browseMotherboard extends javax.swing.JFrame {
         jLblLogo.setIcon(logoSmall);
         jLblTitle.setIcon(title);
         jLblBackground.setIcon(background);
+        
+        t = (DefaultTableModel) jTblMotherboards.getModel();
+        tableSelect();
     }
 
     /**
@@ -40,8 +48,9 @@ public class browseMotherboard extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLblLogo = new javax.swing.JLabel();
         jLblTitle = new javax.swing.JLabel();
+        jBtnBack = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTblMotherboards = new javax.swing.JTable();
         jLblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -63,22 +72,31 @@ public class browseMotherboard extends javax.swing.JFrame {
         jPanel1.add(jLblTitle);
         jLblTitle.setBounds(130, 15, 400, 88);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jBtnBack.setText("Back");
+        jBtnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnBackActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBtnBack);
+        jBtnBack.setBounds(260, 480, 140, 32);
+
+        jTblMotherboards.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Manufacturer", "Model", "Socket", "Chipset", "Form Factor", "Price"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTblMotherboards);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(60, 120, 560, 350);
+        jScrollPane1.setBounds(10, 120, 640, 350);
 
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\browseComponent.jpg")); // NOI18N
         jPanel1.add(jLblBackground);
-        jLblBackground.setBounds(0, 0, 660, 520);
+        jLblBackground.setBounds(0, 10, 660, 520);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -96,9 +114,14 @@ public class browseMotherboard extends javax.swing.JFrame {
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
+        askOnQuit.askForExit(this);
+    }//GEN-LAST:event_formWindowClosing
+
+    private void jBtnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBackActionPerformed
+        // TODO add your handling code here:
         askGoToBrowse browse = new askGoToBrowse();
         browse.goToComponents(this);
-    }//GEN-LAST:event_formWindowClosing
+    }//GEN-LAST:event_jBtnBackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,13 +157,36 @@ public class browseMotherboard extends javax.swing.JFrame {
             }
         });
     }
+    
+        private void tableSelect() {
+        ArrayList<String> data = new ArrayList<String>();
+            String[] columns = {"ID",
+            "Manufacturer",
+            "Model",
+            "Socket",
+            "Chipset",
+            "FormFactor",
+            "Price"}; 
+        data = c.conn(columns, "motherboards");
+        for (int i = 0; i < data.size(); i++) {
+            String[] row = data.get(i).split(" ");
+            t.addRow(new Object[]{row[0],
+                                  row[1],
+                                  row[2],
+                                  row[3],
+                                  row[4],
+                                  row[5],
+                                  row[6]});
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnBack;
     private javax.swing.JLabel jLblBackground;
     private javax.swing.JLabel jLblLogo;
     private javax.swing.JLabel jLblTitle;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTblMotherboards;
     // End of variables declaration//GEN-END:variables
 }

@@ -16,7 +16,7 @@ import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
  */
 public class askGoToBrowse {
     public static void goToComponents(JFrame frame){
-        int choice = JOptionPane.showConfirmDialog(frame, "Are you sure you would like to quit ?", "Exit", 2);
+        int choice = JOptionPane.showConfirmDialog(frame, "Are you sure you would like to go back ?", "Exit", 2);
         if (choice == 0){
             frame.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             browseHardware browse = new browseHardware();

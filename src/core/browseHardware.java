@@ -59,7 +59,7 @@ public class browseHardware extends javax.swing.JFrame {
     }
     
     private void goToMenu(){
-        int choice = JOptionPane.showConfirmDialog(this, "Are you sure you would like to quit ?", "Exit", 2);
+        int choice = JOptionPane.showConfirmDialog(this, "Are you sure you would like to go back ?", "Exit", 2);
         if (choice == 0){
             this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             mainMenu menu = new mainMenu();
@@ -232,7 +232,7 @@ public class browseHardware extends javax.swing.JFrame {
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
-        goToMenu();
+        askOnQuit.askForExit(this);
     }//GEN-LAST:event_formWindowClosing
 
     private void jBtnRamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnRamMouseClicked

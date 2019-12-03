@@ -40,10 +40,15 @@ public class addMotherboard extends javax.swing.JFrame {
         jLblTitle = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLblLogo = new javax.swing.JLabel();
+        jLblManufacturer = new javax.swing.JLabel();
+        jLblModel = new javax.swing.JLabel();
+        jLblSocket = new javax.swing.JLabel();
+        jLblChipset = new javax.swing.JLabel();
+        jLblFormFactor = new javax.swing.JLabel();
+        jLblPrice = new javax.swing.JLabel();
         jLblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(650, 545));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -52,45 +57,49 @@ public class addMotherboard extends javax.swing.JFrame {
         });
 
         jPanel1.setPreferredSize(new java.awt.Dimension(650, 545));
+        jPanel1.setLayout(null);
 
         jLblTitle.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\addComponent.png")); // NOI18N
+        jPanel1.add(jLblTitle);
+        jLblTitle.setBounds(130, 20, 400, 90);
 
         jButton1.setText("Add");
+        jPanel1.add(jButton1);
+        jButton1.setBounds(279, 462, 107, 32);
 
         jLblLogo.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\cpblogoSmallFull.png")); // NOI18N
+        jPanel1.add(jLblLogo);
+        jLblLogo.setBounds(450, 460, 183, 36);
+
+        jLblManufacturer.setText("Manufacturer:");
+        jPanel1.add(jLblManufacturer);
+        jLblManufacturer.setBounds(180, 170, 100, 30);
+
+        jLblModel.setText("Model:");
+        jPanel1.add(jLblModel);
+        jLblModel.setBounds(180, 210, 90, 20);
+
+        jLblSocket.setText("Socket: ");
+        jPanel1.add(jLblSocket);
+        jLblSocket.setBounds(180, 250, 80, 20);
+
+        jLblChipset.setText("Chipset: ");
+        jPanel1.add(jLblChipset);
+        jLblChipset.setBounds(180, 280, 80, 30);
+
+        jLblFormFactor.setText("Form Factor: ");
+        jPanel1.add(jLblFormFactor);
+        jLblFormFactor.setBounds(180, 316, 130, 30);
+
+        jLblPrice.setText("Price: ");
+        jPanel1.add(jLblPrice);
+        jLblPrice.setBounds(180, 360, 70, 30);
 
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\addComponent.jpg")); // NOI18N
         jLblBackground.setMaximumSize(new java.awt.Dimension(650, 545));
         jLblBackground.setMinimumSize(new java.awt.Dimension(650, 545));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(130, 130, 130)
-                .addComponent(jLblTitle))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(279, 279, 279)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(450, 450, 450)
-                .addComponent(jLblLogo))
-            .addComponent(jLblBackground, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(462, 462, 462)
-                .addComponent(jButton1))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(460, 460, 460)
-                .addComponent(jLblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLblBackground, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        jPanel1.add(jLblBackground);
+        jLblBackground.setBounds(0, 0, 650, 520);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -150,7 +159,13 @@ public class addMotherboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLblBackground;
+    private javax.swing.JLabel jLblChipset;
+    private javax.swing.JLabel jLblFormFactor;
     private javax.swing.JLabel jLblLogo;
+    private javax.swing.JLabel jLblManufacturer;
+    private javax.swing.JLabel jLblModel;
+    private javax.swing.JLabel jLblPrice;
+    private javax.swing.JLabel jLblSocket;
     private javax.swing.JLabel jLblTitle;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

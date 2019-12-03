@@ -34,6 +34,7 @@ public class browseMotherboard extends javax.swing.JFrame {
         
         t = (DefaultTableModel) jTblMotherboards.getModel();
         tableSelect();
+        jTblMotherboards.setEnabled(false);
     }
 
     /**
@@ -92,7 +93,7 @@ public class browseMotherboard extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTblMotherboards);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(10, 120, 640, 350);
+        jScrollPane1.setBounds(10, 120, 640, 310);
 
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\browseComponent.jpg")); // NOI18N
         jPanel1.add(jLblBackground);

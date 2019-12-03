@@ -14,17 +14,17 @@ Additional Features:
 
 Create a menu
 	I.Panels
-		1. Setups
-			1. Browse setups.
-			2. Create a new setup.
-			3. Delete an existing setup.
-		2. Hardware
-			1. Check a component.
-			2. Add new component.
-✔️About:
---------1. Fill with information.
-✔️Help:
---------2. Add instructions on how to use the program.
+	   1. Setups
+	      1. Browse setups.
+	      2. Create a new setup.
+	      3. Delete an existing setup.
+	 ✔️2. Hardware
+---------------1. Check a component.
+---------------2. Add new component.
+	 ✔️3.About:
+---------------1. Fill with information.
+	 ✔️4.Help:
+---------------2. Add instructions on how to use the program.
 	
 Bugtest:
 	I. All buttons, methods, invalid input (parsing).

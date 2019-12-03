@@ -23,16 +23,16 @@ import javax.swing.JOptionPane;
  *
  * @author TheSowut
  */
-public class browseComponents extends javax.swing.JFrame {
+public class browseHardware extends javax.swing.JFrame {
 
     /**
      * Creates new form addNewComponent
      */
-    public browseComponents() {
+    public browseHardware() {
         initComponents();
         setLocationRelativeTo(jPanel1);
         
-        final ImageIcon logoBrowse = new ImageIcon(".\\images\\icons\\browseComponents.png");
+        final ImageIcon logoBrowse = new ImageIcon(".\\images\\icons\\browseHardware.png");
         final ImageIcon logoSmall = new ImageIcon(".\\images\\icons\\cpblogoSmallFull.png");
         final ImageIcon motherboard = new ImageIcon(".\\images\\components\\motherboard.jpg");
         final ImageIcon psu = new ImageIcon(".\\images\\components\\psu.jpg");
@@ -106,9 +106,9 @@ public class browseComponents extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jLblTitle.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLblTitle.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\browseComponents.png")); // NOI18N
+        jLblTitle.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\browseHardware.png")); // NOI18N
         jPanel1.add(jLblTitle);
-        jLblTitle.setBounds(50, 20, 560, 100);
+        jLblTitle.setBounds(150, 10, 400, 120);
 
         jBtnRam.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\ram.jpg")); // NOI18N
         jBtnRam.setToolTipText("");
@@ -119,7 +119,7 @@ public class browseComponents extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnRam);
-        jBtnRam.setBounds(10, 320, 160, 130);
+        jBtnRam.setBounds(10, 310, 160, 130);
 
         jBtnMotherboard.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\motherboard.jpg")); // NOI18N
         jBtnMotherboard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -130,7 +130,7 @@ public class browseComponents extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnMotherboard);
-        jBtnMotherboard.setBounds(10, 180, 160, 120);
+        jBtnMotherboard.setBounds(10, 160, 160, 120);
 
         jBtnGraphicsCard.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\graphicscard.jpg")); // NOI18N
         jBtnGraphicsCard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -141,7 +141,7 @@ public class browseComponents extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnGraphicsCard);
-        jBtnGraphicsCard.setBounds(180, 180, 160, 120);
+        jBtnGraphicsCard.setBounds(180, 170, 160, 120);
 
         jBtnHdd.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\hdd.jpg")); // NOI18N
         jBtnHdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -160,8 +160,13 @@ public class browseComponents extends javax.swing.JFrame {
                 jBtnProcessorMouseClicked(evt);
             }
         });
+        jBtnProcessor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnProcessorActionPerformed(evt);
+            }
+        });
         jPanel1.add(jBtnProcessor);
-        jBtnProcessor.setBounds(350, 180, 160, 120);
+        jBtnProcessor.setBounds(350, 170, 160, 120);
 
         jBtnSsd.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\ssd.jpg")); // NOI18N
         jBtnSsd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -171,7 +176,7 @@ public class browseComponents extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnSsd);
-        jBtnSsd.setBounds(520, 320, 160, 130);
+        jBtnSsd.setBounds(520, 310, 160, 130);
 
         jLblLogo.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\cpblogoSmallFull.png")); // NOI18N
         jPanel1.add(jLblLogo);
@@ -195,7 +200,7 @@ public class browseComponents extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnPsu);
-        jBtnPsu.setBounds(520, 180, 160, 120);
+        jBtnPsu.setBounds(520, 160, 160, 120);
 
         jBtnCase.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\computercase.jpg")); // NOI18N
         jBtnCase.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -209,7 +214,7 @@ public class browseComponents extends javax.swing.JFrame {
 
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\componentsScreen.jpg")); // NOI18N
         jPanel1.add(jLblBackground);
-        jLblBackground.setBounds(0, 0, 700, 540);
+        jLblBackground.setBounds(0, 0, 700, 550);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -219,9 +224,7 @@ public class browseComponents extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 10, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -249,7 +252,24 @@ public class browseComponents extends javax.swing.JFrame {
 
     private void jBtnMotherboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnMotherboardMouseClicked
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Motherboard");
+        Object[] options = {"Add",
+                    "Browse",
+                    "Cancel"};
+        int n = JOptionPane.showOptionDialog(this, "Would you like to add or check current components of the type ?", "Add or Browse",
+        JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
+        if (n == 0){
+            this.dispose();
+            addMotherboard add = new addMotherboard();
+            add.show();
+        }
+        else if (n == 1){
+            this.dispose();
+            browseMotherboard browse = new browseMotherboard();
+            browse.show();
+        }
+        else if (n == 2){
+            this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        }
     }//GEN-LAST:event_jBtnMotherboardMouseClicked
 
     private void jBtnHddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnHddMouseClicked
@@ -277,6 +297,10 @@ public class browseComponents extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Computer Case");
     }//GEN-LAST:event_jBtnCaseActionPerformed
 
+    private void jBtnProcessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnProcessorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnProcessorActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -294,21 +318,23 @@ public class browseComponents extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(browseComponents.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browseHardware.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(browseComponents.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browseHardware.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(browseComponents.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browseHardware.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(browseComponents.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browseHardware.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new browseComponents().setVisible(true);
+                new browseHardware().setVisible(true);
             }
         });
     }

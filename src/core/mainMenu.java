@@ -168,7 +168,7 @@ public class mainMenu extends javax.swing.JFrame {
     private void jMenuHardwareMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuHardwareMouseClicked
         // TODO add your handling code here:
         this.dispose(); 
-        browseComponents add = new browseComponents();
+        browseHardware add = new browseHardware();
         add.setVisible(true);
     }//GEN-LAST:event_jMenuHardwareMouseClicked
 

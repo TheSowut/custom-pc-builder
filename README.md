@@ -12,7 +12,7 @@
 <img src="images/demo/registrationScreen.JPG" width="300"></div>
 
 - Browse the hardware components menu.
-<div><img src="images/demo/browseComponents.JPG" width="300"></div>
+<div><img src="images/demo/browseHardware.JPG" width="300"></div>
 
 ## ☁ Planned Features:
 - Create a Custom PC with a variety of hardware components.<br>

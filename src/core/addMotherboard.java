@@ -43,7 +43,7 @@ public class addMotherboard extends javax.swing.JFrame {
         jLblTitle = new javax.swing.JLabel();
         jLblLogo = new javax.swing.JLabel();
         jLblManufacturer = new javax.swing.JLabel();
-        jTxtManufacturer = new javax.swing.JTextField();
+        jComboManufacturer = new javax.swing.JComboBox<>();
         jLblModel = new javax.swing.JLabel();
         jTxtModel = new javax.swing.JTextField();
         jLblSocket = new javax.swing.JLabel();
@@ -83,8 +83,10 @@ public class addMotherboard extends javax.swing.JFrame {
         jLblManufacturer.setText("Manufacturer:");
         jPanel1.add(jLblManufacturer);
         jLblManufacturer.setBounds(180, 150, 100, 20);
-        jPanel1.add(jTxtManufacturer);
-        jTxtManufacturer.setBounds(390, 150, 100, 24);
+
+        jComboManufacturer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ASRock", "ASUS", "Biostar", "EVGA", "GIGABYTE", "MSI" }));
+        jPanel1.add(jComboManufacturer);
+        jComboManufacturer.setBounds(390, 150, 100, 26);
 
         jLblModel.setForeground(new java.awt.Color(255, 255, 255));
         jLblModel.setText("Model:");
@@ -168,7 +170,7 @@ public class addMotherboard extends javax.swing.JFrame {
 
     private void jBtnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAddActionPerformed
         // TODO add your handling code here:
-        String manufacturer = jTxtManufacturer.getText();
+        String manufacturer = jComboManufacturer.getSelectedItem().toString();
         String model = jTxtModel.getText();
         String socket = jTxtSocket.getText();
         String chipset = jTxtChipset.getText();
@@ -196,7 +198,6 @@ public class addMotherboard extends javax.swing.JFrame {
         motherboardConnect con = new motherboardConnect();
         con.add(columns, manufacturer, model, socket, chipset, formFactor, price);
         
-        jTxtManufacturer.setText("");
         jTxtModel.setText("");
         jTxtSocket.setText("");
         jTxtChipset.setText("");
@@ -259,6 +260,7 @@ public class addMotherboard extends javax.swing.JFrame {
     private javax.swing.JButton jBtnBack;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboFormFactor;
+    private javax.swing.JComboBox<String> jComboManufacturer;
     private javax.swing.JLabel jLblBackground;
     private javax.swing.JLabel jLblChipset;
     private javax.swing.JLabel jLblFormFactor;
@@ -270,7 +272,6 @@ public class addMotherboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLblTitle;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTxtChipset;
-    private javax.swing.JTextField jTxtManufacturer;
     private javax.swing.JTextField jTxtModel;
     private javax.swing.JTextField jTxtPrice;
     private javax.swing.JTextField jTxtSocket;

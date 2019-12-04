@@ -38,6 +38,7 @@ public class addMotherboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jComboBox1 = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jLblTitle = new javax.swing.JLabel();
         jLblLogo = new javax.swing.JLabel();
@@ -50,12 +51,14 @@ public class addMotherboard extends javax.swing.JFrame {
         jLblChipset = new javax.swing.JLabel();
         jTxtChipset = new javax.swing.JTextField();
         jLblFormFactor = new javax.swing.JLabel();
-        jTxtFormFactor = new javax.swing.JTextField();
+        jComboFormFactor = new javax.swing.JComboBox<>();
         jLblPrice = new javax.swing.JLabel();
         jTxtPrice = new javax.swing.JTextField();
         jBtnAdd = new javax.swing.JButton();
         jBtnBack = new javax.swing.JButton();
         jLblBackground = new javax.swing.JLabel();
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -108,8 +111,10 @@ public class addMotherboard extends javax.swing.JFrame {
         jLblFormFactor.setText("Form Factor: ");
         jPanel1.add(jLblFormFactor);
         jLblFormFactor.setBounds(180, 310, 130, 30);
-        jPanel1.add(jTxtFormFactor);
-        jTxtFormFactor.setBounds(390, 310, 100, 24);
+
+        jComboFormFactor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ATX", "microATX" }));
+        jPanel1.add(jComboFormFactor);
+        jComboFormFactor.setBounds(390, 310, 100, 26);
 
         jLblPrice.setForeground(new java.awt.Color(255, 255, 255));
         jLblPrice.setText("Price: ");
@@ -167,7 +172,7 @@ public class addMotherboard extends javax.swing.JFrame {
         String model = jTxtModel.getText();
         String socket = jTxtSocket.getText();
         String chipset = jTxtChipset.getText();
-        String formFactor = jTxtFormFactor.getText();
+        String formFactor = jComboFormFactor.getSelectedItem().toString();
         String price = jTxtPrice.getText();
         Integer priceInt = 0;
         
@@ -195,7 +200,6 @@ public class addMotherboard extends javax.swing.JFrame {
         jTxtModel.setText("");
         jTxtSocket.setText("");
         jTxtChipset.setText("");
-        jTxtFormFactor.setText("");
         jTxtPrice.setText("");
         
             JOptionPane.showMessageDialog(this, "Motherboard successfully added!", "Process Complete", 1);
@@ -253,6 +257,8 @@ public class addMotherboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnAdd;
     private javax.swing.JButton jBtnBack;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboFormFactor;
     private javax.swing.JLabel jLblBackground;
     private javax.swing.JLabel jLblChipset;
     private javax.swing.JLabel jLblFormFactor;
@@ -264,7 +270,6 @@ public class addMotherboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLblTitle;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTxtChipset;
-    private javax.swing.JTextField jTxtFormFactor;
     private javax.swing.JTextField jTxtManufacturer;
     private javax.swing.JTextField jTxtModel;
     private javax.swing.JTextField jTxtPrice;

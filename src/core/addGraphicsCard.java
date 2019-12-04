@@ -45,12 +45,12 @@ public class addGraphicsCard extends javax.swing.JFrame {
         jTxtManufacturer = new javax.swing.JTextField();
         jLblModel = new javax.swing.JLabel();
         jTxtModel = new javax.swing.JTextField();
-        jLblSocket = new javax.swing.JLabel();
-        jTxtSocket = new javax.swing.JTextField();
-        jLblChipset = new javax.swing.JLabel();
-        jTxtChipset = new javax.swing.JTextField();
-        jLblFormFactor = new javax.swing.JLabel();
-        jTxtFormFactor = new javax.swing.JTextField();
+        jComboInterface = new javax.swing.JComboBox<>();
+        jLblInterface = new javax.swing.JLabel();
+        jLblCapacity = new javax.swing.JLabel();
+        jTxtCapacity = new javax.swing.JTextField();
+        jLblMemoryType = new javax.swing.JLabel();
+        jComboMemoryType = new javax.swing.JComboBox<>();
         jLblPrice = new javax.swing.JLabel();
         jTxtPrice = new javax.swing.JTextField();
         jBtnAdd = new javax.swing.JButton();
@@ -90,26 +90,30 @@ public class addGraphicsCard extends javax.swing.JFrame {
         jPanel1.add(jTxtModel);
         jTxtModel.setBounds(390, 190, 100, 24);
 
-        jLblSocket.setForeground(new java.awt.Color(255, 255, 255));
-        jLblSocket.setText("Socket: ");
-        jPanel1.add(jLblSocket);
-        jLblSocket.setBounds(180, 230, 80, 20);
-        jPanel1.add(jTxtSocket);
-        jTxtSocket.setBounds(390, 230, 100, 24);
+        jComboInterface.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PCI", "AGP", "PCI-E", "PCI-Ex1", "PCI-Ex4", "PCI-Ex16" }));
+        jPanel1.add(jComboInterface);
+        jComboInterface.setBounds(390, 230, 100, 26);
 
-        jLblChipset.setForeground(new java.awt.Color(255, 255, 255));
-        jLblChipset.setText("Chipset: ");
-        jPanel1.add(jLblChipset);
-        jLblChipset.setBounds(180, 270, 80, 30);
-        jPanel1.add(jTxtChipset);
-        jTxtChipset.setBounds(390, 270, 100, 24);
+        jLblInterface.setForeground(new java.awt.Color(255, 255, 255));
+        jLblInterface.setText("Inteface:");
+        jPanel1.add(jLblInterface);
+        jLblInterface.setBounds(180, 230, 80, 20);
 
-        jLblFormFactor.setForeground(new java.awt.Color(255, 255, 255));
-        jLblFormFactor.setText("Form Factor: ");
-        jPanel1.add(jLblFormFactor);
-        jLblFormFactor.setBounds(180, 310, 130, 30);
-        jPanel1.add(jTxtFormFactor);
-        jTxtFormFactor.setBounds(390, 310, 100, 24);
+        jLblCapacity.setForeground(new java.awt.Color(255, 255, 255));
+        jLblCapacity.setText("Capacity:");
+        jPanel1.add(jLblCapacity);
+        jLblCapacity.setBounds(180, 270, 80, 30);
+        jPanel1.add(jTxtCapacity);
+        jTxtCapacity.setBounds(390, 270, 100, 24);
+
+        jLblMemoryType.setForeground(new java.awt.Color(255, 255, 255));
+        jLblMemoryType.setText("Memory Type:");
+        jPanel1.add(jLblMemoryType);
+        jLblMemoryType.setBounds(180, 310, 130, 30);
+
+        jComboMemoryType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DDR3", "DDR4", "GDDR5", "GDDR5X", "GDDR6" }));
+        jPanel1.add(jComboMemoryType);
+        jComboMemoryType.setBounds(390, 310, 100, 26);
 
         jLblPrice.setForeground(new java.awt.Color(255, 255, 255));
         jLblPrice.setText("Price: ");
@@ -165,9 +169,9 @@ public class addGraphicsCard extends javax.swing.JFrame {
         // TODO add your handling code here:
         String manufacturer = jTxtManufacturer.getText();
         String model = jTxtModel.getText();
-        String graphicsCardInterface = jTxtSocket.getText();
-        String capacity = jTxtChipset.getText();
-        String memoryType = jTxtFormFactor.getText();
+        String graphicsCardInterface = jComboInterface.getSelectedItem().toString();
+        String capacity = jTxtCapacity.getText();
+        String memoryType = jComboMemoryType.getSelectedItem().toString();
         String price = jTxtPrice.getText();
         Integer priceInt = 0;
         
@@ -193,9 +197,7 @@ public class addGraphicsCard extends javax.swing.JFrame {
         
         jTxtManufacturer.setText("");
         jTxtModel.setText("");
-        jTxtSocket.setText("");
-        jTxtChipset.setText("");
-        jTxtFormFactor.setText("");
+        jTxtCapacity.setText("");
         jTxtPrice.setText("");
         
             JOptionPane.showMessageDialog(this, "Graphics Card successfully added!", "Process Complete", 1);
@@ -254,21 +256,21 @@ public class addGraphicsCard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnAdd;
     private javax.swing.JButton jBtnBack;
+    private javax.swing.JComboBox<String> jComboInterface;
+    private javax.swing.JComboBox<String> jComboMemoryType;
     private javax.swing.JLabel jLblBackground;
-    private javax.swing.JLabel jLblChipset;
-    private javax.swing.JLabel jLblFormFactor;
+    private javax.swing.JLabel jLblCapacity;
+    private javax.swing.JLabel jLblInterface;
     private javax.swing.JLabel jLblLogo;
     private javax.swing.JLabel jLblManufacturer;
+    private javax.swing.JLabel jLblMemoryType;
     private javax.swing.JLabel jLblModel;
     private javax.swing.JLabel jLblPrice;
-    private javax.swing.JLabel jLblSocket;
     private javax.swing.JLabel jLblTitle;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTxtChipset;
-    private javax.swing.JTextField jTxtFormFactor;
+    private javax.swing.JTextField jTxtCapacity;
     private javax.swing.JTextField jTxtManufacturer;
     private javax.swing.JTextField jTxtModel;
     private javax.swing.JTextField jTxtPrice;
-    private javax.swing.JTextField jTxtSocket;
     // End of variables declaration//GEN-END:variables
 }

@@ -13,12 +13,12 @@ import javax.swing.JOptionPane;
  *
  * @author TheSowut
  */
-public class addGraphicsCard extends javax.swing.JFrame {
+public class addProcessor extends javax.swing.JFrame {
 
     /**
-     * Creates new form addGraphicsCard
+     * Creates new form addProcessor
      */
-    public addGraphicsCard() {
+    public addProcessor() {
         initComponents();
         setLocationRelativeTo(null);
         final ImageIcon title = new ImageIcon(".\\images\\icons\\addComponent.png");
@@ -38,24 +38,25 @@ public class addGraphicsCard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jComboBox1 = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jLblTitle = new javax.swing.JLabel();
         jLblLogo = new javax.swing.JLabel();
-        jLblManufacturer = new javax.swing.JLabel();
-        jTxtManufacturer = new javax.swing.JTextField();
+        jLblBrand = new javax.swing.JLabel();
+        jComboBrands = new javax.swing.JComboBox<>();
+        jLblBrandModifier = new javax.swing.JLabel();
+        jTxtBrandModifier = new javax.swing.JTextField();
         jLblModel = new javax.swing.JLabel();
         jTxtModel = new javax.swing.JTextField();
-        jComboInterface = new javax.swing.JComboBox<>();
-        jLblInterface = new javax.swing.JLabel();
-        jLblCapacity = new javax.swing.JLabel();
-        jTxtCapacity = new javax.swing.JTextField();
-        jLblMemoryType = new javax.swing.JLabel();
-        jComboMemoryType = new javax.swing.JComboBox<>();
+        jLblSuffix = new javax.swing.JLabel();
+        jTxtSuffix = new javax.swing.JTextField();
         jLblPrice = new javax.swing.JLabel();
         jTxtPrice = new javax.swing.JTextField();
         jBtnAdd = new javax.swing.JButton();
         jBtnBack = new javax.swing.JButton();
         jLblBackground = new javax.swing.JLabel();
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -76,49 +77,41 @@ public class addGraphicsCard extends javax.swing.JFrame {
         jPanel1.add(jLblLogo);
         jLblLogo.setBounds(460, 480, 183, 36);
 
-        jLblManufacturer.setForeground(new java.awt.Color(255, 255, 255));
-        jLblManufacturer.setText("Manufacturer:");
-        jPanel1.add(jLblManufacturer);
-        jLblManufacturer.setBounds(180, 150, 100, 20);
-        jPanel1.add(jTxtManufacturer);
-        jTxtManufacturer.setBounds(390, 150, 100, 24);
+        jLblBrand.setForeground(new java.awt.Color(255, 255, 255));
+        jLblBrand.setText("Brand:");
+        jPanel1.add(jLblBrand);
+        jLblBrand.setBounds(180, 150, 100, 20);
+
+        jComboBrands.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Intel_Core", "AMD_Ryzen" }));
+        jPanel1.add(jComboBrands);
+        jComboBrands.setBounds(390, 150, 100, 26);
+
+        jLblBrandModifier.setForeground(new java.awt.Color(255, 255, 255));
+        jLblBrandModifier.setText("Brand Modifier:");
+        jPanel1.add(jLblBrandModifier);
+        jLblBrandModifier.setBounds(180, 200, 90, 20);
+        jPanel1.add(jTxtBrandModifier);
+        jTxtBrandModifier.setBounds(390, 200, 100, 24);
 
         jLblModel.setForeground(new java.awt.Color(255, 255, 255));
         jLblModel.setText("Model:");
+        jLblModel.setToolTipText("");
         jPanel1.add(jLblModel);
-        jLblModel.setBounds(180, 190, 90, 20);
+        jLblModel.setBounds(180, 250, 80, 20);
         jPanel1.add(jTxtModel);
-        jTxtModel.setBounds(390, 190, 100, 24);
+        jTxtModel.setBounds(390, 250, 100, 24);
 
-        jComboInterface.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PCI", "AGP", "PCI-E", "PCI-Ex1", "PCI-Ex4", "PCI-Ex16" }));
-        jPanel1.add(jComboInterface);
-        jComboInterface.setBounds(390, 230, 100, 26);
-
-        jLblInterface.setForeground(new java.awt.Color(255, 255, 255));
-        jLblInterface.setText("Inteface:");
-        jPanel1.add(jLblInterface);
-        jLblInterface.setBounds(180, 230, 80, 20);
-
-        jLblCapacity.setForeground(new java.awt.Color(255, 255, 255));
-        jLblCapacity.setText("Capacity:");
-        jPanel1.add(jLblCapacity);
-        jLblCapacity.setBounds(180, 270, 80, 30);
-        jPanel1.add(jTxtCapacity);
-        jTxtCapacity.setBounds(390, 270, 100, 24);
-
-        jLblMemoryType.setForeground(new java.awt.Color(255, 255, 255));
-        jLblMemoryType.setText("Memory Type:");
-        jPanel1.add(jLblMemoryType);
-        jLblMemoryType.setBounds(180, 310, 130, 30);
-
-        jComboMemoryType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DDR3", "DDR4", "GDDR5", "GDDR5X", "GDDR6" }));
-        jPanel1.add(jComboMemoryType);
-        jComboMemoryType.setBounds(390, 310, 100, 26);
+        jLblSuffix.setForeground(new java.awt.Color(255, 255, 255));
+        jLblSuffix.setText("Suffix:");
+        jPanel1.add(jLblSuffix);
+        jLblSuffix.setBounds(180, 300, 80, 20);
+        jPanel1.add(jTxtSuffix);
+        jTxtSuffix.setBounds(390, 300, 100, 24);
 
         jLblPrice.setForeground(new java.awt.Color(255, 255, 255));
         jLblPrice.setText("Price: ");
         jPanel1.add(jLblPrice);
-        jLblPrice.setBounds(180, 350, 70, 30);
+        jLblPrice.setBounds(180, 350, 70, 20);
         jPanel1.add(jTxtPrice);
         jTxtPrice.setBounds(390, 350, 100, 24);
 
@@ -167,40 +160,32 @@ public class addGraphicsCard extends javax.swing.JFrame {
 
     private void jBtnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAddActionPerformed
         // TODO add your handling code here:
-        String manufacturer = jTxtManufacturer.getText();
+        String brand = jComboBrands.getSelectedItem().toString();
+        String brandModifier = jTxtBrandModifier.getText();
         String model = jTxtModel.getText();
-        String graphicsCardInterface = jComboInterface.getSelectedItem().toString();
-        String capacity = jTxtCapacity.getText();
-        String memoryType = jComboMemoryType.getSelectedItem().toString();
+        String suffix = jTxtSuffix.getText();
         String price = jTxtPrice.getText();
         Integer priceInt = 0;
         
         priceInt = Integer.parseInt(price);
-        boolean validationTest = (!manufacturer.equals("") && !manufacturer.equals(" ") &&
-                !model.equals("") && !model.equals(" ") && !graphicsCardInterface.equals("") && !graphicsCardInterface.equals(" ") &&
-                !capacity.equals("") && !capacity.equals(" ") && !memoryType.equals("") && !memoryType.equals(" ") &&
-                priceInt > 0);
+        boolean validationTest = (!brand.equals("") && !brand.equals(" ") &&
+            !brandModifier.equals("") && !brandModifier.equals(" ") && !model.equals("") && !model.equals(" ") && priceInt > 0);
         
         if (validationTest){
-            
         ArrayList<String> data = new ArrayList<String>();
         String[] columns = {"ID",
-            "Manufacturer",
+            "Brand",
+            "Brand_Modifier",
             "Model",
-            "Interface",
-            "Capacity",
-            "Memory_Type",
+            "Suffix",
             "Price"}; 
-        
-        graphicsCardConnect con = new graphicsCardConnect();
-        con.add(columns, manufacturer, model, graphicsCardInterface, capacity, memoryType, price);
-        
-        jTxtManufacturer.setText("");
+        processorConnect con = new processorConnect();
+        con.add(columns, brand, brandModifier, model, suffix, price);
+        jTxtBrandModifier.setText("");
         jTxtModel.setText("");
-        jTxtCapacity.setText("");
+        jTxtSuffix.setText("");
         jTxtPrice.setText("");
-        
-            JOptionPane.showMessageDialog(this, "Graphics Card successfully added!", "Process Complete", 1);
+            JOptionPane.showMessageDialog(this, "Processor successfully added!", "Process Complete", 1);
             this.dispose();
             browseHardware browse = new browseHardware();
             browse.show();
@@ -234,13 +219,13 @@ public class addGraphicsCard extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(addGraphicsCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addProcessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(addGraphicsCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addProcessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(addGraphicsCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addProcessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(addGraphicsCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addProcessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -248,7 +233,7 @@ public class addGraphicsCard extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new addGraphicsCard().setVisible(true);
+                new addProcessor().setVisible(true);
             }
         });
     }
@@ -256,21 +241,20 @@ public class addGraphicsCard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnAdd;
     private javax.swing.JButton jBtnBack;
-    private javax.swing.JComboBox<String> jComboInterface;
-    private javax.swing.JComboBox<String> jComboMemoryType;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBrands;
     private javax.swing.JLabel jLblBackground;
-    private javax.swing.JLabel jLblCapacity;
-    private javax.swing.JLabel jLblInterface;
+    private javax.swing.JLabel jLblBrand;
+    private javax.swing.JLabel jLblBrandModifier;
     private javax.swing.JLabel jLblLogo;
-    private javax.swing.JLabel jLblManufacturer;
-    private javax.swing.JLabel jLblMemoryType;
     private javax.swing.JLabel jLblModel;
     private javax.swing.JLabel jLblPrice;
+    private javax.swing.JLabel jLblSuffix;
     private javax.swing.JLabel jLblTitle;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTxtCapacity;
-    private javax.swing.JTextField jTxtManufacturer;
+    private javax.swing.JTextField jTxtBrandModifier;
     private javax.swing.JTextField jTxtModel;
     private javax.swing.JTextField jTxtPrice;
+    private javax.swing.JTextField jTxtSuffix;
     // End of variables declaration//GEN-END:variables
 }

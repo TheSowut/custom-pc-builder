@@ -263,7 +263,24 @@ public class browseHardware extends javax.swing.JFrame {
 
     private void jBtnProcessorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnProcessorMouseClicked
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Processor");
+        Object[] options = {"Add",
+                    "Browse",
+                    "Cancel"};
+        int n = JOptionPane.showOptionDialog(this, "Would you like to add or check current components of the type ?", "Add or Browse Graphics Cards",
+        JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
+        if (n == 0){
+            this.dispose();
+            addProcessor add = new addProcessor();
+            add.show();
+        }
+        else if (n == 1){
+            this.dispose();
+            browseProcessor browse = new browseProcessor();
+            browse.show();
+        }
+        else if (n == 2){
+            this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        }   
     }//GEN-LAST:event_jBtnProcessorMouseClicked
 
     private void jBtnMotherboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnMotherboardMouseClicked
@@ -271,7 +288,7 @@ public class browseHardware extends javax.swing.JFrame {
         Object[] options = {"Add",
                     "Browse",
                     "Cancel"};
-        int n = JOptionPane.showOptionDialog(this, "Would you like to add or check current components of the type ?", "Add or Browse Motherboards",
+        int n = JOptionPane.showOptionDialog(this, "Would you like to add or check current components of the type ?", "Add or Browse Processors",
         JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
         if (n == 0){
             this.dispose();

@@ -10,13 +10,13 @@ import java.util.logging.Logger;
  *
  * @author sqlitetutorial.net
  */
-public class graphicsCardConnect {
+public class processorConnect {
      /**
      * Connect to a sample database
      */
     public String url;
     public Connection conn;
-    public graphicsCardConnect(){
+    public processorConnect(){
         String filePath = new File("").getAbsolutePath();
         String filePathChanged = filePath.replaceAll("\\\\", "/");
         String path = "/db/cpb-db.db";
@@ -33,7 +33,7 @@ public class graphicsCardConnect {
             conn.close();
             this.finalize();
         } catch (Throwable ex) {
-            Logger.getLogger(graphicsCardConnect.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(processorConnect.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
       
@@ -68,11 +68,11 @@ public class graphicsCardConnect {
         return result;
     }
     
-    public ArrayList<String> add(String[] columns, String manufacturer, String model, String graphicsCardInterface, String capacity, String memoryType, String price) {
+    public ArrayList<String> add(String[] columns, String brand, String brandModifier, String model , String suffix, String price) {
         ArrayList<String> result = new ArrayList<String>();
         String cols = String.join(", ", columns);
-        String sql = "SELECT " + cols + " FROM graphicscards";
-        String queryInsertData = "INSERT INTO graphicscards (Manufacturer, Model, Interface, Capacity, Memory_Type, Price) values ('" + manufacturer + "', '" + model + "', '" + graphicsCardInterface + "', '" + capacity + "', '" + memoryType + "', '" + price + "')";
+        String sql = "SELECT " + cols + " FROM processors";
+        String queryInsertData = "INSERT INTO processors (Brand, Brand_Modifier, Model, Suffix, Price) values ('" + brand + "', '" + brandModifier + "', '" + model + "', '" + suffix + "', '" + price + "')";
         try {
             Connection openConn = conn;
             Statement stmt  = openConn.createStatement();

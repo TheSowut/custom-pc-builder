@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author TheSowut
  */
-public class browseGraphicsCard extends javax.swing.JFrame {
+public class browseProcessor extends javax.swing.JFrame {
 
     /**
      * Creates new form browseMotherboard
@@ -22,7 +22,7 @@ public class browseGraphicsCard extends javax.swing.JFrame {
     public final motherboardConnect c = new motherboardConnect();
     // инициализираме модел, който ще използваме при попълването на таблицата
     public DefaultTableModel t;
-    public browseGraphicsCard() {
+    public browseProcessor() {
         initComponents();
         setLocationRelativeTo(null);
         final ImageIcon title = new ImageIcon(".\\images\\icons\\browseComponent.png");
@@ -32,9 +32,9 @@ public class browseGraphicsCard extends javax.swing.JFrame {
         jLblTitle.setIcon(title);
         jLblBackground.setIcon(background);
         
-        t = (DefaultTableModel) jTblGraphicsCards.getModel();
+        t = (DefaultTableModel) jTblProcessors.getModel();
         tableSelect();
-        jTblGraphicsCards.setEnabled(false);
+        jTblProcessors.setEnabled(false);
     }
 
     /**
@@ -52,7 +52,7 @@ public class browseGraphicsCard extends javax.swing.JFrame {
         jLblWarning = new javax.swing.JLabel();
         jBtnBack = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTblGraphicsCards = new javax.swing.JTable();
+        jTblProcessors = new javax.swing.JTable();
         jLblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -88,15 +88,15 @@ public class browseGraphicsCard extends javax.swing.JFrame {
         jPanel1.add(jBtnBack);
         jBtnBack.setBounds(260, 480, 140, 32);
 
-        jTblGraphicsCards.setModel(new javax.swing.table.DefaultTableModel(
+        jTblProcessors.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Manufacturer", "Model", "Interface", "Capacity", "Memory Type", "Price"
+                "ID", "Brand", "Brand_Modifier", "Model", "Suffix", "Price"
             }
         ));
-        jScrollPane1.setViewportView(jTblGraphicsCards);
+        jScrollPane1.setViewportView(jTblProcessors);
 
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(10, 120, 640, 310);
@@ -147,13 +147,13 @@ public class browseGraphicsCard extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(browseGraphicsCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browseProcessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(browseGraphicsCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browseProcessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(browseGraphicsCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browseProcessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(browseGraphicsCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browseProcessor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -161,7 +161,7 @@ public class browseGraphicsCard extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new browseGraphicsCard().setVisible(true);
+                new browseProcessor().setVisible(true);
             }
         });
     }
@@ -169,13 +169,12 @@ public class browseGraphicsCard extends javax.swing.JFrame {
         private void tableSelect() {
         ArrayList<String> data = new ArrayList<String>();
             String[] columns = {"ID",
-            "Manufacturer",
+            "Brand",
+            "Brand_Modifier",
             "Model",
-            "Interface",
-            "Capacity",
-            "Memory_Type",
+            "Suffix",
             "Price"}; 
-        data = c.conn(columns, "graphicscards");
+        data = c.conn(columns, "processors");
         for (int i = 0; i < data.size(); i++) {
             String[] row = data.get(i).split(" ");
             t.addRow(new Object[]{row[0],
@@ -183,8 +182,7 @@ public class browseGraphicsCard extends javax.swing.JFrame {
                                   row[2],
                                   row[3],
                                   row[4],
-                                  row[5],
-                                  row[6]});
+                                  row[5]});
         }
     }
 
@@ -196,6 +194,6 @@ public class browseGraphicsCard extends javax.swing.JFrame {
     private javax.swing.JLabel jLblWarning;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTblGraphicsCards;
+    private javax.swing.JTable jTblProcessors;
     // End of variables declaration//GEN-END:variables
 }

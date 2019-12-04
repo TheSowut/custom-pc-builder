@@ -73,7 +73,6 @@ public class motherboardConnect {
         String cols = String.join(", ", columns);
         String sql = "SELECT " + cols + " FROM motherboards";
         String queryInsertData = "INSERT INTO motherboards (Manufacturer, Model, Socket, Chipset, Form_Factor, Price) values ('" + manufacturer + "', '" + model + "', '" + socket + "', '" + chipset + "', '" + formFactor + "', '" + price + "')";
-            System.out.println(queryInsertData);
         try {
             Connection openConn = conn;
             Statement stmt  = openConn.createStatement();
@@ -103,27 +102,6 @@ public class motherboardConnect {
         }
         return result;
     }
-    
-//    public void deleteWhere(String table, int term, String col) {
-//        String sql = "DELETE FROM " + table + " WHERE " + col + " LIKE " + term;
-//        // = работи само с числени стойности за разика от LIKE (което работи и с string
-//        // за LIKE задължително с '' - пример LIKE '%" + term + "%'%;
-//        System.out.println(sql);
-//        try {
-//            Connection openConn = conn;
-//            Statement stmt  = openConn.createStatement();
-//            ResultSet rs    = stmt.executeQuery(sql);
-//            // loop through the result set
-//            ResultSetMetaData rsMetaData = rs.getMetaData();
-//            
-//            while (rs.next()) {
-//                System.out.println("Row Deleted");
-////                    result.add(rs.getString("city"));
-//            }
-//        } catch (SQLException e) {
-//            System.out.println(e.getMessage());
-//        }
-//    }
     /**
      * @param args the command line arguments
      */

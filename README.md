@@ -14,6 +14,10 @@
 - Browse the hardware components menu.
 <div><img src="images/demo/browseHardware.JPG" width="300"></div>
 
+- Browse and Add new component.
+<div><img src="images/demo/addComponent.JPG" width="300">
+<img src="images/demo/browseComponent.JPG" width="303.5"></div>
+
 ## ☁ Planned Features:
 - Create a Custom PC with a variety of hardware components.<br>
 - Save and Load custom setups from a local DB.<br>

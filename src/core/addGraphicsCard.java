@@ -13,12 +13,12 @@ import javax.swing.JOptionPane;
  *
  * @author TheSowut
  */
-public class addMotherboard extends javax.swing.JFrame {
+public class addGraphicsCard extends javax.swing.JFrame {
 
     /**
      * Creates new form addMotherboard
      */
-    public addMotherboard() {
+    public addGraphicsCard() {
         initComponents();
         setLocationRelativeTo(null);
         final ImageIcon title = new ImageIcon(".\\images\\icons\\addComponent.png");
@@ -165,16 +165,16 @@ public class addMotherboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         String manufacturer = jTxtManufacturer.getText();
         String model = jTxtModel.getText();
-        String socket = jTxtSocket.getText();
-        String chipset = jTxtChipset.getText();
-        String formFactor = jTxtFormFactor.getText();
+        String graphicsCardInterface = jTxtSocket.getText();
+        String capacity = jTxtChipset.getText();
+        String memoryType = jTxtFormFactor.getText();
         String price = jTxtPrice.getText();
         Integer priceInt = 0;
         
         priceInt = Integer.parseInt(price);
         boolean validationTest = (!manufacturer.equals("") && !manufacturer.equals(" ") &&
-                !model.equals("") && !model.equals(" ") && !socket.equals("") && !socket.equals(" ") &&
-                !chipset.equals("") && !chipset.equals(" ") && !formFactor.equals("") && !formFactor.equals(" ") &&
+                !model.equals("") && !model.equals(" ") && !graphicsCardInterface.equals("") && !graphicsCardInterface.equals(" ") &&
+                !capacity.equals("") && !capacity.equals(" ") && !memoryType.equals("") && !memoryType.equals(" ") &&
                 priceInt > 0);
         
         if (validationTest){
@@ -183,13 +183,13 @@ public class addMotherboard extends javax.swing.JFrame {
         String[] columns = {"ID",
             "Manufacturer",
             "Model",
-            "Socket",
-            "Chipset",
-            "Form_Factor",
+            "Interface",
+            "Capacity",
+            "Memory_Type",
             "Price"}; 
         
-        motherboardConnect con = new motherboardConnect();
-        con.add(columns, manufacturer, model, socket, chipset, formFactor, price);
+        graphicsCardConnect con = new graphicsCardConnect();
+        con.add(columns, manufacturer, model, graphicsCardInterface, capacity, memoryType, price);
         
         jTxtManufacturer.setText("");
         jTxtModel.setText("");
@@ -198,7 +198,7 @@ public class addMotherboard extends javax.swing.JFrame {
         jTxtFormFactor.setText("");
         jTxtPrice.setText("");
         
-            JOptionPane.showMessageDialog(this, "Motherboard successfully added!", "Process Complete", 1);
+            JOptionPane.showMessageDialog(this, "Graphics Card successfully added!", "Process Complete", 1);
             this.dispose();
             browseHardware browse = new browseHardware();
             browse.show();
@@ -232,20 +232,21 @@ public class addMotherboard extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(addMotherboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addGraphicsCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(addMotherboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addGraphicsCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(addMotherboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addGraphicsCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(addMotherboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addGraphicsCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new addMotherboard().setVisible(true);
+                new addGraphicsCard().setVisible(true);
             }
         });
     }

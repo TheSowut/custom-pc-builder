@@ -94,7 +94,6 @@ public class browseHardware extends javax.swing.JFrame {
         jLblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(700, 545));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -242,7 +241,24 @@ public class browseHardware extends javax.swing.JFrame {
 
     private void jBtnGraphicsCardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnGraphicsCardMouseClicked
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Graphics Card");
+        Object[] options = {"Add",
+                    "Browse",
+                    "Cancel"};
+        int n = JOptionPane.showOptionDialog(this, "Would you like to add or check current components of the type ?", "Add or Browse Graphics Cards",
+        JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
+        if (n == 0){
+            this.dispose();
+            addGraphicsCard add = new addGraphicsCard();
+            add.show();
+        }
+        else if (n == 1){
+            this.dispose();
+            browseGraphicsCard browse = new browseGraphicsCard();
+            browse.show();
+        }
+        else if (n == 2){
+            this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        }     
     }//GEN-LAST:event_jBtnGraphicsCardMouseClicked
 
     private void jBtnProcessorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnProcessorMouseClicked
@@ -255,7 +271,7 @@ public class browseHardware extends javax.swing.JFrame {
         Object[] options = {"Add",
                     "Browse",
                     "Cancel"};
-        int n = JOptionPane.showOptionDialog(this, "Would you like to add or check current components of the type ?", "Add or Browse",
+        int n = JOptionPane.showOptionDialog(this, "Would you like to add or check current components of the type ?", "Add or Browse Motherboards",
         JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
         if (n == 0){
             this.dispose();

@@ -10,13 +10,13 @@ import java.util.logging.Logger;
  *
  * @author sqlitetutorial.net
  */
-public class motherboardConnect {
+public class graphicsCardConnect {
      /**
      * Connect to a sample database
      */
     public String url;
     public Connection conn;
-    public motherboardConnect(){
+    public graphicsCardConnect(){
         String filePath = new File("").getAbsolutePath();
         String filePathChanged = filePath.replaceAll("\\\\", "/");
         String path = "/db/cpb-db.db";
@@ -33,7 +33,7 @@ public class motherboardConnect {
             conn.close();
             this.finalize();
         } catch (Throwable ex) {
-            Logger.getLogger(motherboardConnect.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(graphicsCardConnect.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
       
@@ -68,11 +68,11 @@ public class motherboardConnect {
         return result;
     }
     
-    public ArrayList<String> add(String[] columns, String manufacturer, String model, String socket, String chipset, String formFactor, String price) {
+    public ArrayList<String> add(String[] columns, String manufacturer, String model, String graphicsCardInterface, String capacity, String memoryType, String price) {
         ArrayList<String> result = new ArrayList<String>();
         String cols = String.join(", ", columns);
-        String sql = "SELECT " + cols + " FROM motherboards";
-        String queryInsertData = "INSERT INTO motherboards (Manufacturer, Model, Socket, Chipset, Form_Factor, Price) values ('" + manufacturer + "', '" + model + "', '" + socket + "', '" + chipset + "', '" + formFactor + "', '" + price + "')";
+        String sql = "SELECT " + cols + " FROM graphicscards";
+        String queryInsertData = "INSERT INTO graphicscards (Manufacturer, Model, Interface, Capacity, Memory_Type, Price) values ('" + manufacturer + "', '" + model + "', '" + graphicsCardInterface + "', '" + capacity + "', '" + memoryType + "', '" + price + "')";
             System.out.println(queryInsertData);
         try {
             Connection openConn = conn;

@@ -117,9 +117,9 @@
                     <Column editable="true" title="ID" type="java.lang.Object"/>
                     <Column editable="true" title="Manufacturer" type="java.lang.Object"/>
                     <Column editable="true" title="Model" type="java.lang.Object"/>
-                    <Column editable="true" title="Socket" type="java.lang.Object"/>
-                    <Column editable="true" title="Chipset" type="java.lang.Object"/>
-                    <Column editable="true" title="Form Factor" type="java.lang.Object"/>
+                    <Column editable="true" title="Interface" type="java.lang.Object"/>
+                    <Column editable="true" title="Capacity" type="java.lang.Object"/>
+                    <Column editable="true" title="Memory Type" type="java.lang.Object"/>
                     <Column editable="true" title="Price" type="java.lang.Object"/>
                   </Table>
                 </Property>

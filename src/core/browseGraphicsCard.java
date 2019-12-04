@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author TheSowut
  */
-public class browseMotherboard extends javax.swing.JFrame {
+public class browseGraphicsCard extends javax.swing.JFrame {
 
     /**
      * Creates new form browseMotherboard
@@ -22,7 +22,7 @@ public class browseMotherboard extends javax.swing.JFrame {
     public final motherboardConnect c = new motherboardConnect();
     // инициализираме модел, който ще използваме при попълването на таблицата
     public DefaultTableModel t;
-    public browseMotherboard() {
+    public browseGraphicsCard() {
         initComponents();
         setLocationRelativeTo(null);
         final ImageIcon title = new ImageIcon(".\\images\\icons\\browseComponent.png");
@@ -93,7 +93,7 @@ public class browseMotherboard extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Manufacturer", "Model", "Socket", "Chipset", "Form Factor", "Price"
+                "ID", "Manufacturer", "Model", "Interface", "Capacity", "Memory Type", "Price"
             }
         ));
         jScrollPane1.setViewportView(jTblMotherboards);
@@ -147,20 +147,21 @@ public class browseMotherboard extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(browseMotherboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browseGraphicsCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(browseMotherboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browseGraphicsCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(browseMotherboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browseGraphicsCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(browseMotherboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browseGraphicsCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new browseMotherboard().setVisible(true);
+                new browseGraphicsCard().setVisible(true);
             }
         });
     }
@@ -170,11 +171,11 @@ public class browseMotherboard extends javax.swing.JFrame {
             String[] columns = {"ID",
             "Manufacturer",
             "Model",
-            "Socket",
-            "Chipset",
-            "Form_Factor",
+            "Interface",
+            "Capacity",
+            "Memory_Type",
             "Price"}; 
-        data = c.conn(columns, "motherboards");
+        data = c.conn(columns, "graphicscards");
         for (int i = 0; i < data.size(); i++) {
             String[] row = data.get(i).split(" ");
             t.addRow(new Object[]{row[0],

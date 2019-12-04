@@ -14,14 +14,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author TheSowut
  */
-public class browseMotherboard extends javax.swing.JFrame {
+public class browsePsu extends javax.swing.JFrame {
 
     /**
-     * Creates new form browseMotherboard
+     * Creates new form browsePsu
      */
     public final motherboardConnect c = new motherboardConnect();
     public DefaultTableModel t;
-    public browseMotherboard() {
+    public browsePsu() {
         initComponents();
         setLocationRelativeTo(null);
         final ImageIcon title = new ImageIcon(".\\images\\icons\\browseComponent.png");
@@ -31,9 +31,9 @@ public class browseMotherboard extends javax.swing.JFrame {
         jLblTitle.setIcon(title);
         jLblBackground.setIcon(background);
         
-        t = (DefaultTableModel) jTblMotherboards.getModel();
+        t = (DefaultTableModel) jTblPsus.getModel();
         tableSelect();
-        jTblMotherboards.setEnabled(false);
+        jTblPsus.setEnabled(false);
     }
 
     /**
@@ -50,7 +50,7 @@ public class browseMotherboard extends javax.swing.JFrame {
         jLblTitle = new javax.swing.JLabel();
         jBtnBack = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTblMotherboards = new javax.swing.JTable();
+        jTblPsus = new javax.swing.JTable();
         jLblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -81,15 +81,15 @@ public class browseMotherboard extends javax.swing.JFrame {
         jPanel1.add(jBtnBack);
         jBtnBack.setBounds(260, 460, 140, 32);
 
-        jTblMotherboards.setModel(new javax.swing.table.DefaultTableModel(
+        jTblPsus.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Manufacturer", "Model", "Socket", "Chipset", "Form Factor", "Price"
+                "ID", "Manufacturer", "Model", "Wattage", "Certificate", "Modular", "Price"
             }
         ));
-        jScrollPane1.setViewportView(jTblMotherboards);
+        jScrollPane1.setViewportView(jTblPsus);
 
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(10, 120, 640, 310);
@@ -140,20 +140,23 @@ public class browseMotherboard extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(browseMotherboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browsePsu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(browseMotherboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browsePsu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(browseMotherboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browsePsu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(browseMotherboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browsePsu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new browseMotherboard().setVisible(true);
+                new browsePsu().setVisible(true);
             }
         });
     }
@@ -163,11 +166,11 @@ public class browseMotherboard extends javax.swing.JFrame {
             String[] columns = {"ID",
             "Manufacturer",
             "Model",
-            "Socket",
-            "Chipset",
-            "Form_Factor",
+            "Wattage",
+            "Certificate",
+            "Modular",
             "Price"}; 
-        data = c.conn(columns, "motherboards");
+        data = c.conn(columns, "psus");
         for (int i = 0; i < data.size(); i++) {
             String[] row = data.get(i).split(" ");
             t.addRow(new Object[]{row[0],
@@ -187,6 +190,6 @@ public class browseMotherboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLblTitle;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTblMotherboards;
+    private javax.swing.JTable jTblPsus;
     // End of variables declaration//GEN-END:variables
 }

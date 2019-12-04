@@ -50,10 +50,13 @@ public class addProcessor extends javax.swing.JFrame {
         jTxtModel = new javax.swing.JTextField();
         jLblSuffix = new javax.swing.JLabel();
         jTxtSuffix = new javax.swing.JTextField();
+        jLblSocket = new javax.swing.JLabel();
+        jComboSocket = new javax.swing.JComboBox<>();
         jLblPrice = new javax.swing.JLabel();
         jTxtPrice = new javax.swing.JTextField();
         jBtnAdd = new javax.swing.JButton();
         jBtnBack = new javax.swing.JButton();
+        jLblWarning = new javax.swing.JLabel();
         jLblBackground = new javax.swing.JLabel();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -89,31 +92,40 @@ public class addProcessor extends javax.swing.JFrame {
         jLblBrandModifier.setForeground(new java.awt.Color(255, 255, 255));
         jLblBrandModifier.setText("Brand Modifier:");
         jPanel1.add(jLblBrandModifier);
-        jLblBrandModifier.setBounds(180, 200, 90, 20);
+        jLblBrandModifier.setBounds(180, 190, 90, 20);
         jPanel1.add(jTxtBrandModifier);
-        jTxtBrandModifier.setBounds(390, 200, 100, 24);
+        jTxtBrandModifier.setBounds(390, 190, 100, 24);
 
         jLblModel.setForeground(new java.awt.Color(255, 255, 255));
         jLblModel.setText("Model:");
         jLblModel.setToolTipText("");
         jPanel1.add(jLblModel);
-        jLblModel.setBounds(180, 250, 80, 20);
+        jLblModel.setBounds(180, 230, 80, 20);
         jPanel1.add(jTxtModel);
-        jTxtModel.setBounds(390, 250, 100, 24);
+        jTxtModel.setBounds(390, 230, 100, 24);
 
         jLblSuffix.setForeground(new java.awt.Color(255, 255, 255));
         jLblSuffix.setText("Suffix:");
         jPanel1.add(jLblSuffix);
-        jLblSuffix.setBounds(180, 300, 80, 20);
+        jLblSuffix.setBounds(180, 270, 80, 20);
         jPanel1.add(jTxtSuffix);
-        jTxtSuffix.setBounds(390, 300, 100, 24);
+        jTxtSuffix.setBounds(390, 270, 100, 24);
+
+        jLblSocket.setForeground(new java.awt.Color(255, 255, 255));
+        jLblSocket.setText("Socket:");
+        jPanel1.add(jLblSocket);
+        jLblSocket.setBounds(180, 320, 70, 16);
+
+        jComboSocket.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LGA", "LGA_1150", "LGA_1151", "LGA_1155", "LGA_1356", "LGA_1248", "LGA_2011", "LGA_2066", "LGA_3647", "AM1", "AM2", "AM2+", "AM3", "AM3+", "AM4", "SP3", "TR4", "FM1", "FM2", "FM2+" }));
+        jPanel1.add(jComboSocket);
+        jComboSocket.setBounds(390, 310, 100, 26);
 
         jLblPrice.setForeground(new java.awt.Color(255, 255, 255));
         jLblPrice.setText("Price: ");
         jPanel1.add(jLblPrice);
-        jLblPrice.setBounds(180, 350, 70, 20);
+        jLblPrice.setBounds(180, 360, 70, 20);
         jPanel1.add(jTxtPrice);
-        jTxtPrice.setBounds(390, 350, 100, 24);
+        jTxtPrice.setBounds(390, 360, 100, 24);
 
         jBtnAdd.setText("Add");
         jBtnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +134,7 @@ public class addProcessor extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnAdd);
-        jBtnAdd.setBounds(170, 420, 107, 32);
+        jBtnAdd.setBounds(170, 450, 107, 32);
 
         jBtnBack.setText("Back");
         jBtnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -131,7 +143,12 @@ public class addProcessor extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnBack);
-        jBtnBack.setBounds(390, 420, 107, 32);
+        jBtnBack.setBounds(390, 450, 107, 32);
+
+        jLblWarning.setForeground(new java.awt.Color(255, 0, 51));
+        jLblWarning.setText("Please use \"_\" (underscore) instead of \" \" (space) and WHOLE integers for Price.");
+        jPanel1.add(jLblWarning);
+        jLblWarning.setBounds(110, 410, 560, 16);
 
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\addComponent.jpg")); // NOI18N
         jLblBackground.setMaximumSize(new java.awt.Dimension(650, 545));
@@ -164,12 +181,12 @@ public class addProcessor extends javax.swing.JFrame {
         String brandModifier = jTxtBrandModifier.getText();
         String model = jTxtModel.getText();
         String suffix = jTxtSuffix.getText();
+        String socket = jComboSocket.getSelectedItem().toString();
         String price = jTxtPrice.getText();
         Integer priceInt = 0;
         
         priceInt = Integer.parseInt(price);
-        boolean validationTest = (!brand.equals("") && !brand.equals(" ") &&
-            !brandModifier.equals("") && !brandModifier.equals(" ") && !model.equals("") && !model.equals(" ") && priceInt > 0);
+        boolean validationTest = (!brandModifier.equals("") && !brandModifier.equals(" ") && !model.equals("") && !model.equals(" ") && priceInt > 0);
         
         if (validationTest){
         ArrayList<String> data = new ArrayList<String>();
@@ -178,9 +195,10 @@ public class addProcessor extends javax.swing.JFrame {
             "Brand_Modifier",
             "Model",
             "Suffix",
+            "Socket",
             "Price"}; 
         processorConnect con = new processorConnect();
-        con.add(columns, brand, brandModifier, model, suffix, price);
+        con.add(columns, brand, brandModifier, model, suffix, socket, price);
         jTxtBrandModifier.setText("");
         jTxtModel.setText("");
         jTxtSuffix.setText("");
@@ -243,14 +261,17 @@ public class addProcessor extends javax.swing.JFrame {
     private javax.swing.JButton jBtnBack;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBrands;
+    private javax.swing.JComboBox<String> jComboSocket;
     private javax.swing.JLabel jLblBackground;
     private javax.swing.JLabel jLblBrand;
     private javax.swing.JLabel jLblBrandModifier;
     private javax.swing.JLabel jLblLogo;
     private javax.swing.JLabel jLblModel;
     private javax.swing.JLabel jLblPrice;
+    private javax.swing.JLabel jLblSocket;
     private javax.swing.JLabel jLblSuffix;
     private javax.swing.JLabel jLblTitle;
+    private javax.swing.JLabel jLblWarning;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTxtBrandModifier;
     private javax.swing.JTextField jTxtModel;

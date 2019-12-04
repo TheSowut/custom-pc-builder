@@ -10,13 +10,13 @@ import java.util.logging.Logger;
  *
  * @author sqlitetutorial.net
  */
-public class processorConnect {
+public class psuConnect {
      /**
      * Connect to a sample database
      */
     public String url;
     public Connection conn;
-    public processorConnect(){
+    public psuConnect(){
         String filePath = new File("").getAbsolutePath();
         String filePathChanged = filePath.replaceAll("\\\\", "/");
         String path = "/db/cpb-db.db";
@@ -33,7 +33,7 @@ public class processorConnect {
             conn.close();
             this.finalize();
         } catch (Throwable ex) {
-            Logger.getLogger(processorConnect.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(psuConnect.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
       
@@ -68,11 +68,11 @@ public class processorConnect {
         return result;
     }
     
-    public ArrayList<String> add(String[] columns, String brand, String brandModifier, String model , String suffix, String socket, String price) {
+    public ArrayList<String> add(String[] columns, String manufacturer, String model, String wattage, String certificate, String modular, String price) {
         ArrayList<String> result = new ArrayList<String>();
         String cols = String.join(", ", columns);
-        String sql = "SELECT " + cols + " FROM processors";
-        String queryInsertData = "INSERT INTO processors (Brand, Brand_Modifier, Model, Suffix, Socket, Price) values ('" + brand + "', '" + brandModifier + "', '" + model + "', '" + suffix + "', '" + socket + "', '" + price + "')";
+        String sql = "SELECT " + cols + " FROM psus";
+        String queryInsertData = "INSERT INTO psus (Manufacturer, Model, Wattage, Certificate, Modular, Price) values ('" + manufacturer + "', '" + model + "', '" + wattage + "', '" + certificate + "', '" + modular + "', '" + price + "')";
         try {
             Connection openConn = conn;
             Statement stmt  = openConn.createStatement();

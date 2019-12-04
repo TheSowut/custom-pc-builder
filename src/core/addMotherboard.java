@@ -47,7 +47,7 @@ public class addMotherboard extends javax.swing.JFrame {
         jLblModel = new javax.swing.JLabel();
         jTxtModel = new javax.swing.JTextField();
         jLblSocket = new javax.swing.JLabel();
-        jTxtSocket = new javax.swing.JTextField();
+        jComboSocket = new javax.swing.JComboBox<>();
         jLblChipset = new javax.swing.JLabel();
         jTxtChipset = new javax.swing.JTextField();
         jLblFormFactor = new javax.swing.JLabel();
@@ -56,6 +56,7 @@ public class addMotherboard extends javax.swing.JFrame {
         jTxtPrice = new javax.swing.JTextField();
         jBtnAdd = new javax.swing.JButton();
         jBtnBack = new javax.swing.JButton();
+        jLblWarning = new javax.swing.JLabel();
         jLblBackground = new javax.swing.JLabel();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -99,8 +100,10 @@ public class addMotherboard extends javax.swing.JFrame {
         jLblSocket.setText("Socket: ");
         jPanel1.add(jLblSocket);
         jLblSocket.setBounds(180, 230, 80, 20);
-        jPanel1.add(jTxtSocket);
-        jTxtSocket.setBounds(390, 230, 100, 24);
+
+        jComboSocket.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LGA", "LGA_1150", "LGA_1151", "LGA_1155", "LGA_1356", "LGA_1248", "LGA_2011", "LGA_2066", "LGA_3647", "AM1", "AM2", "AM2+", "AM3", "AM3+", "AM4", "SP3", "TR4", "FM1", "FM2", "FM2+" }));
+        jPanel1.add(jComboSocket);
+        jComboSocket.setBounds(390, 230, 100, 26);
 
         jLblChipset.setForeground(new java.awt.Color(255, 255, 255));
         jLblChipset.setText("Chipset: ");
@@ -132,7 +135,7 @@ public class addMotherboard extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnAdd);
-        jBtnAdd.setBounds(170, 420, 107, 32);
+        jBtnAdd.setBounds(170, 440, 107, 32);
 
         jBtnBack.setText("Back");
         jBtnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -141,7 +144,12 @@ public class addMotherboard extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnBack);
-        jBtnBack.setBounds(390, 420, 107, 32);
+        jBtnBack.setBounds(390, 440, 107, 32);
+
+        jLblWarning.setForeground(new java.awt.Color(255, 0, 51));
+        jLblWarning.setText("Please use \"_\" (underscore) instead of \" \" (space) and WHOLE integers for Price.");
+        jPanel1.add(jLblWarning);
+        jLblWarning.setBounds(110, 400, 560, 16);
 
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\addComponent.jpg")); // NOI18N
         jLblBackground.setMaximumSize(new java.awt.Dimension(650, 545));
@@ -172,7 +180,7 @@ public class addMotherboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         String manufacturer = jComboManufacturer.getSelectedItem().toString();
         String model = jTxtModel.getText();
-        String socket = jTxtSocket.getText();
+        String socket = jComboSocket.getSelectedItem().toString();
         String chipset = jTxtChipset.getText();
         String formFactor = jComboFormFactor.getSelectedItem().toString();
         String price = jTxtPrice.getText();
@@ -199,7 +207,6 @@ public class addMotherboard extends javax.swing.JFrame {
         con.add(columns, manufacturer, model, socket, chipset, formFactor, price);
         
         jTxtModel.setText("");
-        jTxtSocket.setText("");
         jTxtChipset.setText("");
         jTxtPrice.setText("");
         
@@ -261,6 +268,7 @@ public class addMotherboard extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboFormFactor;
     private javax.swing.JComboBox<String> jComboManufacturer;
+    private javax.swing.JComboBox<String> jComboSocket;
     private javax.swing.JLabel jLblBackground;
     private javax.swing.JLabel jLblChipset;
     private javax.swing.JLabel jLblFormFactor;
@@ -270,10 +278,10 @@ public class addMotherboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLblPrice;
     private javax.swing.JLabel jLblSocket;
     private javax.swing.JLabel jLblTitle;
+    private javax.swing.JLabel jLblWarning;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTxtChipset;
     private javax.swing.JTextField jTxtModel;
     private javax.swing.JTextField jTxtPrice;
-    private javax.swing.JTextField jTxtSocket;
     // End of variables declaration//GEN-END:variables
 }

@@ -13,12 +13,12 @@ import javax.swing.JOptionPane;
  *
  * @author TheSowut
  */
-public class addGraphicsCard extends javax.swing.JFrame {
+public class addPSU extends javax.swing.JFrame {
 
     /**
-     * Creates new form addGraphicsCard
+     * Creates new form addPSU
      */
-    public addGraphicsCard() {
+    public addPSU() {
         initComponents();
         setLocationRelativeTo(null);
         final ImageIcon title = new ImageIcon(".\\images\\icons\\addComponent.png");
@@ -38,25 +38,28 @@ public class addGraphicsCard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jComboBox1 = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jLblTitle = new javax.swing.JLabel();
         jLblLogo = new javax.swing.JLabel();
         jLblManufacturer = new javax.swing.JLabel();
         jComboManufacturers = new javax.swing.JComboBox<>();
-        jLblModel = new javax.swing.JLabel();
+        jLblVoltage = new javax.swing.JLabel();
         jTxtModel = new javax.swing.JTextField();
-        jComboInterface = new javax.swing.JComboBox<>();
-        jLblInterface = new javax.swing.JLabel();
-        jLblCapacity = new javax.swing.JLabel();
-        jTxtCapacity = new javax.swing.JTextField();
-        jLblMemoryType = new javax.swing.JLabel();
-        jComboMemoryType = new javax.swing.JComboBox<>();
+        jLblModel = new javax.swing.JLabel();
+        jTxtWattage = new javax.swing.JTextField();
+        jLblCertificate = new javax.swing.JLabel();
+        jTxtCertificate = new javax.swing.JTextField();
+        jLblModular = new javax.swing.JLabel();
+        jComboModular = new javax.swing.JComboBox<>();
         jLblPrice = new javax.swing.JLabel();
         jTxtPrice = new javax.swing.JTextField();
         jBtnAdd = new javax.swing.JButton();
         jBtnBack = new javax.swing.JButton();
         jLblWarning = new javax.swing.JLabel();
         jLblBackground = new javax.swing.JLabel();
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -82,46 +85,45 @@ public class addGraphicsCard extends javax.swing.JFrame {
         jPanel1.add(jLblManufacturer);
         jLblManufacturer.setBounds(180, 150, 100, 20);
 
-        jComboManufacturers.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AMD", "ASUS", "EVGA", "GIGABYTE", "MSI", "NVIDIA", "SAPPHIRE", " ", " " }));
+        jComboManufacturers.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Antec", "Cooler_Master", "Corsair", "Cougar", "GIGABYTE", "EVGA", "Seasonic", "Silverstone", "Thermaltake" }));
         jPanel1.add(jComboManufacturers);
         jComboManufacturers.setBounds(390, 150, 100, 26);
 
-        jLblModel.setForeground(new java.awt.Color(255, 255, 255));
-        jLblModel.setText("Model:");
-        jPanel1.add(jLblModel);
-        jLblModel.setBounds(180, 190, 90, 20);
+        jLblVoltage.setForeground(new java.awt.Color(255, 255, 255));
+        jLblVoltage.setText("Wattage:");
+        jPanel1.add(jLblVoltage);
+        jLblVoltage.setBounds(180, 230, 90, 20);
         jPanel1.add(jTxtModel);
         jTxtModel.setBounds(390, 190, 100, 24);
 
-        jComboInterface.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PCI", "AGP", "PCI-E", "PCI-Ex1", "PCI-Ex4", "PCI-Ex16" }));
-        jPanel1.add(jComboInterface);
-        jComboInterface.setBounds(390, 230, 100, 26);
+        jLblModel.setForeground(new java.awt.Color(255, 255, 255));
+        jLblModel.setText("Model:");
+        jLblModel.setToolTipText("");
+        jPanel1.add(jLblModel);
+        jLblModel.setBounds(180, 190, 80, 20);
+        jPanel1.add(jTxtWattage);
+        jTxtWattage.setBounds(390, 230, 100, 24);
 
-        jLblInterface.setForeground(new java.awt.Color(255, 255, 255));
-        jLblInterface.setText("Inteface:");
-        jPanel1.add(jLblInterface);
-        jLblInterface.setBounds(180, 230, 80, 20);
+        jLblCertificate.setForeground(new java.awt.Color(255, 255, 255));
+        jLblCertificate.setText("Certificate:");
+        jPanel1.add(jLblCertificate);
+        jLblCertificate.setBounds(180, 270, 80, 20);
+        jPanel1.add(jTxtCertificate);
+        jTxtCertificate.setBounds(390, 270, 100, 24);
 
-        jLblCapacity.setForeground(new java.awt.Color(255, 255, 255));
-        jLblCapacity.setText("Capacity:");
-        jPanel1.add(jLblCapacity);
-        jLblCapacity.setBounds(180, 270, 80, 30);
-        jPanel1.add(jTxtCapacity);
-        jTxtCapacity.setBounds(390, 270, 100, 24);
+        jLblModular.setForeground(new java.awt.Color(255, 255, 255));
+        jLblModular.setText("Modular: ");
+        jPanel1.add(jLblModular);
+        jLblModular.setBounds(180, 310, 70, 16);
 
-        jLblMemoryType.setForeground(new java.awt.Color(255, 255, 255));
-        jLblMemoryType.setText("Memory Type:");
-        jPanel1.add(jLblMemoryType);
-        jLblMemoryType.setBounds(180, 310, 130, 30);
-
-        jComboMemoryType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DDR3", "DDR4", "GDDR5", "GDDR5X", "GDDR6" }));
-        jPanel1.add(jComboMemoryType);
-        jComboMemoryType.setBounds(390, 310, 100, 26);
+        jComboModular.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Modular", "Non_Modular" }));
+        jPanel1.add(jComboModular);
+        jComboModular.setBounds(390, 310, 100, 26);
 
         jLblPrice.setForeground(new java.awt.Color(255, 255, 255));
         jLblPrice.setText("Price: ");
         jPanel1.add(jLblPrice);
-        jLblPrice.setBounds(180, 350, 70, 30);
+        jLblPrice.setBounds(180, 350, 70, 20);
         jPanel1.add(jTxtPrice);
         jTxtPrice.setBounds(390, 350, 100, 24);
 
@@ -177,37 +179,30 @@ public class addGraphicsCard extends javax.swing.JFrame {
         // TODO add your handling code here:
         String manufacturer = jComboManufacturers.getSelectedItem().toString();
         String model = jTxtModel.getText();
-        String graphicsCardInterface = jComboInterface.getSelectedItem().toString();
-        String capacity = jTxtCapacity.getText();
-        String memoryType = jComboMemoryType.getSelectedItem().toString();
+        String wattage = jTxtWattage.getText();
+        String certificate = jTxtCertificate.getText();
+        String modular = jComboModular.getSelectedItem().toString();
         String price = jTxtPrice.getText();
         Integer priceInt = 0;
         
         priceInt = Integer.parseInt(price);
-        boolean validationTest = (!manufacturer.equals("") && !manufacturer.equals(" ") &&
-                !model.equals("") && !model.equals(" ") && !graphicsCardInterface.equals("") && !graphicsCardInterface.equals(" ") &&
-                !capacity.equals("") && !capacity.equals(" ") && !memoryType.equals("") && !memoryType.equals(" ") &&
-                priceInt > 0);
-        
+        boolean validationTest = (!model.equals("") && !model.equals(" ") && priceInt > 0);
         if (validationTest){
-            
         ArrayList<String> data = new ArrayList<String>();
         String[] columns = {"ID",
             "Manufacturer",
             "Model",
-            "Interface",
-            "Capacity",
-            "Memory_Type",
+            "Wattage",
+            "Certificate",
+            "Modular",
             "Price"}; 
-        
-        graphicsCardConnect con = new graphicsCardConnect();
-        con.add(columns, manufacturer, model, graphicsCardInterface, capacity, memoryType, price);
-        
+        psuConnect con = new psuConnect();
+        con.add(columns, manufacturer, model, wattage, certificate, modular, price);
         jTxtModel.setText("");
-        jTxtCapacity.setText("");
+        jTxtWattage.setText("");
+        jTxtCertificate.setText("");
         jTxtPrice.setText("");
-        
-            JOptionPane.showMessageDialog(this, "Graphics Card successfully added!", "Process Complete", 1);
+            JOptionPane.showMessageDialog(this, "PSU successfully added!", "Process Complete", 1);
             this.dispose();
             browseHardware browse = new browseHardware();
             browse.show();
@@ -241,21 +236,23 @@ public class addGraphicsCard extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(addGraphicsCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addPSU.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(addGraphicsCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addPSU.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(addGraphicsCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addPSU.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(addGraphicsCard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addPSU.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new addGraphicsCard().setVisible(true);
+                new addPSU().setVisible(true);
             }
         });
     }
@@ -263,22 +260,23 @@ public class addGraphicsCard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnAdd;
     private javax.swing.JButton jBtnBack;
-    private javax.swing.JComboBox<String> jComboInterface;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboManufacturers;
-    private javax.swing.JComboBox<String> jComboMemoryType;
+    private javax.swing.JComboBox<String> jComboModular;
     private javax.swing.JLabel jLblBackground;
-    private javax.swing.JLabel jLblCapacity;
-    private javax.swing.JLabel jLblInterface;
+    private javax.swing.JLabel jLblCertificate;
     private javax.swing.JLabel jLblLogo;
     private javax.swing.JLabel jLblManufacturer;
-    private javax.swing.JLabel jLblMemoryType;
     private javax.swing.JLabel jLblModel;
+    private javax.swing.JLabel jLblModular;
     private javax.swing.JLabel jLblPrice;
     private javax.swing.JLabel jLblTitle;
+    private javax.swing.JLabel jLblVoltage;
     private javax.swing.JLabel jLblWarning;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTxtCapacity;
+    private javax.swing.JTextField jTxtCertificate;
     private javax.swing.JTextField jTxtModel;
     private javax.swing.JTextField jTxtPrice;
+    private javax.swing.JTextField jTxtWattage;
     // End of variables declaration//GEN-END:variables
 }

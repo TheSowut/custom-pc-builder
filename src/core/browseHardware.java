@@ -81,16 +81,16 @@ public class browseHardware extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLblTitle = new javax.swing.JLabel();
-        jBtnRam = new javax.swing.JButton();
         jBtnMotherboard = new javax.swing.JButton();
         jBtnGraphicsCard = new javax.swing.JButton();
-        jBtnHdd = new javax.swing.JButton();
         jBtnProcessor = new javax.swing.JButton();
-        jBtnSsd = new javax.swing.JButton();
-        jLblLogo = new javax.swing.JLabel();
-        jBtnBack = new javax.swing.JButton();
         jBtnPsu = new javax.swing.JButton();
+        jBtnRam = new javax.swing.JButton();
+        jBtnHdd = new javax.swing.JButton();
         jBtnCase = new javax.swing.JButton();
+        jBtnSsd = new javax.swing.JButton();
+        jBtnBack = new javax.swing.JButton();
+        jLblLogo = new javax.swing.JLabel();
         jLblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -108,17 +108,6 @@ public class browseHardware extends javax.swing.JFrame {
         jLblTitle.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\browseHardware.png")); // NOI18N
         jPanel1.add(jLblTitle);
         jLblTitle.setBounds(150, 10, 400, 120);
-
-        jBtnRam.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\ram.jpg")); // NOI18N
-        jBtnRam.setToolTipText("");
-        jBtnRam.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBtnRam.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jBtnRamMouseClicked(evt);
-            }
-        });
-        jPanel1.add(jBtnRam);
-        jBtnRam.setBounds(10, 310, 160, 130);
 
         jBtnMotherboard.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\motherboard.jpg")); // NOI18N
         jBtnMotherboard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -142,16 +131,6 @@ public class browseHardware extends javax.swing.JFrame {
         jPanel1.add(jBtnGraphicsCard);
         jBtnGraphicsCard.setBounds(180, 170, 160, 120);
 
-        jBtnHdd.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\hdd.jpg")); // NOI18N
-        jBtnHdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBtnHdd.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jBtnHddMouseClicked(evt);
-            }
-        });
-        jPanel1.add(jBtnHdd);
-        jBtnHdd.setBounds(350, 320, 160, 130);
-
         jBtnProcessor.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\processor.jpg")); // NOI18N
         jBtnProcessor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBtnProcessor.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -167,39 +146,36 @@ public class browseHardware extends javax.swing.JFrame {
         jPanel1.add(jBtnProcessor);
         jBtnProcessor.setBounds(350, 170, 160, 120);
 
-        jBtnSsd.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\ssd.jpg")); // NOI18N
-        jBtnSsd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBtnSsd.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jBtnSsdMouseClicked(evt);
-            }
-        });
-        jPanel1.add(jBtnSsd);
-        jBtnSsd.setBounds(520, 310, 160, 130);
-
-        jLblLogo.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\cpblogoSmallFull.png")); // NOI18N
-        jPanel1.add(jLblLogo);
-        jLblLogo.setBounds(500, 470, 183, 35);
-
-        jBtnBack.setText("Back");
-        jBtnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBtnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnBackActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jBtnBack);
-        jBtnBack.setBounds(280, 470, 125, 32);
-
         jBtnPsu.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\psu.jpg")); // NOI18N
         jBtnPsu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBtnPsu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnPsuActionPerformed(evt);
+        jBtnPsu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnPsuMouseClicked(evt);
             }
         });
         jPanel1.add(jBtnPsu);
         jBtnPsu.setBounds(520, 160, 160, 120);
+
+        jBtnRam.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\ram.jpg")); // NOI18N
+        jBtnRam.setToolTipText("");
+        jBtnRam.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnRam.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnRamMouseClicked(evt);
+            }
+        });
+        jPanel1.add(jBtnRam);
+        jBtnRam.setBounds(10, 310, 160, 130);
+
+        jBtnHdd.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\hdd.jpg")); // NOI18N
+        jBtnHdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnHdd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnHddMouseClicked(evt);
+            }
+        });
+        jPanel1.add(jBtnHdd);
+        jBtnHdd.setBounds(350, 320, 160, 130);
 
         jBtnCase.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\computercase.jpg")); // NOI18N
         jBtnCase.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -210,6 +186,30 @@ public class browseHardware extends javax.swing.JFrame {
         });
         jPanel1.add(jBtnCase);
         jBtnCase.setBounds(180, 320, 160, 130);
+
+        jBtnSsd.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\ssd.jpg")); // NOI18N
+        jBtnSsd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnSsd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnSsdMouseClicked(evt);
+            }
+        });
+        jPanel1.add(jBtnSsd);
+        jBtnSsd.setBounds(520, 310, 160, 130);
+
+        jBtnBack.setText("Back");
+        jBtnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnBackActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBtnBack);
+        jBtnBack.setBounds(270, 500, 125, 32);
+
+        jLblLogo.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\cpblogoSmallFull.png")); // NOI18N
+        jPanel1.add(jLblLogo);
+        jLblLogo.setBounds(510, 500, 183, 35);
 
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\componentsScreen.jpg")); // NOI18N
         jPanel1.add(jLblBackground);
@@ -320,11 +320,6 @@ public class browseHardware extends javax.swing.JFrame {
         goToMenu();
     }//GEN-LAST:event_jBtnBackActionPerformed
 
-    private void jBtnPsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPsuActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "SSD");
-    }//GEN-LAST:event_jBtnPsuActionPerformed
-
     private void jBtnCaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCaseActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(this, "Computer Case");
@@ -333,6 +328,28 @@ public class browseHardware extends javax.swing.JFrame {
     private void jBtnProcessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnProcessorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtnProcessorActionPerformed
+
+    private void jBtnPsuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnPsuMouseClicked
+        // TODO add your handling code here:
+                Object[] options = {"Add",
+                    "Browse",
+                    "Cancel"};
+        int n = JOptionPane.showOptionDialog(this, "Would you like to add or check current components of the type ?", "Add or Browse PSU",
+        JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
+        if (n == 0){
+            this.dispose();
+            addPSU add = new addPSU();
+            add.show();
+        }
+        else if (n == 1){
+            this.dispose();
+            browsePsu browse = new browsePsu();
+            browse.show();
+        }
+        else if (n == 2){
+            this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        }
+    }//GEN-LAST:event_jBtnPsuMouseClicked
 
     /**
      * @param args the command line arguments

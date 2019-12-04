@@ -20,7 +20,6 @@ public class browseGraphicsCard extends javax.swing.JFrame {
      * Creates new form browseMotherboard
      */
     public final motherboardConnect c = new motherboardConnect();
-    // инициализираме модел, който ще използваме при попълването на таблицата
     public DefaultTableModel t;
     public browseGraphicsCard() {
         initComponents();
@@ -49,7 +48,6 @@ public class browseGraphicsCard extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLblLogo = new javax.swing.JLabel();
         jLblTitle = new javax.swing.JLabel();
-        jLblWarning = new javax.swing.JLabel();
         jBtnBack = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTblGraphicsCards = new javax.swing.JTable();
@@ -74,11 +72,6 @@ public class browseGraphicsCard extends javax.swing.JFrame {
         jPanel1.add(jLblTitle);
         jLblTitle.setBounds(130, 15, 400, 88);
 
-        jLblWarning.setForeground(new java.awt.Color(255, 0, 0));
-        jLblWarning.setText("PLEASE USE \"_\" (underscore) instead of \" \" (space) !");
-        jPanel1.add(jLblWarning);
-        jLblWarning.setBounds(180, 440, 370, 30);
-
         jBtnBack.setText("Back");
         jBtnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,7 +79,7 @@ public class browseGraphicsCard extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnBack);
-        jBtnBack.setBounds(260, 480, 140, 32);
+        jBtnBack.setBounds(260, 460, 140, 32);
 
         jTblGraphicsCards.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -193,7 +186,6 @@ public class browseGraphicsCard extends javax.swing.JFrame {
     private javax.swing.JLabel jLblBackground;
     private javax.swing.JLabel jLblLogo;
     private javax.swing.JLabel jLblTitle;
-    private javax.swing.JLabel jLblWarning;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTblGraphicsCards;

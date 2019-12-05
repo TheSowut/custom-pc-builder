@@ -14,19 +14,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - README.md
 
-#### REMOVED
+#### Removed
 - Connect.java
 
-## [0.0.2] - DATE
+## [0.0.2] - 2019-12-03
 ### Added
--
+- Add Motherboard
+- Browse List of Motherboards
+
+### Changed
+- readme
+- roadmap
+
+## [0.0.3] - 2019-12-04
+### Added
+- Add Graphics Card, Processor, PSU
+- Browse Lists of Graphics Cards, Processors, PSUs
+- Comboboxes for easier and more user friendly component adding
+
+### Changed
+- readme
+- Pictures of the Forms 
+
+## [0.0.4] - DATE
+### Added
 -
 
 ### Changed
--
-
-## [0.0.3] - DATE
-### Added
 -
 
 ### Removed

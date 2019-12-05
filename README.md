@@ -8,15 +8,15 @@
 ## ✔ Current Features:
 - Create and Login with an account on a local db and browse the planned features.
 
-<div><img src="images/demo/loginScreen.JPG" width="305">
+<div><img src="images/demo/loginScreen.JPG" width="304">
 <img src="images/demo/registrationScreen.JPG" width="300"></div>
 
 - Browse the hardware components menu.
 <div><img src="images/demo/browseHardware.JPG" width="300"></div>
 
-- Browse and Add new component.
+- Browse and Add New hardware components of your choice.
 <div><img src="images/demo/addComponent.JPG" width="300">
-<img src="images/demo/browseComponent.JPG" width="303.5"></div>
+<img src="images/demo/browseComponent.JPG" width="308"></div>
 
 ## ☁ Planned Features:
 - Create a Custom PC with a variety of hardware components.<br>

@@ -69,7 +69,7 @@ public class addMotherboard extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(650, 545));
+        jPanel1.setPreferredSize(new java.awt.Dimension(650, 510));
         jPanel1.setLayout(null);
 
         jLblTitle.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\addComponent.png")); // NOI18N
@@ -78,7 +78,7 @@ public class addMotherboard extends javax.swing.JFrame {
 
         jLblLogo.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\cpblogoSmallFull.png")); // NOI18N
         jPanel1.add(jLblLogo);
-        jLblLogo.setBounds(460, 480, 183, 36);
+        jLblLogo.setBounds(460, 470, 183, 36);
 
         jLblManufacturer.setForeground(new java.awt.Color(255, 255, 255));
         jLblManufacturer.setText("Manufacturer:");
@@ -147,9 +147,9 @@ public class addMotherboard extends javax.swing.JFrame {
         jBtnBack.setBounds(390, 440, 107, 32);
 
         jLblWarning.setForeground(new java.awt.Color(255, 0, 51));
-        jLblWarning.setText("Please use \"_\" (underscore) instead of \" \" (space) and WHOLE integers for Price.");
+        jLblWarning.setText("Please use \"_\" (underscore) instead of \" \" (space) !");
         jPanel1.add(jLblWarning);
-        jLblWarning.setBounds(110, 400, 560, 16);
+        jLblWarning.setBounds(190, 400, 290, 16);
 
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\addComponent.jpg")); // NOI18N
         jLblBackground.setMaximumSize(new java.awt.Dimension(650, 545));
@@ -165,7 +165,7 @@ public class addMotherboard extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -184,31 +184,30 @@ public class addMotherboard extends javax.swing.JFrame {
         String chipset = jTxtChipset.getText();
         String formFactor = jComboFormFactor.getSelectedItem().toString();
         String price = jTxtPrice.getText();
-        Integer priceInt = 0;
+        Double priceDouble = 0.0;
         
-        priceInt = Integer.parseInt(price);
+        priceDouble = Double.parseDouble(price);
         boolean validationTest = (!manufacturer.equals("") && !manufacturer.equals(" ") &&
                 !model.equals("") && !model.equals(" ") && !socket.equals("") && !socket.equals(" ") &&
                 !chipset.equals("") && !chipset.equals(" ") && !formFactor.equals("") && !formFactor.equals(" ") &&
-                priceInt > 0);
+                priceDouble > 0);
         
         if (validationTest){
-            
-        ArrayList<String> data = new ArrayList<String>();
-        String[] columns = {"ID",
-            "Manufacturer",
-            "Model",
-            "Socket",
-            "Chipset",
-            "Form_Factor",
-            "Price"}; 
+            ArrayList<String> data = new ArrayList<String>();
+            String[] columns = {"ID",
+                "Manufacturer",
+                "Model",
+                "Socket",
+                "Chipset",
+                "Form_Factor",
+                "Price"}; 
         
-        motherboardConnect con = new motherboardConnect();
-        con.add(columns, manufacturer, model, socket, chipset, formFactor, price);
+            motherboardConnect con = new motherboardConnect();
+            con.add(columns, manufacturer, model, socket, chipset, formFactor, priceDouble.toString());
         
-        jTxtModel.setText("");
-        jTxtChipset.setText("");
-        jTxtPrice.setText("");
+            jTxtModel.setText("");
+            jTxtChipset.setText("");
+            jTxtPrice.setText("");
         
             JOptionPane.showMessageDialog(this, "Motherboard successfully added!", "Process Complete", 1);
             this.dispose();

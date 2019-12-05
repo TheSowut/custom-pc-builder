@@ -67,7 +67,6 @@ public class loginForm extends javax.swing.JFrame {
         jLblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(660, 519));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -76,7 +75,7 @@ public class loginForm extends javax.swing.JFrame {
         });
 
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.setPreferredSize(new java.awt.Dimension(660, 519));
+        jPanel1.setPreferredSize(new java.awt.Dimension(650, 510));
         jPanel1.setLayout(null);
 
         jBtnLogin.setText("Login");
@@ -128,7 +127,7 @@ public class loginForm extends javax.swing.JFrame {
 
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\loginScreen.jpg")); // NOI18N
         jPanel1.add(jLblBackground);
-        jLblBackground.setBounds(0, 0, 680, 520);
+        jLblBackground.setBounds(0, 0, 660, 520);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

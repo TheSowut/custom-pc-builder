@@ -54,6 +54,7 @@ public class browseMotherboard extends javax.swing.JFrame {
         jLblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(648, 519));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -66,7 +67,7 @@ public class browseMotherboard extends javax.swing.JFrame {
 
         jLblLogo.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\cpblogoSmallFull.png")); // NOI18N
         jPanel1.add(jLblLogo);
-        jLblLogo.setBounds(467, 479, 183, 35);
+        jLblLogo.setBounds(440, 440, 183, 35);
 
         jLblTitle.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\browseComponent.png")); // NOI18N
         jPanel1.add(jLblTitle);
@@ -79,7 +80,7 @@ public class browseMotherboard extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnBack);
-        jBtnBack.setBounds(260, 460, 140, 32);
+        jBtnBack.setBounds(260, 440, 140, 32);
 
         jTblMotherboards.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -92,7 +93,7 @@ public class browseMotherboard extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTblMotherboards);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(10, 120, 640, 310);
+        jScrollPane1.setBounds(10, 120, 610, 310);
 
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\browseComponent.jpg")); // NOI18N
         jPanel1.add(jLblBackground);
@@ -102,11 +103,11 @@ public class browseMotherboard extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

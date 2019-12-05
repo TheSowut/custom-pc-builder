@@ -59,6 +59,7 @@ public class addGraphicsCard extends javax.swing.JFrame {
         jLblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(640, 519));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -66,7 +67,7 @@ public class addGraphicsCard extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(650, 545));
+        jPanel1.setPreferredSize(new java.awt.Dimension(640, 520));
         jPanel1.setLayout(null);
 
         jLblTitle.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\addComponent.png")); // NOI18N
@@ -75,55 +76,55 @@ public class addGraphicsCard extends javax.swing.JFrame {
 
         jLblLogo.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\cpblogoSmallFull.png")); // NOI18N
         jPanel1.add(jLblLogo);
-        jLblLogo.setBounds(460, 480, 183, 36);
+        jLblLogo.setBounds(430, 440, 183, 36);
 
         jLblManufacturer.setForeground(new java.awt.Color(255, 255, 255));
         jLblManufacturer.setText("Manufacturer:");
         jPanel1.add(jLblManufacturer);
-        jLblManufacturer.setBounds(180, 150, 100, 20);
+        jLblManufacturer.setBounds(180, 140, 100, 20);
 
-        jComboManufacturers.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AMD", "ASUS", "EVGA", "GIGABYTE", "MSI", "NVIDIA", "SAPPHIRE", " ", " " }));
+        jComboManufacturers.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AMD", "ASUS", "EVGA", "GIGABYTE", "MSI", "NVIDIA", "Sapphire" }));
         jPanel1.add(jComboManufacturers);
-        jComboManufacturers.setBounds(390, 150, 100, 26);
+        jComboManufacturers.setBounds(390, 140, 100, 26);
 
         jLblModel.setForeground(new java.awt.Color(255, 255, 255));
         jLblModel.setText("Model:");
         jPanel1.add(jLblModel);
-        jLblModel.setBounds(180, 190, 90, 20);
+        jLblModel.setBounds(180, 180, 90, 20);
         jPanel1.add(jTxtModel);
-        jTxtModel.setBounds(390, 190, 100, 24);
+        jTxtModel.setBounds(390, 180, 100, 24);
 
-        jComboInterface.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PCI", "AGP", "PCI-E", "PCI-Ex1", "PCI-Ex4", "PCI-Ex16" }));
+        jComboInterface.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PCI", "AGP", "PCI_E" }));
         jPanel1.add(jComboInterface);
-        jComboInterface.setBounds(390, 230, 100, 26);
+        jComboInterface.setBounds(390, 220, 100, 26);
 
         jLblInterface.setForeground(new java.awt.Color(255, 255, 255));
         jLblInterface.setText("Inteface:");
         jPanel1.add(jLblInterface);
-        jLblInterface.setBounds(180, 230, 80, 20);
+        jLblInterface.setBounds(180, 220, 80, 20);
 
         jLblCapacity.setForeground(new java.awt.Color(255, 255, 255));
         jLblCapacity.setText("Capacity:");
         jPanel1.add(jLblCapacity);
-        jLblCapacity.setBounds(180, 270, 80, 30);
+        jLblCapacity.setBounds(180, 260, 80, 30);
         jPanel1.add(jTxtCapacity);
-        jTxtCapacity.setBounds(390, 270, 100, 24);
+        jTxtCapacity.setBounds(390, 260, 100, 24);
 
         jLblMemoryType.setForeground(new java.awt.Color(255, 255, 255));
         jLblMemoryType.setText("Memory Type:");
         jPanel1.add(jLblMemoryType);
-        jLblMemoryType.setBounds(180, 310, 130, 30);
+        jLblMemoryType.setBounds(180, 300, 130, 30);
 
         jComboMemoryType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DDR3", "DDR4", "GDDR5", "GDDR5X", "GDDR6" }));
         jPanel1.add(jComboMemoryType);
-        jComboMemoryType.setBounds(390, 310, 100, 26);
+        jComboMemoryType.setBounds(390, 300, 100, 26);
 
         jLblPrice.setForeground(new java.awt.Color(255, 255, 255));
         jLblPrice.setText("Price: ");
         jPanel1.add(jLblPrice);
-        jLblPrice.setBounds(180, 350, 70, 30);
+        jLblPrice.setBounds(180, 340, 70, 30);
         jPanel1.add(jTxtPrice);
-        jTxtPrice.setBounds(390, 350, 100, 24);
+        jTxtPrice.setBounds(390, 340, 100, 24);
 
         jBtnAdd.setText("Add");
         jBtnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -132,7 +133,7 @@ public class addGraphicsCard extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnAdd);
-        jBtnAdd.setBounds(170, 440, 107, 32);
+        jBtnAdd.setBounds(170, 420, 107, 32);
 
         jBtnBack.setText("Back");
         jBtnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -141,18 +142,18 @@ public class addGraphicsCard extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnBack);
-        jBtnBack.setBounds(390, 440, 107, 32);
+        jBtnBack.setBounds(390, 420, 107, 32);
 
         jLblWarning.setForeground(new java.awt.Color(255, 0, 51));
-        jLblWarning.setText("Please use \"_\" (underscore) instead of \" \" (space) and WHOLE integers for Price.");
+        jLblWarning.setText("Please use \"_\" (underscore) instead of \" \" (space) !");
         jPanel1.add(jLblWarning);
-        jLblWarning.setBounds(110, 400, 560, 16);
+        jLblWarning.setBounds(190, 380, 290, 16);
 
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\addComponent.jpg")); // NOI18N
         jLblBackground.setMaximumSize(new java.awt.Dimension(650, 545));
         jLblBackground.setMinimumSize(new java.awt.Dimension(650, 545));
         jPanel1.add(jLblBackground);
-        jLblBackground.setBounds(0, 0, 650, 520);
+        jLblBackground.setBounds(0, 0, 650, 550);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -162,7 +163,9 @@ public class addGraphicsCard extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -181,13 +184,13 @@ public class addGraphicsCard extends javax.swing.JFrame {
         String capacity = jTxtCapacity.getText();
         String memoryType = jComboMemoryType.getSelectedItem().toString();
         String price = jTxtPrice.getText();
-        Integer priceInt = 0;
+        Double priceDouble = 0.0;
         
-        priceInt = Integer.parseInt(price);
+        priceDouble = Double.parseDouble(price);
         boolean validationTest = (!manufacturer.equals("") && !manufacturer.equals(" ") &&
                 !model.equals("") && !model.equals(" ") && !graphicsCardInterface.equals("") && !graphicsCardInterface.equals(" ") &&
                 !capacity.equals("") && !capacity.equals(" ") && !memoryType.equals("") && !memoryType.equals(" ") &&
-                priceInt > 0);
+                priceDouble > 0);
         
         if (validationTest){
             

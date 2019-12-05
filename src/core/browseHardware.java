@@ -101,7 +101,7 @@ public class browseHardware extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(700, 545));
+        jPanel1.setPreferredSize(new java.awt.Dimension(690, 530));
         jPanel1.setLayout(null);
 
         jLblTitle.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -205,11 +205,11 @@ public class browseHardware extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnBack);
-        jBtnBack.setBounds(270, 500, 125, 32);
+        jBtnBack.setBounds(270, 480, 125, 32);
 
         jLblLogo.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\cpblogoSmallFull.png")); // NOI18N
         jPanel1.add(jLblLogo);
-        jLblLogo.setBounds(510, 500, 183, 35);
+        jLblLogo.setBounds(500, 480, 183, 35);
 
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\componentsScreen.jpg")); // NOI18N
         jPanel1.add(jLblBackground);

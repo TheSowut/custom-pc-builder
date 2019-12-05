@@ -62,6 +62,7 @@ public class addPSU extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(640, 519));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -69,7 +70,7 @@ public class addPSU extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(650, 545));
+        jPanel1.setPreferredSize(new java.awt.Dimension(650, 519));
         jPanel1.setLayout(null);
 
         jLblTitle.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\addComponent.png")); // NOI18N
@@ -78,54 +79,54 @@ public class addPSU extends javax.swing.JFrame {
 
         jLblLogo.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\cpblogoSmallFull.png")); // NOI18N
         jPanel1.add(jLblLogo);
-        jLblLogo.setBounds(460, 480, 183, 36);
+        jLblLogo.setBounds(430, 440, 183, 36);
 
         jLblManufacturer.setForeground(new java.awt.Color(255, 255, 255));
         jLblManufacturer.setText("Manufacturer:");
         jPanel1.add(jLblManufacturer);
-        jLblManufacturer.setBounds(180, 150, 100, 20);
+        jLblManufacturer.setBounds(180, 140, 100, 20);
 
         jComboManufacturers.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Antec", "Cooler_Master", "Corsair", "Cougar", "GIGABYTE", "EVGA", "Seasonic", "Silverstone", "Thermaltake" }));
         jPanel1.add(jComboManufacturers);
-        jComboManufacturers.setBounds(390, 150, 100, 26);
+        jComboManufacturers.setBounds(390, 140, 100, 26);
 
         jLblVoltage.setForeground(new java.awt.Color(255, 255, 255));
         jLblVoltage.setText("Wattage:");
         jPanel1.add(jLblVoltage);
-        jLblVoltage.setBounds(180, 230, 90, 20);
+        jLblVoltage.setBounds(180, 220, 90, 20);
         jPanel1.add(jTxtModel);
-        jTxtModel.setBounds(390, 190, 100, 24);
+        jTxtModel.setBounds(390, 180, 100, 24);
 
         jLblModel.setForeground(new java.awt.Color(255, 255, 255));
         jLblModel.setText("Model:");
         jLblModel.setToolTipText("");
         jPanel1.add(jLblModel);
-        jLblModel.setBounds(180, 190, 80, 20);
+        jLblModel.setBounds(180, 180, 80, 20);
         jPanel1.add(jTxtWattage);
-        jTxtWattage.setBounds(390, 230, 100, 24);
+        jTxtWattage.setBounds(390, 220, 100, 24);
 
         jLblCertificate.setForeground(new java.awt.Color(255, 255, 255));
         jLblCertificate.setText("Certificate:");
         jPanel1.add(jLblCertificate);
-        jLblCertificate.setBounds(180, 270, 80, 20);
+        jLblCertificate.setBounds(180, 260, 80, 20);
         jPanel1.add(jTxtCertificate);
-        jTxtCertificate.setBounds(390, 270, 100, 24);
+        jTxtCertificate.setBounds(390, 260, 100, 24);
 
         jLblModular.setForeground(new java.awt.Color(255, 255, 255));
         jLblModular.setText("Modular: ");
         jPanel1.add(jLblModular);
-        jLblModular.setBounds(180, 310, 70, 16);
+        jLblModular.setBounds(180, 300, 70, 16);
 
         jComboModular.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Modular", "Non_Modular" }));
         jPanel1.add(jComboModular);
-        jComboModular.setBounds(390, 310, 100, 26);
+        jComboModular.setBounds(390, 300, 100, 26);
 
         jLblPrice.setForeground(new java.awt.Color(255, 255, 255));
         jLblPrice.setText("Price: ");
         jPanel1.add(jLblPrice);
-        jLblPrice.setBounds(180, 350, 70, 20);
+        jLblPrice.setBounds(180, 340, 70, 20);
         jPanel1.add(jTxtPrice);
-        jTxtPrice.setBounds(390, 350, 100, 24);
+        jTxtPrice.setBounds(390, 340, 100, 24);
 
         jBtnAdd.setText("Add");
         jBtnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -134,7 +135,7 @@ public class addPSU extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnAdd);
-        jBtnAdd.setBounds(170, 440, 107, 32);
+        jBtnAdd.setBounds(170, 410, 107, 32);
 
         jBtnBack.setText("Back");
         jBtnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -143,12 +144,12 @@ public class addPSU extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnBack);
-        jBtnBack.setBounds(390, 440, 107, 32);
+        jBtnBack.setBounds(390, 410, 107, 32);
 
         jLblWarning.setForeground(new java.awt.Color(255, 0, 51));
-        jLblWarning.setText("Please use \"_\" (underscore) instead of \" \" (space) and WHOLE integers for Price.");
+        jLblWarning.setText("Please use \"_\" (underscore) instead of \" \" (space) !");
         jPanel1.add(jLblWarning);
-        jLblWarning.setBounds(110, 400, 560, 16);
+        jLblWarning.setBounds(190, 380, 290, 16);
 
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\addComponent.jpg")); // NOI18N
         jLblBackground.setMaximumSize(new java.awt.Dimension(650, 545));
@@ -160,11 +161,15 @@ public class addPSU extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 519, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -183,10 +188,10 @@ public class addPSU extends javax.swing.JFrame {
         String certificate = jTxtCertificate.getText();
         String modular = jComboModular.getSelectedItem().toString();
         String price = jTxtPrice.getText();
-        Integer priceInt = 0;
+        Double priceDouble = 0.0;
         
-        priceInt = Integer.parseInt(price);
-        boolean validationTest = (!model.equals("") && !model.equals(" ") && priceInt > 0);
+        priceDouble = Double.parseDouble(price);
+        boolean validationTest = (!model.equals("") && !model.equals(" ") && priceDouble > 0);
         if (validationTest){
         ArrayList<String> data = new ArrayList<String>();
         String[] columns = {"ID",

@@ -60,7 +60,7 @@ public class mainMenu extends javax.swing.JFrame {
         jMenuHelp = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(700, 540));
+        setPreferredSize(new java.awt.Dimension(700, 531));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -68,13 +68,13 @@ public class mainMenu extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(700, 540));
+        jPanel1.setPreferredSize(new java.awt.Dimension(700, 478));
         jPanel1.setLayout(null);
 
         jLblLogoSmall.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\cpblogoSmallFull.png")); // NOI18N
         jLblLogoSmall.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.add(jLblLogoSmall);
-        jLblLogoSmall.setBounds(500, 440, 183, 35);
+        jLblLogoSmall.setBounds(500, 430, 183, 35);
 
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\menuBackground.jpg")); // NOI18N
         jPanel1.add(jLblBackground);
@@ -145,7 +145,9 @@ public class mainMenu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 62, Short.MAX_VALUE))
         );
 
         pack();

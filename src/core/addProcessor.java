@@ -62,6 +62,7 @@ public class addProcessor extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(640, 519));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -78,54 +79,54 @@ public class addProcessor extends javax.swing.JFrame {
 
         jLblLogo.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\cpblogoSmallFull.png")); // NOI18N
         jPanel1.add(jLblLogo);
-        jLblLogo.setBounds(460, 480, 183, 36);
+        jLblLogo.setBounds(430, 440, 183, 36);
 
         jLblBrand.setForeground(new java.awt.Color(255, 255, 255));
         jLblBrand.setText("Brand:");
         jPanel1.add(jLblBrand);
-        jLblBrand.setBounds(180, 150, 100, 20);
+        jLblBrand.setBounds(180, 140, 100, 20);
 
         jComboBrands.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Intel_Core", "AMD_Ryzen" }));
         jPanel1.add(jComboBrands);
-        jComboBrands.setBounds(390, 150, 100, 26);
+        jComboBrands.setBounds(390, 140, 100, 26);
 
         jLblBrandModifier.setForeground(new java.awt.Color(255, 255, 255));
         jLblBrandModifier.setText("Brand Modifier:");
         jPanel1.add(jLblBrandModifier);
-        jLblBrandModifier.setBounds(180, 190, 90, 20);
+        jLblBrandModifier.setBounds(180, 180, 90, 20);
         jPanel1.add(jTxtBrandModifier);
-        jTxtBrandModifier.setBounds(390, 190, 100, 24);
+        jTxtBrandModifier.setBounds(390, 180, 100, 24);
 
         jLblModel.setForeground(new java.awt.Color(255, 255, 255));
         jLblModel.setText("Model:");
         jLblModel.setToolTipText("");
         jPanel1.add(jLblModel);
-        jLblModel.setBounds(180, 230, 80, 20);
+        jLblModel.setBounds(180, 220, 80, 20);
         jPanel1.add(jTxtModel);
-        jTxtModel.setBounds(390, 230, 100, 24);
+        jTxtModel.setBounds(390, 220, 100, 24);
 
         jLblSuffix.setForeground(new java.awt.Color(255, 255, 255));
         jLblSuffix.setText("Suffix:");
         jPanel1.add(jLblSuffix);
-        jLblSuffix.setBounds(180, 270, 80, 20);
+        jLblSuffix.setBounds(180, 260, 80, 20);
         jPanel1.add(jTxtSuffix);
-        jTxtSuffix.setBounds(390, 270, 100, 24);
+        jTxtSuffix.setBounds(390, 260, 100, 24);
 
         jLblSocket.setForeground(new java.awt.Color(255, 255, 255));
         jLblSocket.setText("Socket:");
         jPanel1.add(jLblSocket);
-        jLblSocket.setBounds(180, 320, 70, 16);
+        jLblSocket.setBounds(180, 300, 70, 16);
 
         jComboSocket.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LGA", "LGA_1150", "LGA_1151", "LGA_1155", "LGA_1356", "LGA_1248", "LGA_2011", "LGA_2066", "LGA_3647", "AM1", "AM2", "AM2+", "AM3", "AM3+", "AM4", "SP3", "TR4", "FM1", "FM2", "FM2+" }));
         jPanel1.add(jComboSocket);
-        jComboSocket.setBounds(390, 310, 100, 26);
+        jComboSocket.setBounds(390, 300, 100, 26);
 
         jLblPrice.setForeground(new java.awt.Color(255, 255, 255));
         jLblPrice.setText("Price: ");
         jPanel1.add(jLblPrice);
-        jLblPrice.setBounds(180, 360, 70, 20);
+        jLblPrice.setBounds(180, 340, 70, 20);
         jPanel1.add(jTxtPrice);
-        jTxtPrice.setBounds(390, 360, 100, 24);
+        jTxtPrice.setBounds(390, 340, 100, 24);
 
         jBtnAdd.setText("Add");
         jBtnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -134,7 +135,7 @@ public class addProcessor extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnAdd);
-        jBtnAdd.setBounds(170, 450, 107, 32);
+        jBtnAdd.setBounds(170, 410, 107, 32);
 
         jBtnBack.setText("Back");
         jBtnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -143,12 +144,12 @@ public class addProcessor extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnBack);
-        jBtnBack.setBounds(390, 450, 107, 32);
+        jBtnBack.setBounds(380, 410, 107, 32);
 
         jLblWarning.setForeground(new java.awt.Color(255, 0, 51));
-        jLblWarning.setText("Please use \"_\" (underscore) instead of \" \" (space) and WHOLE integers for Price.");
+        jLblWarning.setText("Please use \"_\" (underscore) instead of \" \" (space) !");
         jPanel1.add(jLblWarning);
-        jLblWarning.setBounds(110, 410, 560, 16);
+        jLblWarning.setBounds(190, 380, 290, 16);
 
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\addComponent.jpg")); // NOI18N
         jLblBackground.setMaximumSize(new java.awt.Dimension(650, 545));
@@ -183,10 +184,11 @@ public class addProcessor extends javax.swing.JFrame {
         String suffix = jTxtSuffix.getText();
         String socket = jComboSocket.getSelectedItem().toString();
         String price = jTxtPrice.getText();
-        Integer priceInt = 0;
+        Double priceDouble = 0.0;
         
-        priceInt = Integer.parseInt(price);
-        boolean validationTest = (!brandModifier.equals("") && !brandModifier.equals(" ") && !model.equals("") && !model.equals(" ") && priceInt > 0);
+        priceDouble = Double.parseDouble(price);
+        boolean validationTest = (!brandModifier.equals("") && !brandModifier.equals(" ") && !model.equals("")
+                && !model.equals(" ") && priceDouble > 0);
         
         if (validationTest){
         ArrayList<String> data = new ArrayList<String>();

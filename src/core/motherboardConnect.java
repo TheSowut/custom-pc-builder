@@ -77,7 +77,6 @@ public class motherboardConnect {
             Connection openConn = conn;
             Statement stmt  = openConn.createStatement();
             ResultSet rs    = stmt.executeQuery(queryInsertData);
-            // loop through the result set
             ResultSetMetaData rsMetaData = rs.getMetaData();
             
             while (rs.next()) {
@@ -95,7 +94,6 @@ public class motherboardConnect {
                     
                 }
                 result.add(data);
-//                    result.add(rs.getString("city"));
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());

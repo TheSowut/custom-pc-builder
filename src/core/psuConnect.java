@@ -95,7 +95,6 @@ public class psuConnect {
                     
                 }
                 result.add(data);
-//                    result.add(rs.getString("city"));
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());

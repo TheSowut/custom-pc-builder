@@ -324,7 +324,24 @@ public class browseHardware extends javax.swing.JFrame {
 
     private void jBtnHddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnHddMouseClicked
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "HDD");
+        Object[] options = {"Add",
+                    "Browse",
+                    "Cancel"};
+        int n = JOptionPane.showOptionDialog(this, "Would you like to add or check current components of the type ?", "Add or Browse Internal HDD",
+        JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
+        if (n == 0){
+            this.dispose();
+            addHdd add = new addHdd();
+            add.show();
+        }
+        else if (n == 1){
+            this.dispose();
+            browseHdds browse = new browseHdds();
+            browse.show();
+        }
+        else if (n == 2){
+            this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        }
     }//GEN-LAST:event_jBtnHddMouseClicked
 
     private void jBtnSsdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnSsdMouseClicked

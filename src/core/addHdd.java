@@ -46,10 +46,8 @@ public class addHdd extends javax.swing.JFrame {
         jComboManufacturer = new javax.swing.JComboBox<>();
         jLblModel = new javax.swing.JLabel();
         jTxtModel = new javax.swing.JTextField();
-        jLblSocket = new javax.swing.JLabel();
-        jComboSocket = new javax.swing.JComboBox<>();
-        jLblChipset = new javax.swing.JLabel();
-        jTxtChipset = new javax.swing.JTextField();
+        jLblSize = new javax.swing.JLabel();
+        jComboSize = new javax.swing.JComboBox<>();
         jLblFormFactor = new javax.swing.JLabel();
         jComboFormFactor = new javax.swing.JComboBox<>();
         jLblPrice = new javax.swing.JLabel();
@@ -85,46 +83,44 @@ public class addHdd extends javax.swing.JFrame {
         jPanel1.add(jLblManufacturer);
         jLblManufacturer.setBounds(180, 150, 100, 20);
 
-        jComboManufacturer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ASRock", "ASUS", "Biostar", "EVGA", "GIGABYTE", "MSI" }));
+        jComboManufacturer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dell", "Seagate", "Toshiba", "Western_Digital" }));
         jPanel1.add(jComboManufacturer);
         jComboManufacturer.setBounds(390, 150, 100, 26);
 
         jLblModel.setForeground(new java.awt.Color(255, 255, 255));
         jLblModel.setText("Model:");
         jPanel1.add(jLblModel);
-        jLblModel.setBounds(180, 190, 90, 20);
+        jLblModel.setBounds(180, 200, 90, 20);
         jPanel1.add(jTxtModel);
-        jTxtModel.setBounds(390, 190, 100, 24);
+        jTxtModel.setBounds(390, 200, 100, 24);
 
-        jLblSocket.setForeground(new java.awt.Color(255, 255, 255));
-        jLblSocket.setText("Socket: ");
-        jPanel1.add(jLblSocket);
-        jLblSocket.setBounds(180, 230, 80, 20);
+        jLblSize.setForeground(new java.awt.Color(255, 255, 255));
+        jLblSize.setText("Size:");
+        jPanel1.add(jLblSize);
+        jLblSize.setBounds(180, 300, 80, 20);
 
-        jComboSocket.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LGA", "LGA_1150", "LGA_1151", "LGA_1155", "LGA_1356", "LGA_1248", "LGA_2011", "LGA_2066", "LGA_3647", "AM1", "AM2", "AM2+", "AM3", "AM3+", "AM4", "SP3", "TR4", "FM1", "FM2", "FM2+" }));
-        jPanel1.add(jComboSocket);
-        jComboSocket.setBounds(390, 230, 100, 26);
-
-        jLblChipset.setForeground(new java.awt.Color(255, 255, 255));
-        jLblChipset.setText("Chipset: ");
-        jPanel1.add(jLblChipset);
-        jLblChipset.setBounds(180, 270, 80, 30);
-        jPanel1.add(jTxtChipset);
-        jTxtChipset.setBounds(390, 270, 100, 24);
+        jComboSize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "320GB", "500GB", "1TB", "2TB", "4TB", "6TB", "8TB" }));
+        jPanel1.add(jComboSize);
+        jComboSize.setBounds(390, 300, 100, 26);
 
         jLblFormFactor.setForeground(new java.awt.Color(255, 255, 255));
         jLblFormFactor.setText("Form Factor: ");
         jPanel1.add(jLblFormFactor);
-        jLblFormFactor.setBounds(180, 310, 130, 30);
+        jLblFormFactor.setBounds(180, 250, 130, 20);
 
-        jComboFormFactor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ATX", "microATX" }));
+        jComboFormFactor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2.5_in", "3.5_in" }));
+        jComboFormFactor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboFormFactorActionPerformed(evt);
+            }
+        });
         jPanel1.add(jComboFormFactor);
-        jComboFormFactor.setBounds(390, 310, 100, 26);
+        jComboFormFactor.setBounds(390, 250, 100, 26);
 
         jLblPrice.setForeground(new java.awt.Color(255, 255, 255));
         jLblPrice.setText("Price: ");
         jPanel1.add(jLblPrice);
-        jLblPrice.setBounds(180, 350, 70, 30);
+        jLblPrice.setBounds(180, 350, 70, 20);
         jPanel1.add(jTxtPrice);
         jTxtPrice.setBounds(390, 350, 100, 24);
 
@@ -180,33 +176,27 @@ public class addHdd extends javax.swing.JFrame {
         // TODO add your handling code here:
         String manufacturer = jComboManufacturer.getSelectedItem().toString();
         String model = jTxtModel.getText();
-        String socket = jComboSocket.getSelectedItem().toString();
-        String chipset = jTxtChipset.getText();
         String formFactor = jComboFormFactor.getSelectedItem().toString();
+        String size = jComboSize.getSelectedItem().toString();
         String price = jTxtPrice.getText();
         Double priceDouble = 0.0;
         
         priceDouble = Double.parseDouble(price);
-        boolean validationTest = (!manufacturer.equals("") && !manufacturer.equals(" ") &&
-                !model.equals("") && !model.equals(" ") && !socket.equals("") && !socket.equals(" ") &&
-                !chipset.equals("") && !chipset.equals(" ") && !formFactor.equals("") && !formFactor.equals(" ") &&
-                priceDouble > 0);
+        boolean validationTest = (!model.equals("") && !model.equals(" ") && priceDouble > 0);
         
         if (validationTest){
             ArrayList<String> data = new ArrayList<String>();
             String[] columns = {"ID",
                 "Manufacturer",
                 "Model",
-                "Socket",
-                "Chipset",
                 "Form_Factor",
+                "Size",
                 "Price"}; 
         
-            motherboardConnect con = new motherboardConnect();
-            con.add(columns, manufacturer, model, socket, chipset, formFactor, priceDouble.toString());
+            hddConnect con = new hddConnect();
+            con.add(columns, manufacturer, model, formFactor, size, priceDouble.toString());
         
             jTxtModel.setText("");
-            jTxtChipset.setText("");
             jTxtPrice.setText("");
         
             JOptionPane.showMessageDialog(this, "HDD successfully added!", "Process Complete", 1);
@@ -225,6 +215,10 @@ public class addHdd extends javax.swing.JFrame {
         askGoToBrowse browse = new askGoToBrowse();
         browse.goToComponents(this);
     }//GEN-LAST:event_jBtnBackActionPerformed
+
+    private void jComboFormFactorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboFormFactorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboFormFactorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -268,19 +262,17 @@ public class addHdd extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboFormFactor;
     private javax.swing.JComboBox<String> jComboManufacturer;
-    private javax.swing.JComboBox<String> jComboSocket;
+    private javax.swing.JComboBox<String> jComboSize;
     private javax.swing.JLabel jLblBackground;
-    private javax.swing.JLabel jLblChipset;
     private javax.swing.JLabel jLblFormFactor;
     private javax.swing.JLabel jLblLogo;
     private javax.swing.JLabel jLblManufacturer;
     private javax.swing.JLabel jLblModel;
     private javax.swing.JLabel jLblPrice;
-    private javax.swing.JLabel jLblSocket;
+    private javax.swing.JLabel jLblSize;
     private javax.swing.JLabel jLblTitle;
     private javax.swing.JLabel jLblWarning;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTxtChipset;
     private javax.swing.JTextField jTxtModel;
     private javax.swing.JTextField jTxtPrice;
     // End of variables declaration//GEN-END:variables

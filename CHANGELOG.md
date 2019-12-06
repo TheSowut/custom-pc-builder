@@ -36,12 +36,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - readme
 - Pictures of the Forms 
 
-## [0.0.4] - DATE
+## [0.0.4] - 2019-12-06
+### Added
+- Add RAM, Computer Case, HDD, SSD menus
+- Browse a variety of newly added components for the respective RAM, Computer Case, HDD, SSD
+- used_components file
+
+### Changed
+- readme
+- roadmap
+
+## [0.0.5] - DATE
 ### Added
 -
 
-### Changed
+## Changed
 -
 
-### Removed
+## Removed
 -

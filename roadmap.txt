@@ -30,12 +30,7 @@ Bugtest:
 	I. All buttons, methods, invalid input (parsing).
 	II. Distribute for feedback.
 
-Style the app:
-	I. Backgrounds.
-	II. Fonts.
-	III. Custom images.
-	IV. Night mode. (flag check in all forms inits linked with a class function for background change)
-	V. Custom icons for labels.
-	
-Optional:
-	1. Get hardware elements directly in the db with an API.
+✔️Style the app:
+--------I. Backgrounds.
+--------II. Custom images.
+--------III. Custom icons for labels.

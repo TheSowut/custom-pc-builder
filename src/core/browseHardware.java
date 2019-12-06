@@ -138,11 +138,6 @@ public class browseHardware extends javax.swing.JFrame {
                 jBtnProcessorMouseClicked(evt);
             }
         });
-        jBtnProcessor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnProcessorActionPerformed(evt);
-            }
-        });
         jPanel1.add(jBtnProcessor);
         jBtnProcessor.setBounds(350, 170, 160, 120);
 
@@ -346,17 +341,30 @@ public class browseHardware extends javax.swing.JFrame {
 
     private void jBtnSsdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnSsdMouseClicked
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "SSD");
+        Object[] options = {"Add",
+                    "Browse",
+                    "Cancel"};
+        int n = JOptionPane.showOptionDialog(this, "Would you like to add or check current components of the type ?", "Add or Browse PSU",
+        JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
+        if (n == 0){
+            this.dispose();
+            addSsd add = new addSsd();
+            add.show();
+        }
+        else if (n == 1){
+            this.dispose();
+            browseSsds browse = new browseSsds();
+            browse.show();
+        }
+        else if (n == 2){
+            this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        }
     }//GEN-LAST:event_jBtnSsdMouseClicked
 
     private void jBtnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBackActionPerformed
         // TODO add your handling code here:
         goToMenu();
     }//GEN-LAST:event_jBtnBackActionPerformed
-
-    private void jBtnProcessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnProcessorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBtnProcessorActionPerformed
 
     private void jBtnPsuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnPsuMouseClicked
         // TODO add your handling code here:

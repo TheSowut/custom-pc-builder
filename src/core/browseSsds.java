@@ -14,14 +14,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author TheSowut
  */
-public class browseHdds extends javax.swing.JFrame {
+public class browseSsds extends javax.swing.JFrame {
 
     /**
-     * Creates new form browseSsd
+     * Creates new form browseSsds
      */
     public final ramConnect c = new ramConnect();
     public DefaultTableModel t;
-    public browseHdds() {
+    public browseSsds() {
         initComponents();
         setLocationRelativeTo(null);
         final ImageIcon title = new ImageIcon(".\\images\\icons\\browseComponent.png");
@@ -31,9 +31,9 @@ public class browseHdds extends javax.swing.JFrame {
         jLblTitle.setIcon(title);
         jLblBackground.setIcon(background);
         
-        t = (DefaultTableModel) jTblHdds.getModel();
+        t = (DefaultTableModel) jTblSsds.getModel();
         tableSelect();
-        jTblHdds.setEnabled(false);
+        jTblSsds.setEnabled(false);
     }
 
     /**
@@ -50,7 +50,7 @@ public class browseHdds extends javax.swing.JFrame {
         jLblTitle = new javax.swing.JLabel();
         jBtnBack = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTblHdds = new javax.swing.JTable();
+        jTblSsds = new javax.swing.JTable();
         jLblBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -82,7 +82,7 @@ public class browseHdds extends javax.swing.JFrame {
         jPanel1.add(jBtnBack);
         jBtnBack.setBounds(260, 440, 140, 32);
 
-        jTblHdds.setModel(new javax.swing.table.DefaultTableModel(
+        jTblSsds.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -90,7 +90,7 @@ public class browseHdds extends javax.swing.JFrame {
                 "ID", "Manufacturer", "Model", "Form_Factor", "Interface", "Size", "Price"
             }
         ));
-        jScrollPane1.setViewportView(jTblHdds);
+        jScrollPane1.setViewportView(jTblSsds);
 
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(10, 120, 610, 310);
@@ -141,14 +141,26 @@ public class browseHdds extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(browseHdds.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browseSsds.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(browseHdds.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browseSsds.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(browseHdds.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browseSsds.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(browseHdds.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(browseSsds.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -157,7 +169,7 @@ public class browseHdds extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new browseHdds().setVisible(true);
+                new browseSsds().setVisible(true);
             }
         });
     }
@@ -171,7 +183,7 @@ public class browseHdds extends javax.swing.JFrame {
             "Interface",
             "Size",
             "Price"}; 
-        data = c.conn(columns, "hdds");
+        data = c.conn(columns, "ssds");
         for (int i = 0; i < data.size(); i++) {
             String[] row = data.get(i).split(" ");
             t.addRow(new Object[]{row[0],
@@ -191,6 +203,6 @@ public class browseHdds extends javax.swing.JFrame {
     private javax.swing.JLabel jLblTitle;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTblHdds;
+    private javax.swing.JTable jTblSsds;
     // End of variables declaration//GEN-END:variables
 }

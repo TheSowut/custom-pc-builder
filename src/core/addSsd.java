@@ -13,12 +13,12 @@ import javax.swing.JOptionPane;
  *
  * @author TheSowut
  */
-public class addHdd extends javax.swing.JFrame {
+public class addSsd extends javax.swing.JFrame {
 
     /**
      * Creates new form addMotherboard
      */
-    public addHdd() {
+    public addSsd() {
         initComponents();
         setLocationRelativeTo(null);
         final ImageIcon title = new ImageIcon(".\\images\\icons\\addComponent.png");
@@ -62,6 +62,7 @@ public class addHdd extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(648, 519));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -78,14 +79,14 @@ public class addHdd extends javax.swing.JFrame {
 
         jLblLogo.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\cpblogoSmallFull.png")); // NOI18N
         jPanel1.add(jLblLogo);
-        jLblLogo.setBounds(460, 470, 183, 36);
+        jLblLogo.setBounds(440, 440, 183, 36);
 
         jLblManufacturer.setForeground(new java.awt.Color(255, 255, 255));
         jLblManufacturer.setText("Manufacturer:");
         jPanel1.add(jLblManufacturer);
         jLblManufacturer.setBounds(180, 130, 100, 20);
 
-        jComboManufacturer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dell", "Hitachi", "Kingston", "SanDisk", "Seagate", "Toshiba", "Western_Digital" }));
+        jComboManufacturer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADATA", "Corsair", "Crucial", "Dataram", "HP", "Intel", "Kingston", "Micron", "OWC", "SanDisk", "Samsung", "Seagate", "Western_Digital" }));
         jPanel1.add(jComboManufacturer);
         jComboManufacturer.setBounds(390, 130, 100, 26);
 
@@ -101,7 +102,7 @@ public class addHdd extends javax.swing.JFrame {
         jPanel1.add(jLblSize);
         jLblSize.setBounds(180, 290, 80, 20);
 
-        jComboSize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "320GB", "500GB", "1TB", "2TB", "4TB", "6TB", "8TB" }));
+        jComboSize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "240GB", "256GB", "480GB", "500GB", "512GB", "960GB", "1TB", "2TB" }));
         jPanel1.add(jComboSize);
         jComboSize.setBounds(390, 290, 100, 26);
 
@@ -124,7 +125,7 @@ public class addHdd extends javax.swing.JFrame {
         jPanel1.add(jLblInterface);
         jLblInterface.setBounds(180, 250, 54, 16);
 
-        jComboInterface.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SCSI", "SAS", "PATA(IDE)", "SATA", "SATA_II", "SATA_III" }));
+        jComboInterface.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PCI_E", "mSATA", "PATA(IDE)", "SATA", "SATA_II", "SATA_III" }));
         jPanel1.add(jComboInterface);
         jComboInterface.setBounds(390, 250, 100, 26);
 
@@ -142,7 +143,7 @@ public class addHdd extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnAdd);
-        jBtnAdd.setBounds(170, 440, 107, 32);
+        jBtnAdd.setBounds(180, 410, 107, 32);
 
         jBtnBack.setText("Back");
         jBtnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -151,12 +152,12 @@ public class addHdd extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnBack);
-        jBtnBack.setBounds(390, 440, 107, 32);
+        jBtnBack.setBounds(390, 410, 107, 32);
 
         jLblWarning.setForeground(new java.awt.Color(255, 0, 51));
         jLblWarning.setText("Please use \"_\" (underscore) instead of \" \" (space) !");
         jPanel1.add(jLblWarning);
-        jLblWarning.setBounds(190, 400, 290, 16);
+        jLblWarning.setBounds(190, 370, 290, 16);
 
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\addComponent.jpg")); // NOI18N
         jLblBackground.setMaximumSize(new java.awt.Dimension(650, 545));
@@ -206,13 +207,13 @@ public class addHdd extends javax.swing.JFrame {
                 "Size",
                 "Price"}; 
         
-            hddConnect con = new hddConnect();
+            ssdConnect con = new ssdConnect();
             con.add(columns, manufacturer, model, formFactor, hddInterface, size, priceDouble.toString());
         
             jTxtModel.setText("");
             jTxtPrice.setText("");
         
-            JOptionPane.showMessageDialog(this, "HDD successfully added!", "Process Complete", 1);
+            JOptionPane.showMessageDialog(this, "SSD successfully added!", "Process Complete", 1);
             this.dispose();
             browseHardware browse = new browseHardware();
             browse.show();
@@ -250,21 +251,23 @@ public class addHdd extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(addHdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addSsd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(addHdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addSsd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(addHdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addSsd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(addHdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addSsd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new addHdd().setVisible(true);
+                new addSsd().setVisible(true);
             }
         });
     }

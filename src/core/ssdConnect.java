@@ -10,13 +10,13 @@ import java.util.logging.Logger;
  *
  * @author sqlitetutorial.net
  */
-public class hddConnect {
+public class ssdConnect {
      /**
      * Connect to a sample database
      */
     public String url;
     public Connection conn;
-    public hddConnect(){
+    public ssdConnect(){
         String filePath = new File("").getAbsolutePath();
         String filePathChanged = filePath.replaceAll("\\\\", "/");
         String path = "/db/cpb-db.db";
@@ -33,7 +33,7 @@ public class hddConnect {
             conn.close();
             this.finalize();
         } catch (Throwable ex) {
-            Logger.getLogger(hddConnect.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ssdConnect.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
       
@@ -68,12 +68,12 @@ public class hddConnect {
         return result;
     }
     
-    public ArrayList<String> add(String[] columns, String manufacturer, String model, String formFactor, String hddInterface, String size, String price) {
+    public ArrayList<String> add(String[] columns, String manufacturer, String model, String formFactor, String ssdInterface, String size, String price) {
         ArrayList<String> result = new ArrayList<String>();
         String cols = String.join(", ", columns);
-        String sql = "SELECT " + cols + " FROM hdds";
-        String queryInsertData = "INSERT INTO hdds (Manufacturer, Model, Form_Factor, Interface, Size, Price) values ('" + manufacturer + "', '"
-                + model + "', '" + formFactor + "', '" + hddInterface + "', '" + size + "', '" + price + "')";
+        String sql = "SELECT " + cols + " FROM ssds";
+        String queryInsertData = "INSERT INTO ssds (Manufacturer, Model, Form_Factor, Interface, Size, Price) values ('" + manufacturer + "', '"
+                + model + "', '" + formFactor + "', '" + ssdInterface + "', '" + size + "', '" + price + "')";
         try {
             Connection openConn = conn;
             Statement stmt  = openConn.createStatement();

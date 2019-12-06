@@ -13,12 +13,12 @@ import javax.swing.JOptionPane;
  *
  * @author TheSowut
  */
-public class addRam extends javax.swing.JFrame {
+public class addHdd extends javax.swing.JFrame {
 
     /**
      * Creates new form addMotherboard
      */
-    public addRam() {
+    public addHdd() {
         initComponents();
         setLocationRelativeTo(null);
         final ImageIcon title = new ImageIcon(".\\images\\icons\\addComponent.png");
@@ -46,10 +46,12 @@ public class addRam extends javax.swing.JFrame {
         jComboManufacturer = new javax.swing.JComboBox<>();
         jLblModel = new javax.swing.JLabel();
         jTxtModel = new javax.swing.JTextField();
-        jLblType = new javax.swing.JLabel();
-        jComboType = new javax.swing.JComboBox<>();
-        jLblSize = new javax.swing.JLabel();
-        jComboSize = new javax.swing.JComboBox<>();
+        jLblSocket = new javax.swing.JLabel();
+        jComboSocket = new javax.swing.JComboBox<>();
+        jLblChipset = new javax.swing.JLabel();
+        jTxtChipset = new javax.swing.JTextField();
+        jLblFormFactor = new javax.swing.JLabel();
+        jComboFormFactor = new javax.swing.JComboBox<>();
         jLblPrice = new javax.swing.JLabel();
         jTxtPrice = new javax.swing.JTextField();
         jBtnAdd = new javax.swing.JButton();
@@ -60,7 +62,6 @@ public class addRam extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(648, 519));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -77,14 +78,14 @@ public class addRam extends javax.swing.JFrame {
 
         jLblLogo.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\cpblogoSmallFull.png")); // NOI18N
         jPanel1.add(jLblLogo);
-        jLblLogo.setBounds(440, 440, 183, 36);
+        jLblLogo.setBounds(460, 470, 183, 36);
 
         jLblManufacturer.setForeground(new java.awt.Color(255, 255, 255));
         jLblManufacturer.setText("Manufacturer:");
         jPanel1.add(jLblManufacturer);
         jLblManufacturer.setBounds(180, 150, 100, 20);
 
-        jComboManufacturer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADATA", "ASUS", "Corsair", "Crucial", "Fujitsu", "HyperX", "IBM", "Kingston", "Samsung" }));
+        jComboManufacturer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ASRock", "ASUS", "Biostar", "EVGA", "GIGABYTE", "MSI" }));
         jPanel1.add(jComboManufacturer);
         jComboManufacturer.setBounds(390, 150, 100, 26);
 
@@ -95,30 +96,37 @@ public class addRam extends javax.swing.JFrame {
         jPanel1.add(jTxtModel);
         jTxtModel.setBounds(390, 190, 100, 24);
 
-        jLblType.setForeground(new java.awt.Color(255, 255, 255));
-        jLblType.setText("Memory Type:");
-        jPanel1.add(jLblType);
-        jLblType.setBounds(180, 230, 80, 20);
+        jLblSocket.setForeground(new java.awt.Color(255, 255, 255));
+        jLblSocket.setText("Socket: ");
+        jPanel1.add(jLblSocket);
+        jLblSocket.setBounds(180, 230, 80, 20);
 
-        jComboType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DDR2", "DDR2_SODIMM", "DDR3", "DDR3_SODIMM", "DDR4", "DDR4_SODIMM" }));
-        jPanel1.add(jComboType);
-        jComboType.setBounds(390, 230, 100, 26);
+        jComboSocket.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LGA", "LGA_1150", "LGA_1151", "LGA_1155", "LGA_1356", "LGA_1248", "LGA_2011", "LGA_2066", "LGA_3647", "AM1", "AM2", "AM2+", "AM3", "AM3+", "AM4", "SP3", "TR4", "FM1", "FM2", "FM2+" }));
+        jPanel1.add(jComboSocket);
+        jComboSocket.setBounds(390, 230, 100, 26);
 
-        jLblSize.setForeground(new java.awt.Color(255, 255, 255));
-        jLblSize.setText("Memory Size:");
-        jPanel1.add(jLblSize);
-        jLblSize.setBounds(180, 270, 130, 30);
+        jLblChipset.setForeground(new java.awt.Color(255, 255, 255));
+        jLblChipset.setText("Chipset: ");
+        jPanel1.add(jLblChipset);
+        jLblChipset.setBounds(180, 270, 80, 30);
+        jPanel1.add(jTxtChipset);
+        jTxtChipset.setBounds(390, 270, 100, 24);
 
-        jComboSize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "4GB", "4GB(2x2GB)", "8GB", "8GB(2x4GB)", "16GB", "16GB(2x8GB)", "32GB", "32GB(2x16GB)", "64GB", "64GB(2x32GB)" }));
-        jPanel1.add(jComboSize);
-        jComboSize.setBounds(390, 270, 100, 26);
+        jLblFormFactor.setForeground(new java.awt.Color(255, 255, 255));
+        jLblFormFactor.setText("Form Factor: ");
+        jPanel1.add(jLblFormFactor);
+        jLblFormFactor.setBounds(180, 310, 130, 30);
+
+        jComboFormFactor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ATX", "microATX" }));
+        jPanel1.add(jComboFormFactor);
+        jComboFormFactor.setBounds(390, 310, 100, 26);
 
         jLblPrice.setForeground(new java.awt.Color(255, 255, 255));
         jLblPrice.setText("Price: ");
         jPanel1.add(jLblPrice);
-        jLblPrice.setBounds(180, 310, 70, 30);
+        jLblPrice.setBounds(180, 350, 70, 30);
         jPanel1.add(jTxtPrice);
-        jTxtPrice.setBounds(390, 310, 100, 24);
+        jTxtPrice.setBounds(390, 350, 100, 24);
 
         jBtnAdd.setText("Add");
         jBtnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -127,7 +135,7 @@ public class addRam extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnAdd);
-        jBtnAdd.setBounds(170, 410, 107, 32);
+        jBtnAdd.setBounds(170, 440, 107, 32);
 
         jBtnBack.setText("Back");
         jBtnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -136,12 +144,12 @@ public class addRam extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnBack);
-        jBtnBack.setBounds(390, 410, 107, 32);
+        jBtnBack.setBounds(390, 440, 107, 32);
 
         jLblWarning.setForeground(new java.awt.Color(255, 0, 51));
         jLblWarning.setText("Please use \"_\" (underscore) instead of \" \" (space) !");
         jPanel1.add(jLblWarning);
-        jLblWarning.setBounds(190, 360, 290, 16);
+        jLblWarning.setBounds(190, 400, 290, 16);
 
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\addComponent.jpg")); // NOI18N
         jLblBackground.setMaximumSize(new java.awt.Dimension(650, 545));
@@ -172,31 +180,36 @@ public class addRam extends javax.swing.JFrame {
         // TODO add your handling code here:
         String manufacturer = jComboManufacturer.getSelectedItem().toString();
         String model = jTxtModel.getText();
-        String memoryType = jComboType.getSelectedItem().toString();
-        String memorySize = jComboSize.getSelectedItem().toString();
+        String socket = jComboSocket.getSelectedItem().toString();
+        String chipset = jTxtChipset.getText();
+        String formFactor = jComboFormFactor.getSelectedItem().toString();
         String price = jTxtPrice.getText();
         Double priceDouble = 0.0;
         
         priceDouble = Double.parseDouble(price);
-        boolean validationTest = (!manufacturer.equals("") && !manufacturer.equals(" ") && !model.equals("") &&
-                !model.equals(" ") && priceDouble > 0);
+        boolean validationTest = (!manufacturer.equals("") && !manufacturer.equals(" ") &&
+                !model.equals("") && !model.equals(" ") && !socket.equals("") && !socket.equals(" ") &&
+                !chipset.equals("") && !chipset.equals(" ") && !formFactor.equals("") && !formFactor.equals(" ") &&
+                priceDouble > 0);
         
         if (validationTest){
             ArrayList<String> data = new ArrayList<String>();
             String[] columns = {"ID",
                 "Manufacturer",
                 "Model",
-                "Memory_Type",
-                "Memory_Size",
+                "Socket",
+                "Chipset",
+                "Form_Factor",
                 "Price"}; 
         
-            ramConnect con = new ramConnect();
-            con.add(columns, manufacturer, model, memoryType, memorySize, priceDouble.toString());
+            motherboardConnect con = new motherboardConnect();
+            con.add(columns, manufacturer, model, socket, chipset, formFactor, priceDouble.toString());
         
             jTxtModel.setText("");
+            jTxtChipset.setText("");
             jTxtPrice.setText("");
         
-            JOptionPane.showMessageDialog(this, "RAM successfully added!", "Process Complete", 1);
+            JOptionPane.showMessageDialog(this, "HDD successfully added!", "Process Complete", 1);
             this.dispose();
             browseHardware browse = new browseHardware();
             browse.show();
@@ -230,13 +243,13 @@ public class addRam extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(addRam.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addHdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(addRam.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addHdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(addRam.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addHdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(addRam.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addHdd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -244,7 +257,7 @@ public class addRam extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new addRam().setVisible(true);
+                new addHdd().setVisible(true);
             }
         });
     }
@@ -253,19 +266,21 @@ public class addRam extends javax.swing.JFrame {
     private javax.swing.JButton jBtnAdd;
     private javax.swing.JButton jBtnBack;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboFormFactor;
     private javax.swing.JComboBox<String> jComboManufacturer;
-    private javax.swing.JComboBox<String> jComboSize;
-    private javax.swing.JComboBox<String> jComboType;
+    private javax.swing.JComboBox<String> jComboSocket;
     private javax.swing.JLabel jLblBackground;
+    private javax.swing.JLabel jLblChipset;
+    private javax.swing.JLabel jLblFormFactor;
     private javax.swing.JLabel jLblLogo;
     private javax.swing.JLabel jLblManufacturer;
     private javax.swing.JLabel jLblModel;
     private javax.swing.JLabel jLblPrice;
-    private javax.swing.JLabel jLblSize;
+    private javax.swing.JLabel jLblSocket;
     private javax.swing.JLabel jLblTitle;
-    private javax.swing.JLabel jLblType;
     private javax.swing.JLabel jLblWarning;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTxtChipset;
     private javax.swing.JTextField jTxtModel;
     private javax.swing.JTextField jTxtPrice;
     // End of variables declaration//GEN-END:variables

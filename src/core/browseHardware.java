@@ -179,9 +179,9 @@ public class browseHardware extends javax.swing.JFrame {
 
         jBtnCase.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\components\\computercase.jpg")); // NOI18N
         jBtnCase.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBtnCase.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnCaseActionPerformed(evt);
+        jBtnCase.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnCaseMouseClicked(evt);
             }
         });
         jPanel1.add(jBtnCase);
@@ -337,18 +337,13 @@ public class browseHardware extends javax.swing.JFrame {
         goToMenu();
     }//GEN-LAST:event_jBtnBackActionPerformed
 
-    private void jBtnCaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCaseActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Computer Case");
-    }//GEN-LAST:event_jBtnCaseActionPerformed
-
     private void jBtnProcessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnProcessorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtnProcessorActionPerformed
 
     private void jBtnPsuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnPsuMouseClicked
         // TODO add your handling code here:
-                Object[] options = {"Add",
+        Object[] options = {"Add",
                     "Browse",
                     "Cancel"};
         int n = JOptionPane.showOptionDialog(this, "Would you like to add or check current components of the type ?", "Add or Browse PSU",
@@ -367,6 +362,28 @@ public class browseHardware extends javax.swing.JFrame {
             this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         }
     }//GEN-LAST:event_jBtnPsuMouseClicked
+
+    private void jBtnCaseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnCaseMouseClicked
+        // TODO add your handling code here:
+        Object[] options = {"Add",
+                            "Browse",
+                            "Cancel"};
+        int n = JOptionPane.showOptionDialog(this, "Would you like to add or check current components of the type ?", "Add or Browse Computer Cases",
+        JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
+        if (n == 0){
+            this.dispose();
+            addComputerCase add = new addComputerCase();
+            add.show();
+        }
+        else if (n == 1){
+            this.dispose();
+            browseComputerCases browse = new browseComputerCases();
+            browse.show();
+        }
+        else if (n == 2){
+            this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        }           
+    }//GEN-LAST:event_jBtnCaseMouseClicked
 
     /**
      * @param args the command line arguments

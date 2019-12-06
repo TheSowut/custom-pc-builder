@@ -117,7 +117,7 @@ public class addMotherboard extends javax.swing.JFrame {
         jPanel1.add(jLblFormFactor);
         jLblFormFactor.setBounds(180, 310, 130, 30);
 
-        jComboFormFactor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ATX", "microATX" }));
+        jComboFormFactor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ATX", "microATX", "miniITX" }));
         jPanel1.add(jComboFormFactor);
         jComboFormFactor.setBounds(390, 310, 100, 26);
 

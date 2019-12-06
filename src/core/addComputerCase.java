@@ -13,12 +13,12 @@ import javax.swing.JOptionPane;
  *
  * @author TheSowut
  */
-public class addRam extends javax.swing.JFrame {
+public class addComputerCase extends javax.swing.JFrame {
 
     /**
-     * Creates new form addMotherboard
+     * Creates new form addComputerCase
      */
-    public addRam() {
+    public addComputerCase() {
         initComponents();
         setLocationRelativeTo(null);
         final ImageIcon title = new ImageIcon(".\\images\\icons\\addComponent.png");
@@ -48,8 +48,10 @@ public class addRam extends javax.swing.JFrame {
         jTxtModel = new javax.swing.JTextField();
         jLblType = new javax.swing.JLabel();
         jComboType = new javax.swing.JComboBox<>();
-        jLblSize = new javax.swing.JLabel();
-        jComboSize = new javax.swing.JComboBox<>();
+        jLblMotherboardSupport = new javax.swing.JLabel();
+        jComboMotherboardSupport = new javax.swing.JComboBox<>();
+        jLblExtras = new javax.swing.JLabel();
+        jTxtExtras = new javax.swing.JTextField();
         jLblPrice = new javax.swing.JLabel();
         jTxtPrice = new javax.swing.JTextField();
         jBtnAdd = new javax.swing.JButton();
@@ -77,48 +79,55 @@ public class addRam extends javax.swing.JFrame {
 
         jLblLogo.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\cpblogoSmallFull.png")); // NOI18N
         jPanel1.add(jLblLogo);
-        jLblLogo.setBounds(440, 440, 183, 36);
+        jLblLogo.setBounds(440, 440, 183, 30);
 
         jLblManufacturer.setForeground(new java.awt.Color(255, 255, 255));
         jLblManufacturer.setText("Manufacturer:");
         jPanel1.add(jLblManufacturer);
-        jLblManufacturer.setBounds(180, 150, 100, 20);
+        jLblManufacturer.setBounds(180, 130, 100, 20);
 
-        jComboManufacturer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADATA", "ASUS", "Corsair", "Crucial", "Fujitsu", "HyperX", "IBM", "Kingston", "Samsung" }));
+        jComboManufacturer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AOpen", "ASPEVIA", "ASRock", "Antec", "Cooler_Master", "Corsair", "Dell", "Deepcool", "EVGA", "GIGABYTE", "Lian_Li", "MSI", "NZXT", "Razer", "Rosewill" }));
         jPanel1.add(jComboManufacturer);
-        jComboManufacturer.setBounds(390, 150, 100, 26);
+        jComboManufacturer.setBounds(390, 130, 100, 26);
 
         jLblModel.setForeground(new java.awt.Color(255, 255, 255));
         jLblModel.setText("Model:");
         jPanel1.add(jLblModel);
-        jLblModel.setBounds(180, 190, 90, 20);
+        jLblModel.setBounds(180, 170, 90, 20);
         jPanel1.add(jTxtModel);
-        jTxtModel.setBounds(390, 190, 100, 24);
+        jTxtModel.setBounds(390, 170, 100, 24);
 
         jLblType.setForeground(new java.awt.Color(255, 255, 255));
-        jLblType.setText("Memory Type:");
+        jLblType.setText("Type:");
         jPanel1.add(jLblType);
-        jLblType.setBounds(180, 230, 80, 20);
+        jLblType.setBounds(180, 210, 80, 20);
 
-        jComboType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DDR2", "DDR2_SODIMM", "DDR3", "DDR3_SODIMM", "DDR4", "DDR4_SODIMM" }));
+        jComboType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SSF", "Desktop", "Mini_Tower", "Mid_Tower", "Full_Tower" }));
         jPanel1.add(jComboType);
-        jComboType.setBounds(390, 230, 100, 26);
+        jComboType.setBounds(390, 210, 100, 26);
 
-        jLblSize.setForeground(new java.awt.Color(255, 255, 255));
-        jLblSize.setText("Memory Size:");
-        jPanel1.add(jLblSize);
-        jLblSize.setBounds(180, 270, 130, 30);
+        jLblMotherboardSupport.setForeground(new java.awt.Color(255, 255, 255));
+        jLblMotherboardSupport.setText("Motherboard Support:");
+        jPanel1.add(jLblMotherboardSupport);
+        jLblMotherboardSupport.setBounds(180, 250, 130, 30);
 
-        jComboSize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "4GB", "4GB(2x2GB)", "8GB", "8GB(2x4GB)", "16GB", "16GB(2x8GB)", "32GB", "32GB(2x16GB)", "64GB", "64GB(2x32GB)" }));
-        jPanel1.add(jComboSize);
-        jComboSize.setBounds(390, 270, 100, 26);
+        jComboMotherboardSupport.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ATX", "microATX", "miniITX", "microITX/miniITX", "ALL" }));
+        jPanel1.add(jComboMotherboardSupport);
+        jComboMotherboardSupport.setBounds(390, 250, 100, 26);
+
+        jLblExtras.setForeground(new java.awt.Color(255, 255, 255));
+        jLblExtras.setText("Extras:");
+        jPanel1.add(jLblExtras);
+        jLblExtras.setBounds(180, 290, 41, 20);
+        jPanel1.add(jTxtExtras);
+        jTxtExtras.setBounds(390, 290, 100, 24);
 
         jLblPrice.setForeground(new java.awt.Color(255, 255, 255));
         jLblPrice.setText("Price: ");
         jPanel1.add(jLblPrice);
-        jLblPrice.setBounds(180, 310, 70, 30);
+        jLblPrice.setBounds(180, 330, 70, 30);
         jPanel1.add(jTxtPrice);
-        jTxtPrice.setBounds(390, 310, 100, 24);
+        jTxtPrice.setBounds(390, 330, 100, 24);
 
         jBtnAdd.setText("Add");
         jBtnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -127,7 +136,7 @@ public class addRam extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnAdd);
-        jBtnAdd.setBounds(170, 410, 107, 32);
+        jBtnAdd.setBounds(170, 420, 107, 32);
 
         jBtnBack.setText("Back");
         jBtnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -136,12 +145,12 @@ public class addRam extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnBack);
-        jBtnBack.setBounds(390, 410, 107, 32);
+        jBtnBack.setBounds(380, 420, 107, 32);
 
         jLblWarning.setForeground(new java.awt.Color(255, 0, 51));
         jLblWarning.setText("Please use \"_\" (underscore) instead of \" \" (space) !");
         jPanel1.add(jLblWarning);
-        jLblWarning.setBounds(190, 360, 290, 16);
+        jLblWarning.setBounds(190, 380, 290, 16);
 
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\addComponent.jpg")); // NOI18N
         jLblBackground.setMaximumSize(new java.awt.Dimension(650, 545));
@@ -172,31 +181,33 @@ public class addRam extends javax.swing.JFrame {
         // TODO add your handling code here:
         String manufacturer = jComboManufacturer.getSelectedItem().toString();
         String model = jTxtModel.getText();
-        String memoryType = jComboType.getSelectedItem().toString();
-        String memorySize = jComboSize.getSelectedItem().toString();
+        String type = jComboType.getSelectedItem().toString();
+        String motherboardSupport = jComboMotherboardSupport.getSelectedItem().toString();
+        String extras = jTxtExtras.getText();
         String price = jTxtPrice.getText();
         Double priceDouble = 0.0;
         
         priceDouble = Double.parseDouble(price);
-        boolean validationTest = (!manufacturer.equals("") && !manufacturer.equals(" ") && !model.equals("") &&
-                !model.equals(" ") && priceDouble > 0);
+        boolean validationTest = (!manufacturer.equals("") && !manufacturer.equals(" ") &&
+                !model.equals("") && !model.equals(" ") && priceDouble > 0);
         
         if (validationTest){
             ArrayList<String> data = new ArrayList<String>();
             String[] columns = {"ID",
                 "Manufacturer",
                 "Model",
-                "Memory_Type",
-                "Memory_Size",
+                "Type",
+                "Motherboard_Support",
+                "Extras",
                 "Price"}; 
-        
-            ramConnect con = new ramConnect();
-            con.add(columns, manufacturer, model, memoryType, memorySize, priceDouble.toString());
+            computercaseConnect con = new computercaseConnect();
+            con.add(columns, manufacturer, model, type, motherboardSupport, extras, priceDouble.toString());
         
             jTxtModel.setText("");
+            jTxtExtras.setText("");
             jTxtPrice.setText("");
         
-            JOptionPane.showMessageDialog(this, "RAM successfully added!", "Process Complete", 1);
+            JOptionPane.showMessageDialog(this, "Computer Case successfully added!", "Process Complete", 1);
             this.dispose();
             browseHardware browse = new browseHardware();
             browse.show();
@@ -230,13 +241,13 @@ public class addRam extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(addRam.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addComputerCase.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(addRam.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addComputerCase.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(addRam.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addComputerCase.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(addRam.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addComputerCase.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -244,7 +255,7 @@ public class addRam extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new addRam().setVisible(true);
+                new addComputerCase().setVisible(true);
             }
         });
     }
@@ -254,18 +265,20 @@ public class addRam extends javax.swing.JFrame {
     private javax.swing.JButton jBtnBack;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboManufacturer;
-    private javax.swing.JComboBox<String> jComboSize;
+    private javax.swing.JComboBox<String> jComboMotherboardSupport;
     private javax.swing.JComboBox<String> jComboType;
     private javax.swing.JLabel jLblBackground;
+    private javax.swing.JLabel jLblExtras;
     private javax.swing.JLabel jLblLogo;
     private javax.swing.JLabel jLblManufacturer;
     private javax.swing.JLabel jLblModel;
+    private javax.swing.JLabel jLblMotherboardSupport;
     private javax.swing.JLabel jLblPrice;
-    private javax.swing.JLabel jLblSize;
     private javax.swing.JLabel jLblTitle;
     private javax.swing.JLabel jLblType;
     private javax.swing.JLabel jLblWarning;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTxtExtras;
     private javax.swing.JTextField jTxtModel;
     private javax.swing.JTextField jTxtPrice;
     // End of variables declaration//GEN-END:variables

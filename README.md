@@ -6,20 +6,18 @@
 - **Java GUI Application with SQL connectivity dedicated to building a custom PC with user chosen hardware.**
 
 ## ✔ Current Features:
-- Create and Login with an account on a local db and browse the planned features.
+- Create and Login with an Account on a Local DB.
 
 <div><img src="images/demo/loginScreen.JPG" width="304">
 <img src="images/demo/registrationScreen.JPG" width="300"></div>
 
-- Browse the hardware components menu.
+- Browse the Hardware Components Menu.
 <div><img src="images/demo/browseHardware.JPG" width="300"></div>
 
-- Browse and Add New hardware components of your choice.
+- Browse and Add new Hardware Components of your choice.
 <div><img src="images/demo/addComponent.JPG" width="300">
 <img src="images/demo/browseComponent.JPG" width="308"></div>
 
 ## ☁ Planned Features:
-- Create a Custom PC with a variety of hardware components.<br>
-- Save and Load custom setups from a local DB.<br>
-- Add custom hardware components and use them in a setup.<br>
-- More features to be added.
+- Create a Custom PC with a Variety of Hardware Components.<br>
+- Save and Load Custom Setups from on a Local DB.<br>

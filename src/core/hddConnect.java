@@ -68,11 +68,12 @@ public class hddConnect {
         return result;
     }
     
-    public ArrayList<String> add(String[] columns, String manufacturer, String model, String formFactor, String size, String price) {
+    public ArrayList<String> add(String[] columns, String manufacturer, String model, String formFactor, String hddInterface, String size, String price) {
         ArrayList<String> result = new ArrayList<String>();
         String cols = String.join(", ", columns);
         String sql = "SELECT " + cols + " FROM hdds";
-        String queryInsertData = "INSERT INTO hdds (Manufacturer, Model, Form_Factor, Size, Price) values ('" + manufacturer + "', '" + model + "', '" + formFactor + "', '" + size + "', '" + price + "')";
+        String queryInsertData = "INSERT INTO hdds (Manufacturer, Model, Form_Factor, Size, Interface, Price) values ('" + manufacturer + "', '"
+                + model + "', '" + formFactor + "', '" + size + "', '" + hddInterface + "', '" + price + "')";
         try {
             Connection openConn = conn;
             Statement stmt  = openConn.createStatement();

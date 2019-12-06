@@ -50,6 +50,8 @@ public class addHdd extends javax.swing.JFrame {
         jComboSize = new javax.swing.JComboBox<>();
         jLblFormFactor = new javax.swing.JLabel();
         jComboFormFactor = new javax.swing.JComboBox<>();
+        jLblInterface = new javax.swing.JLabel();
+        jComboInterface = new javax.swing.JComboBox<>();
         jLblPrice = new javax.swing.JLabel();
         jTxtPrice = new javax.swing.JTextField();
         jBtnAdd = new javax.swing.JButton();
@@ -81,32 +83,32 @@ public class addHdd extends javax.swing.JFrame {
         jLblManufacturer.setForeground(new java.awt.Color(255, 255, 255));
         jLblManufacturer.setText("Manufacturer:");
         jPanel1.add(jLblManufacturer);
-        jLblManufacturer.setBounds(180, 150, 100, 20);
+        jLblManufacturer.setBounds(180, 130, 100, 20);
 
         jComboManufacturer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dell", "Seagate", "Toshiba", "Western_Digital" }));
         jPanel1.add(jComboManufacturer);
-        jComboManufacturer.setBounds(390, 150, 100, 26);
+        jComboManufacturer.setBounds(390, 130, 100, 26);
 
         jLblModel.setForeground(new java.awt.Color(255, 255, 255));
         jLblModel.setText("Model:");
         jPanel1.add(jLblModel);
-        jLblModel.setBounds(180, 200, 90, 20);
+        jLblModel.setBounds(180, 170, 90, 20);
         jPanel1.add(jTxtModel);
-        jTxtModel.setBounds(390, 200, 100, 24);
+        jTxtModel.setBounds(390, 170, 100, 24);
 
         jLblSize.setForeground(new java.awt.Color(255, 255, 255));
         jLblSize.setText("Size:");
         jPanel1.add(jLblSize);
-        jLblSize.setBounds(180, 300, 80, 20);
+        jLblSize.setBounds(180, 250, 80, 20);
 
         jComboSize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "320GB", "500GB", "1TB", "2TB", "4TB", "6TB", "8TB" }));
         jPanel1.add(jComboSize);
-        jComboSize.setBounds(390, 300, 100, 26);
+        jComboSize.setBounds(390, 250, 100, 26);
 
         jLblFormFactor.setForeground(new java.awt.Color(255, 255, 255));
         jLblFormFactor.setText("Form Factor: ");
         jPanel1.add(jLblFormFactor);
-        jLblFormFactor.setBounds(180, 250, 130, 20);
+        jLblFormFactor.setBounds(180, 210, 130, 20);
 
         jComboFormFactor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2.5_in", "3.5_in" }));
         jComboFormFactor.addActionListener(new java.awt.event.ActionListener() {
@@ -115,14 +117,23 @@ public class addHdd extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jComboFormFactor);
-        jComboFormFactor.setBounds(390, 250, 100, 26);
+        jComboFormFactor.setBounds(390, 210, 100, 26);
+
+        jLblInterface.setForeground(new java.awt.Color(255, 255, 255));
+        jLblInterface.setText("Interface:");
+        jPanel1.add(jLblInterface);
+        jLblInterface.setBounds(180, 290, 54, 16);
+
+        jComboInterface.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SCSI", "SAS", "PATA(IDE)", "SATA", "SATA_II", "SATA_III" }));
+        jPanel1.add(jComboInterface);
+        jComboInterface.setBounds(390, 290, 100, 26);
 
         jLblPrice.setForeground(new java.awt.Color(255, 255, 255));
         jLblPrice.setText("Price: ");
         jPanel1.add(jLblPrice);
-        jLblPrice.setBounds(180, 350, 70, 20);
+        jLblPrice.setBounds(180, 330, 70, 20);
         jPanel1.add(jTxtPrice);
-        jTxtPrice.setBounds(390, 350, 100, 24);
+        jTxtPrice.setBounds(390, 330, 100, 24);
 
         jBtnAdd.setText("Add");
         jBtnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -178,6 +189,7 @@ public class addHdd extends javax.swing.JFrame {
         String model = jTxtModel.getText();
         String formFactor = jComboFormFactor.getSelectedItem().toString();
         String size = jComboSize.getSelectedItem().toString();
+        String hddInterface = jComboInterface.getSelectedItem().toString();
         String price = jTxtPrice.getText();
         Double priceDouble = 0.0;
         
@@ -191,10 +203,11 @@ public class addHdd extends javax.swing.JFrame {
                 "Model",
                 "Form_Factor",
                 "Size",
+                "Interface",
                 "Price"}; 
         
             hddConnect con = new hddConnect();
-            con.add(columns, manufacturer, model, formFactor, size, priceDouble.toString());
+            con.add(columns, manufacturer, model, formFactor, size, hddInterface, priceDouble.toString());
         
             jTxtModel.setText("");
             jTxtPrice.setText("");
@@ -261,10 +274,12 @@ public class addHdd extends javax.swing.JFrame {
     private javax.swing.JButton jBtnBack;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboFormFactor;
+    private javax.swing.JComboBox<String> jComboInterface;
     private javax.swing.JComboBox<String> jComboManufacturer;
     private javax.swing.JComboBox<String> jComboSize;
     private javax.swing.JLabel jLblBackground;
     private javax.swing.JLabel jLblFormFactor;
+    private javax.swing.JLabel jLblInterface;
     private javax.swing.JLabel jLblLogo;
     private javax.swing.JLabel jLblManufacturer;
     private javax.swing.JLabel jLblModel;

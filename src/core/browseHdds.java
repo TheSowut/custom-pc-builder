@@ -87,7 +87,7 @@ public class browseHdds extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Manufacturer", "Model", "Form_Factor", "Size", "Price"
+                "ID", "Manufacturer", "Model", "Form_Factor", "Size", "Interface", "Price"
             }
         ));
         jScrollPane1.setViewportView(jTblHdds);
@@ -169,6 +169,7 @@ public class browseHdds extends javax.swing.JFrame {
             "Model",
             "Form_Factor",
             "Size",
+            "Interface",
             "Price"}; 
         data = c.conn(columns, "hdds");
         for (int i = 0; i < data.size(); i++) {
@@ -178,7 +179,8 @@ public class browseHdds extends javax.swing.JFrame {
                                   row[2],
                                   row[3],
                                   row[4],
-                                  row[5]});
+                                  row[5],
+                                  row[6]});
         }
     }
 

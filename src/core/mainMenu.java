@@ -17,9 +17,9 @@
 package core;
 
 import java.awt.event.FocusEvent;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-
 /**
  *
  * @author TheSowut
@@ -36,6 +36,21 @@ public class mainMenu extends javax.swing.JFrame {
         final ImageIcon background = new ImageIcon(".\\images\\backgrounds\\menuBackground.jpg");
         jLblLogoSmall.setIcon(logoSmall);
         jLblBackground.setIcon(background);
+        
+        jLblMotherboard.hide();
+        jComboMotherboards.hide();
+        jLblMotherboardModel.hide();
+        jComboMotherboardModels.hide();
+        
+        jLblGraphicsCardManufacturers.hide();
+        jComboGraphicsCards.hide();
+        jLblGraphicsCardsModels.hide();
+        jComboGraphicsCardsModels.hide();
+        
+        
+        jBtnNext1.hide();
+        
+        
     }
 
     /**
@@ -49,6 +64,15 @@ public class mainMenu extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLblLogoSmall = new javax.swing.JLabel();
+        jLblMotherboard = new javax.swing.JLabel();
+        jComboMotherboards = new javax.swing.JComboBox<>();
+        jLblMotherboardModel = new javax.swing.JLabel();
+        jLblGraphicsCardManufacturers = new javax.swing.JLabel();
+        jComboGraphicsCards = new javax.swing.JComboBox<>();
+        jLblGraphicsCardsModels = new javax.swing.JLabel();
+        jComboGraphicsCardsModels = new javax.swing.JComboBox<>();
+        jBtnNext1 = new javax.swing.JButton();
+        jComboMotherboardModels = new javax.swing.JComboBox<>();
         jLblBackground = new javax.swing.JLabel();
         jMenu = new javax.swing.JMenuBar();
         jMenuSetups = new javax.swing.JMenu();
@@ -76,6 +100,53 @@ public class mainMenu extends javax.swing.JFrame {
         jPanel1.add(jLblLogoSmall);
         jLblLogoSmall.setBounds(500, 430, 183, 35);
 
+        jLblMotherboard.setForeground(new java.awt.Color(255, 255, 255));
+        jLblMotherboard.setText("Motherboard Manufacturer:");
+        jLblMotherboard.setToolTipText("");
+        jPanel1.add(jLblMotherboard);
+        jLblMotherboard.setBounds(60, 40, 160, 30);
+
+        jComboMotherboards.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboMotherboardsItemStateChanged(evt);
+            }
+        });
+        jPanel1.add(jComboMotherboards);
+        jComboMotherboards.setBounds(50, 90, 170, 26);
+
+        jLblMotherboardModel.setForeground(new java.awt.Color(255, 255, 255));
+        jLblMotherboardModel.setText("Motherboard Model:");
+        jPanel1.add(jLblMotherboardModel);
+        jLblMotherboardModel.setBounds(70, 160, 120, 16);
+
+        jLblGraphicsCardManufacturers.setForeground(new java.awt.Color(255, 255, 255));
+        jLblGraphicsCardManufacturers.setText("Graphics Card Manufacturer:");
+        jPanel1.add(jLblGraphicsCardManufacturers);
+        jLblGraphicsCardManufacturers.setBounds(260, 120, 170, 16);
+
+        jPanel1.add(jComboGraphicsCards);
+        jComboGraphicsCards.setBounds(260, 150, 160, 26);
+
+        jLblGraphicsCardsModels.setForeground(new java.awt.Color(255, 255, 255));
+        jLblGraphicsCardsModels.setText("Graphics Card Model:");
+        jPanel1.add(jLblGraphicsCardsModels);
+        jLblGraphicsCardsModels.setBounds(270, 200, 130, 16);
+
+        jPanel1.add(jComboGraphicsCardsModels);
+        jComboGraphicsCardsModels.setBounds(270, 230, 120, 26);
+
+        jBtnNext1.setText("Next");
+        jBtnNext1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnNext1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBtnNext1);
+        jBtnNext1.setBounds(310, 400, 56, 32);
+
+        jPanel1.add(jComboMotherboardModels);
+        jComboMotherboardModels.setBounds(60, 190, 140, 26);
+
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\menuBackground.jpg")); // NOI18N
         jPanel1.add(jLblBackground);
         jLblBackground.setBounds(0, 0, 700, 480);
@@ -88,6 +159,11 @@ public class mainMenu extends javax.swing.JFrame {
         jMenuSetupsCreate.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, 0));
         jMenuSetupsCreate.setText("Create a new setup");
         jMenuSetupsCreate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuSetupsCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuSetupsCreateActionPerformed(evt);
+            }
+        });
         jMenuSetups.add(jMenuSetupsCreate);
 
         jMenuSetupsBrowse.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, 0));
@@ -153,12 +229,6 @@ public class mainMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuAboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuAboutMouseClicked
-        // TODO add your handling code here:
-        About about = new About();
-        about.showAbout();
-    }//GEN-LAST:event_jMenuAboutMouseClicked
-
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
         askOnQuit.askForExit(this);
@@ -181,6 +251,71 @@ public class mainMenu extends javax.swing.JFrame {
         Help help = new Help();
         help.showHelp();
     }//GEN-LAST:event_jMenuHelpMouseClicked
+
+    private void jMenuSetupsCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSetupsCreateActionPerformed
+        // TODO add your handling code here:
+        jLblMotherboard.show();
+        jComboMotherboards.show();
+        jBtnNext1.show();
+        jLblGraphicsCardManufacturers.show();
+        jLblGraphicsCardsModels.show();
+        jComboGraphicsCards.show();
+        jComboGraphicsCardsModels.show();
+        
+        motherboardConnect connmoth = new motherboardConnect();
+        ArrayList<String> output = new ArrayList<String>();
+        output = connmoth.getMotherboard("");
+        for (int i = 0; i < output.size(); i++) {
+            jComboMotherboards.addItem(output.get(i));
+        }
+        
+        graphicsCardConnect conngrap = new graphicsCardConnect();
+        ArrayList<String> outputGraphics = new ArrayList<String>();
+        outputGraphics = conngrap.getGraphicsCard("");
+        for (int i = 0; i < outputGraphics.size(); i++) {
+            jComboGraphicsCards.addItem(outputGraphics.get(i));
+        }
+    }//GEN-LAST:event_jMenuSetupsCreateActionPerformed
+
+    private void jMenuAboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuAboutMouseClicked
+        // TODO add your handling code here:
+        About about = new About();
+        about.showAbout();
+    }//GEN-LAST:event_jMenuAboutMouseClicked
+
+    private void jComboMotherboardsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboMotherboardsItemStateChanged
+        // TODO add your handling code here:
+        jComboMotherboardModels.removeAllItems();
+        jLblMotherboardModel.show();
+        jComboMotherboardModels.show();
+        String manufacturer = jComboMotherboards.getSelectedItem().toString();
+        motherboardConnect connmoth = new motherboardConnect();
+        ArrayList<String> output = new ArrayList<String>();
+        output = connmoth.getMotherboardModel(manufacturer);
+        for (int i = 0; i < output.size(); i++) {
+            jComboMotherboardModels.addItem(output.get(i));
+        }
+    }//GEN-LAST:event_jComboMotherboardsItemStateChanged
+
+    private void jBtnNext1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnNext1ActionPerformed
+        // TODO add your handling code here:
+        String chosenMotherboardManufacturer = jComboMotherboards.getSelectedItem().toString();
+        String chosenMotherboardModel = jComboMotherboardModels.getSelectedItem().toString();
+        String chosenMotheboard = chosenMotherboardManufacturer + " " + chosenMotherboardModel;
+        
+        String chosenGraphicsCardManufacturer = jComboGraphicsCards.getSelectedItem().toString();
+        String chosenGraphicsCardModel = jComboGraphicsCardsModels.getSelectedItem().toString();
+        String chosenGraphicsCard = chosenGraphicsCardManufacturer + " " + chosenGraphicsCardModel;
+        
+        
+        
+        
+        ArrayList<String> data = new ArrayList<String>();
+        createSetupConnect conn = new createSetupConnect();
+        
+        //data = conn.createSetup(chosenMotheboard, chosenGraphicsCard, );
+        conn.close();
+    }//GEN-LAST:event_jBtnNext1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,8 +352,17 @@ public class mainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnNext1;
+    private javax.swing.JComboBox<String> jComboGraphicsCards;
+    private javax.swing.JComboBox<String> jComboGraphicsCardsModels;
+    private javax.swing.JComboBox<String> jComboMotherboardModels;
+    private javax.swing.JComboBox<String> jComboMotherboards;
     private javax.swing.JLabel jLblBackground;
+    private javax.swing.JLabel jLblGraphicsCardManufacturers;
+    private javax.swing.JLabel jLblGraphicsCardsModels;
     private javax.swing.JLabel jLblLogoSmall;
+    private javax.swing.JLabel jLblMotherboard;
+    private javax.swing.JLabel jLblMotherboardModel;
     private javax.swing.JMenuBar jMenu;
     private javax.swing.JMenu jMenuAbout;
     private javax.swing.JMenu jMenuHardware;

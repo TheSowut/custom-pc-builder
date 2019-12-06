@@ -161,9 +161,9 @@ public class loginForm extends javax.swing.JFrame {
         String password = jPassword.getText();
         
         // create a check, whether the password is correct
-        connectLoginPassword checkPassword = new connectLoginPassword();
-        connectLoginPassword.checkPassword(username);
-        String passwordCheck = connectLoginPassword.checkPassword(username);
+        connectLogin checkPassword = new connectLogin();
+        connectLogin.checkPassword(username);
+        String passwordCheck = connectLogin.checkPassword(username);
         
         // if to handle if the inputted password matches the one for the username
         if (password.equals(passwordCheck)){

@@ -100,10 +100,81 @@ public class motherboardConnect {
         }
         return result;
     }
+    
+    public ArrayList<String> getMotherboard(String term) {
+        ArrayList<String> result = new ArrayList<String>();
+        Connection conn = null;
+        try {
+            String filePath = new File("").getAbsolutePath();
+            String filePathChanged = filePath.replaceAll("\\\\", "/");
+            String path = "/db/cpb-db.db";
+            String fullPath = "jdbc:sqlite:" + filePathChanged + path;
+            
+            conn = DriverManager.getConnection(fullPath);
+            String queryBrowseModels = ("SELECT DISTINCT Manufacturer FROM motherboards");
+            try (Connection openConn = conn;
+                Statement stmt  = openConn.createStatement();
+                ResultSet rs    = stmt.executeQuery(queryBrowseModels)){
+                while (rs.next()) {
+                    result.add(rs.getString("Manufacturer"));
+                }
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+            
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return result;
+    }
+
+    public ArrayList<String> getMotherboardModel(String brand) {
+        ArrayList<String> result = new ArrayList<String>();
+        Connection conn = null;
+        try {
+            String filePath = new File("").getAbsolutePath();
+            String filePathChanged = filePath.replaceAll("\\\\", "/");
+            String path = "/db/cpb-db.db";
+            String fullPath = "jdbc:sqlite:" + filePathChanged + path;
+            
+            conn = DriverManager.getConnection(fullPath);
+            String queryBrowseModels = ("SELECT Model FROM motherboards WHERE Manufacturer = " + "'" + brand + "'");
+            try (Connection openConn = conn;
+                Statement stmt  = openConn.createStatement();
+                ResultSet rs    = stmt.executeQuery(queryBrowseModels)){
+                while (rs.next()) {
+                    result.add(rs.getString("Model"));
+                }
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+            
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return result;
+    }
+}
     /**
      * @param args the command line arguments
      */
 //    public static void main(String[] args) {
 //        connect();
 //    }
-}
+//}

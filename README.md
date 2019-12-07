@@ -8,16 +8,18 @@
 ## ✔ Current Features:
 - Create and Login with an Account on a Local DB.
 
-<div><img src="images/demo/loginScreen.JPG" width="304">
-<img src="images/demo/registrationScreen.JPG" width="300"></div>
+<div><img src="images/demo/loginScreenCropped.JPG" width="304">
+<img src="images/demo/registrationScreenCropped.JPG" width="300"></div>
 
-- Browse the Hardware Components Menu.
-<div><img src="images/demo/browseHardware.JPG" width="300"></div>
+- Browse a Variety of Hardware Components used in Setup Creation.
+<div><img src="images/demo/browseHardwareCropped.JPG" width="300"></div>
 
 - Browse and Add new Hardware Components of your choice.
-<div><img src="images/demo/addComponent.JPG" width="300">
-<img src="images/demo/browseComponent.JPG" width="308"></div>
+<div><img src="images/demo/addComponentCropped.JPG" width="300">
+<img src="images/demo/browseComponentCropped.JPG" width="309.5"></div>
+
+- Create and Browse Setups.
+<div><img src="images/demo/createNewSetup.png" width="650"></div>
 
 ## ☁ Planned Features:
-- Create a Custom PC with a Variety of Hardware Components.<br>
-- Save and Load Custom Setups from on a Local DB.<br>
+- Option for Setup & Components removal.

@@ -17,9 +17,11 @@
 package core;
 
 import java.awt.event.FocusEvent;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author TheSowut
@@ -63,6 +65,7 @@ public class mainMenu extends javax.swing.JFrame {
     public static String chosenSsd = "";
     
     public static Double fullPrice = 0.0;
+    public static DefaultTableModel t;
     
     public mainMenu() {
         initComponents();
@@ -120,6 +123,10 @@ public class mainMenu extends javax.swing.JFrame {
         jBtnNext6.hide();
         jBtnNext7.hide();
         jBtnNext8.hide();
+        jBtnSetupsClose.hide();
+        jBtnSetupCreationCancel.hide();
+        
+        jTableSetups.hide();
     }
 
     /**
@@ -173,6 +180,10 @@ public class mainMenu extends javax.swing.JFrame {
         jLblSsdModels = new javax.swing.JLabel();
         jComboSsdModels = new javax.swing.JComboBox<>();
         jBtnNext8 = new javax.swing.JButton();
+        jBtnSetupCreationCancel = new javax.swing.JButton();
+        jTableSetups = new javax.swing.JScrollPane();
+        jTblSetups = new javax.swing.JTable();
+        jBtnSetupsClose = new javax.swing.JButton();
         jLblBackground = new javax.swing.JLabel();
         jMenu = new javax.swing.JMenuBar();
         jMenuSetups = new javax.swing.JMenu();
@@ -229,7 +240,7 @@ public class mainMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnNext1);
-        jBtnNext1.setBounds(300, 350, 56, 32);
+        jBtnNext1.setBounds(300, 350, 70, 32);
 
         jLblGraphicsCardManufacturers.setForeground(new java.awt.Color(255, 255, 255));
         jLblGraphicsCardManufacturers.setText("Graphics Card Manufacturer:");
@@ -259,7 +270,7 @@ public class mainMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnNext2);
-        jBtnNext2.setBounds(300, 350, 56, 32);
+        jBtnNext2.setBounds(300, 350, 70, 32);
 
         jLblProcessorManufacturer.setForeground(new java.awt.Color(255, 255, 255));
         jLblProcessorManufacturer.setText("Processor Manufacturer:");
@@ -290,7 +301,7 @@ public class mainMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnNext3);
-        jBtnNext3.setBounds(300, 350, 56, 32);
+        jBtnNext3.setBounds(300, 350, 70, 32);
 
         jLblPsuManufacturers.setForeground(new java.awt.Color(255, 255, 255));
         jLblPsuManufacturers.setText("PSU Manufacturer:");
@@ -321,7 +332,7 @@ public class mainMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnNext4);
-        jBtnNext4.setBounds(300, 350, 56, 32);
+        jBtnNext4.setBounds(300, 350, 70, 32);
 
         jLblRamManufacturers.setForeground(new java.awt.Color(255, 255, 255));
         jLblRamManufacturers.setText("RAM Manufacturer:");
@@ -352,7 +363,7 @@ public class mainMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnNext5);
-        jBtnNext5.setBounds(300, 350, 56, 32);
+        jBtnNext5.setBounds(300, 350, 70, 32);
 
         jLblCaseManufacturer.setForeground(new java.awt.Color(255, 255, 255));
         jLblCaseManufacturer.setText("Computer Case Manufacturer:");
@@ -383,7 +394,7 @@ public class mainMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnNext6);
-        jBtnNext6.setBounds(300, 350, 56, 32);
+        jBtnNext6.setBounds(300, 350, 70, 32);
 
         jLblHddManufacturer.setForeground(new java.awt.Color(255, 255, 255));
         jLblHddManufacturer.setText("HDD Manufacturer:");
@@ -414,7 +425,7 @@ public class mainMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnNext7);
-        jBtnNext7.setBounds(300, 350, 56, 32);
+        jBtnNext7.setBounds(300, 350, 70, 32);
 
         jLblSsdManufacturer.setForeground(new java.awt.Color(255, 255, 255));
         jLblSsdManufacturer.setText("SSD Manufacturer:");
@@ -445,7 +456,38 @@ public class mainMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnNext8);
-        jBtnNext8.setBounds(300, 350, 56, 32);
+        jBtnNext8.setBounds(300, 350, 70, 32);
+
+        jBtnSetupCreationCancel.setText("Cancel");
+        jBtnSetupCreationCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnSetupCreationCancelActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBtnSetupCreationCancel);
+        jBtnSetupCreationCancel.setBounds(250, 420, 170, 32);
+
+        jTblSetups.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Motherboard", "Graphics_Card", "Processor", "PSU", "RAM", "Computer_Case", "HDD", "SSD", "Price"
+            }
+        ));
+        jTableSetups.setViewportView(jTblSetups);
+
+        jPanel1.add(jTableSetups);
+        jTableSetups.setBounds(10, 80, 670, 320);
+
+        jBtnSetupsClose.setText("Close");
+        jBtnSetupsClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnSetupsCloseActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBtnSetupsClose);
+        jBtnSetupsClose.setBounds(300, 430, 77, 32);
 
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\menuBackground.jpg")); // NOI18N
         jPanel1.add(jLblBackground);
@@ -480,6 +522,11 @@ public class mainMenu extends javax.swing.JFrame {
         jMenuSetupsDelete.setText("Delete a setup");
         jMenuSetupsDelete.setContentAreaFilled(false);
         jMenuSetupsDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuSetupsDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuSetupsDeleteActionPerformed(evt);
+            }
+        });
         jMenuSetups.add(jMenuSetupsDelete);
 
         jMenu.add(jMenuSetups);
@@ -536,9 +583,44 @@ public class mainMenu extends javax.swing.JFrame {
 
     private void jMenuSetupsBrowseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSetupsBrowseActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Coming soon !", "To be added", 2);
+        jTableSetups.show();
+        jBtnSetupsClose.show();
+        
+        t = (DefaultTableModel) jTblSetups.getModel();
+        t.setRowCount(0);
+        tableSelect();
+        jTableSetups.setEnabled(false);
     }//GEN-LAST:event_jMenuSetupsBrowseActionPerformed
 
+    private void tableSelect() {
+        ArrayList<String> data = new ArrayList<String>();
+            String[] columns = {"ID",
+            "Motherboard",
+            "Graphics_Card",
+            "Processor",
+            "PSU",
+            "RAM",
+            "Computer_Case",
+            "HDD",
+            "SSD",
+            "Price"}; 
+            connectSetup conn = new connectSetup();
+            data = conn.fillTable(columns, "setups");
+        for (int i = 0; i < data.size(); i++) {
+            String[] row = data.get(i).split(" ");
+            t.addRow(new Object[]{row[0],
+                                  row[1],
+                                  row[2],
+                                  row[3],
+                                  row[4],
+                                  row[5],
+                                  row[6],
+                                  row[7],
+                                  row[8],
+                                  row[9]});
+        }
+    }
+    
     private void jMenuHardwareMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuHardwareMouseClicked
         // TODO add your handling code here:
         this.dispose(); 
@@ -559,6 +641,7 @@ public class mainMenu extends javax.swing.JFrame {
         jLblMotherboardModels.show();
         jComboMotherboardModels.show();
         jBtnNext1.show();
+        jBtnSetupCreationCancel.show();
         
         getHardwareComponents connmoth = new getHardwareComponents();
         ArrayList<String> outputmoth = new ArrayList<String>();
@@ -635,8 +718,7 @@ public class mainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         chosenMotherboardManufacturer = jComboMotherboards.getSelectedItem().toString();
         chosenMotherboardModel = jComboMotherboardModels.getSelectedItem().toString();
-        chosenMotheboard = chosenMotherboardManufacturer + "___" + chosenMotherboardModel;
-        System.out.println(chosenMotheboard);
+        chosenMotheboard = chosenMotherboardManufacturer + "-" + chosenMotherboardModel;
         
         jLblGraphicsCardManufacturers.show();
         jLblGraphicsCardsModels.show();
@@ -667,9 +749,8 @@ public class mainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         chosenGraphicsCardManufacturer = jComboGraphicsCards.getSelectedItem().toString();
         chosenGraphicsCardModel = jComboGraphicsCardsModels.getSelectedItem().toString();
-        chosenGraphicsCard = chosenGraphicsCardManufacturer + "___" +chosenGraphicsCardModel;
-        System.out.println(chosenGraphicsCard);
-
+        chosenGraphicsCard = chosenGraphicsCardManufacturer + "-" +chosenGraphicsCardModel;
+        
         jLblProcessorManufacturer.show();
         jComboProcessors.show();
         jLblProcessorModels.show();
@@ -710,8 +791,7 @@ public class mainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         chosenProcessorManufacturer = jComboProcessors.getSelectedItem().toString();
         chosenProcessorModel = jComboProcessorModels.getSelectedItem().toString();
-        chosenProcessor = chosenProcessorManufacturer + "___" + chosenProcessorModel;
-        System.out.println(chosenProcessor);
+        chosenProcessor = chosenProcessorManufacturer + "-" + chosenProcessorModel;
         
         jLblPsuManufacturers.show();
         jComboPsus.show();
@@ -730,8 +810,7 @@ public class mainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         chosenPsuManufacturer = jComboPsus.getSelectedItem().toString();
         chosenPsuModel = jComboPsuModels.getSelectedItem().toString();
-        chosenPsu = chosenPsuManufacturer + "___" + chosenPsuModel;
-        System.out.println(chosenPsu);
+        chosenPsu = chosenPsuManufacturer + "-" + chosenPsuModel;
         
         jLblRamManufacturers.show();
         jComboRam.show();
@@ -774,8 +853,7 @@ public class mainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         chosenRamManufacturer = jComboRam.getSelectedItem().toString();
         chosenRamModel = jComboRamModels.getSelectedItem().toString();
-        chosenRam = chosenRamManufacturer + "___" + chosenRamModel;
-        System.out.println(chosenRam);
+        chosenRam = chosenRamManufacturer + "-" + chosenRamModel;
         
         jLblCaseManufacturer.show();
         jComboCases.show();
@@ -806,8 +884,7 @@ public class mainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         chosenComputerCaseManufacturer = jComboCases.getSelectedItem().toString();
         chosenComputerCaseModel = jComboCaseModels.getSelectedItem().toString();
-        chosenComputerCase = chosenComputerCaseManufacturer + "___" + chosenComputerCaseModel;
-        System.out.println(chosenComputerCase);
+        chosenComputerCase = chosenComputerCaseManufacturer + "-" + chosenComputerCaseModel;
         
         jLblHddManufacturer.show();
         jComboHdds.show();
@@ -826,8 +903,7 @@ public class mainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         chosenHddManufacturer = jComboHdds.getSelectedItem().toString();
         chosenHddModel = jComboHddModels.getSelectedItem().toString();
-        chosenHdd = chosenHddManufacturer + "___" + chosenHddModel;
-        System.out.println(chosenHdd);
+        chosenHdd = chosenHddManufacturer + "-" + chosenHddModel;
         
         jLblSsdManufacturer.show();
         jComboSsds.show();
@@ -870,21 +946,59 @@ public class mainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         chosenSsdManufacturer = jComboSsds.getSelectedItem().toString();
         chosenSsdModel = jComboSsdModels.getSelectedItem().toString();
-        chosenSsd = chosenSsdManufacturer + "___" + chosenSsdModel;
-        System.out.println(chosenSsd);
+        chosenSsd = chosenSsdManufacturer + "-" + chosenSsdModel;
         
         jLblSsdManufacturer.hide();
         jComboSsds.hide();
         jLblSsdModels.hide();
         jComboSsdModels.hide();
         jBtnNext8.hide();
+        jBtnSetupCreationCancel.hide();
         
         JOptionPane.showMessageDialog(this, "Setup successfully created !");
         
         this.dispose();
         mainMenu menu = new mainMenu();
         menu.show();
+        
+        getHardwareComponents conn = new getHardwareComponents();
+        Double motherboardPrice = conn.getPrice("motherboards", chosenMotherboardModel);
+        Double graphicsCardPrice = conn.getPrice("graphicscards", chosenGraphicsCardModel);
+        Double processorPrice = conn.getPrice("processors", chosenProcessorModel);
+        Double psuPrice = conn.getPrice("psus", chosenPsuModel);
+        Double ramPrice = conn.getPrice("ram", chosenRamModel);
+        Double computerCasePrice = conn.getPrice("computercases", chosenComputerCaseModel);
+        Double hddPrice = conn.getPrice("hdds", chosenHddModel);
+        Double ssdPrice = conn.getPrice("ssds", chosenSsdModel);
+
+        fullPrice = motherboardPrice + graphicsCardPrice + processorPrice + psuPrice + ramPrice + computerCasePrice +
+                hddPrice + ssdPrice;
+        DecimalFormat decimalFormat = new DecimalFormat("$#.00");
+        String fullPriceString = decimalFormat.format(fullPrice);
+        
+        connectSetup setupCreate = new connectSetup();
+        String[] columns = {"Motherboard", "Graphics_Card", "Processor", "PSU", "RAM", "Computer_Case", "HDD", "SSD", "Price"};
+        setupCreate.createSetup(columns, chosenMotheboard, chosenGraphicsCard, chosenProcessor, chosenPsu, chosenRam,
+                chosenComputerCase, chosenHdd, chosenSsd, fullPriceString);
     }//GEN-LAST:event_jBtnNext8ActionPerformed
+
+    private void jBtnSetupsCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSetupsCloseActionPerformed
+        // TODO add your handling code here:
+        jTableSetups.hide();
+        jBtnSetupsClose.hide();
+    }//GEN-LAST:event_jBtnSetupsCloseActionPerformed
+
+    private void jBtnSetupCreationCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSetupCreationCancelActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        mainMenu menu = new mainMenu();
+        menu.show();
+    }//GEN-LAST:event_jBtnSetupCreationCancelActionPerformed
+
+    private void jMenuSetupsDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSetupsDeleteActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "Coming soon.");
+    }//GEN-LAST:event_jMenuSetupsDeleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -929,6 +1043,8 @@ public class mainMenu extends javax.swing.JFrame {
     private javax.swing.JButton jBtnNext6;
     private javax.swing.JButton jBtnNext7;
     private javax.swing.JButton jBtnNext8;
+    private javax.swing.JButton jBtnSetupCreationCancel;
+    private javax.swing.JButton jBtnSetupsClose;
     private javax.swing.JComboBox<String> jComboCaseModels;
     private javax.swing.JComboBox<String> jComboCases;
     private javax.swing.JComboBox<String> jComboGraphicsCards;
@@ -972,5 +1088,7 @@ public class mainMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuSetupsCreate;
     private javax.swing.JMenuItem jMenuSetupsDelete;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jTableSetups;
+    private javax.swing.JTable jTblSetups;
     // End of variables declaration//GEN-END:variables
 }

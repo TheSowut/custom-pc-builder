@@ -161,7 +161,6 @@ public class getHardwareComponents {
             conn = DriverManager.getConnection(fullPath);
             String queryBrowseModels = ("SELECT DISTINCT Model FROM " + table + " WHERE " + col + " = " + "'" + manufacturer + "'"
                     + " AND Socket = " + "'" + socket + "'");
-            System.out.println(queryBrowseModels);
             try (Connection openConn = conn;
                 Statement stmt  = openConn.createStatement();
                 ResultSet rs    = stmt.executeQuery(queryBrowseModels)){
@@ -197,12 +196,47 @@ public class getHardwareComponents {
             
             conn = DriverManager.getConnection(fullPath);
             String queryBrowseModels = ("SELECT DISTINCT Brand FROM " + table + " WHERE Socket = " + "'" + socket + "'");
-            System.out.println(queryBrowseModels);
             try (Connection openConn = conn;
                 Statement stmt  = openConn.createStatement();
                 ResultSet rs    = stmt.executeQuery(queryBrowseModels)){
                 while (rs.next()) {
                     result.add(rs.getString("Brand"));
+                }
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+            
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return result;
+    }
+    
+        public Double getPrice(String table, String model) {
+        Double result = 0.0;
+        Connection conn = null;
+        try {
+            String filePath = new File("").getAbsolutePath();
+            String filePathChanged = filePath.replaceAll("\\\\", "/");
+            String path = "/db/cpb-db.db";
+            String fullPath = "jdbc:sqlite:" + filePathChanged + path;
+            
+            conn = DriverManager.getConnection(fullPath);
+            String queryBrowseModels = ("SELECT DISTINCT Price FROM " + table + " WHERE Model = " + "'" + model + "'");
+            System.out.println(queryBrowseModels);
+            try (Connection openConn = conn;
+                Statement stmt  = openConn.createStatement();
+                ResultSet rs    = stmt.executeQuery(queryBrowseModels)){
+                while (rs.next()) {
+                    result = result.parseDouble(rs.getString("Price"));
                 }
             } catch (SQLException e) {
                 System.out.println(e.getMessage());

@@ -46,12 +46,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - readme
 - roadmap
 
-## [0.0.5] - DATE
+## [0.0.5] - 07.12.2019
+### Added
+- Setup Creation
+- Setup Browsing
+- Processor filtering based on with Motherboard Socket
+
+## Changed
+- The queries for data obtaining used for the setup creation
+
+## [1.0.0] - DATE
 ### Added
 -
 
-## Changed
+### Changed
 -
 
-## Removed
+### Removed
 -

@@ -32,6 +32,7 @@ public class mainMenu extends javax.swing.JFrame {
     public static String chosenMotherboardManufacturer = "";
     public static String chosenMotherboardModel = "";
     public static String chosenMotheboard = "";
+    public static String socket = "";
     
     public static String chosenGraphicsCardManufacturer = "";
     public static String chosenGraphicsCardModel = "";
@@ -555,6 +556,8 @@ public class mainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         jLblMotherboard.show();
         jComboMotherboards.show();
+        jLblMotherboardModels.show();
+        jComboMotherboardModels.show();
         jBtnNext1.show();
         
         getHardwareComponents connmoth = new getHardwareComponents();
@@ -569,13 +572,6 @@ public class mainMenu extends javax.swing.JFrame {
         outputGraphics = conngrap.getManufacturer("", "graphicscards", "Manufacturer");
         for (int i = 0; i < outputGraphics.size(); i++) {
             jComboGraphicsCards.addItem(outputGraphics.get(i));
-        }
-        
-        getHardwareComponents connproc = new getHardwareComponents();
-        ArrayList<String> outputProcessors = new ArrayList<String>();
-        outputProcessors = connproc.getManufacturer("", "processors", "Brand");
-        for (int i = 0; i < outputProcessors.size(); i++) {
-            jComboProcessors.addItem(outputProcessors.get(i));
         }
         
         getHardwareComponents connpsu = new getHardwareComponents();
@@ -673,7 +669,7 @@ public class mainMenu extends javax.swing.JFrame {
         chosenGraphicsCardModel = jComboGraphicsCardsModels.getSelectedItem().toString();
         chosenGraphicsCard = chosenGraphicsCardManufacturer + "___" +chosenGraphicsCardModel;
         System.out.println(chosenGraphicsCard);
-        
+
         jLblProcessorManufacturer.show();
         jComboProcessors.show();
         jLblProcessorModels.show();
@@ -685,6 +681,16 @@ public class mainMenu extends javax.swing.JFrame {
         jLblGraphicsCardsModels.hide();
         jComboGraphicsCardsModels.hide();
         jBtnNext2.hide();
+        
+        getHardwareComponents get = new getHardwareComponents();
+        socket = get.getSocket(chosenMotherboardModel);
+        
+        getHardwareComponents connproc = new getHardwareComponents();
+        ArrayList<String> outputProcessors = new ArrayList<String>();
+        outputProcessors = connproc.getManufacturerBySocket("processors", socket);
+        for (int i = 0; i < outputProcessors.size(); i++) {
+            jComboProcessors.addItem(outputProcessors.get(i));
+        }
     }//GEN-LAST:event_jBtnNext2ActionPerformed
 
     private void jComboProcessorsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboProcessorsItemStateChanged
@@ -693,7 +699,8 @@ public class mainMenu extends javax.swing.JFrame {
         String brand = jComboProcessors.getSelectedItem().toString();
         getHardwareComponents connproc = new getHardwareComponents();
         ArrayList<String> output = new ArrayList<String>();
-        output = connproc.getModel(brand, "processors", "Brand");
+        output = connproc.getModelBySocket(brand, "processors", "Brand", socket);
+        //output = connproc.getModel(brand, "processors", "Brand");
         for (int i = 0; i < output.size(); i++) {
             jComboProcessorModels.addItem(output.get(i));
         }

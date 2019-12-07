@@ -113,6 +113,112 @@ public class getHardwareComponents {
         }
         return result;
     }
+    
+    public String getSocket(String model) {
+        String result = "";
+        Connection conn = null;
+        try {
+            String filePath = new File("").getAbsolutePath();
+            String filePathChanged = filePath.replaceAll("\\\\", "/");
+            String path = "/db/cpb-db.db";
+            String fullPath = "jdbc:sqlite:" + filePathChanged + path;
+            
+            conn = DriverManager.getConnection(fullPath);
+            String queryBrowseModels = ("SELECT DISTINCT Socket FROM motherboards WHERE Model = " + "'" + model + "'");
+            try (Connection openConn = conn;
+                Statement stmt  = openConn.createStatement();
+                ResultSet rs    = stmt.executeQuery(queryBrowseModels)){
+                while (rs.next()) {
+                    result = rs.getString("Socket");
+                }
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+            
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return result;
+    }
+    
+    public ArrayList<String> getModelBySocket(String manufacturer, String table, String col, String socket) {
+        ArrayList<String> result = new ArrayList<String>();
+        Connection conn = null;
+        try {
+            String filePath = new File("").getAbsolutePath();
+            String filePathChanged = filePath.replaceAll("\\\\", "/");
+            String path = "/db/cpb-db.db";
+            String fullPath = "jdbc:sqlite:" + filePathChanged + path;
+            
+            conn = DriverManager.getConnection(fullPath);
+            String queryBrowseModels = ("SELECT DISTINCT Model FROM " + table + " WHERE " + col + " = " + "'" + manufacturer + "'"
+                    + " AND Socket = " + "'" + socket + "'");
+            try (Connection openConn = conn;
+                Statement stmt  = openConn.createStatement();
+                ResultSet rs    = stmt.executeQuery(queryBrowseModels)){
+                while (rs.next()) {
+                    result.add(rs.getString("Model"));
+                }
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+            
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return result;
+    }
+    
+    public ArrayList<String> getManufacturerBySocket(String table, String socket) {
+        ArrayList<String> result = new ArrayList<String>();
+        Connection conn = null;
+        try {
+            String filePath = new File("").getAbsolutePath();
+            String filePathChanged = filePath.replaceAll("\\\\", "/");
+            String path = "/db/cpb-db.db";
+            String fullPath = "jdbc:sqlite:" + filePathChanged + path;
+            
+            conn = DriverManager.getConnection(fullPath);
+            String queryBrowseModels = ("SELECT DISTINCT Brand FROM " + table + " WHERE Socket = " + "'" + socket + "'");
+            try (Connection openConn = conn;
+                Statement stmt  = openConn.createStatement();
+                ResultSet rs    = stmt.executeQuery(queryBrowseModels)){
+                while (rs.next()) {
+                    result.add(rs.getString("Brand"));
+                }
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+            
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return result;
+    }
     /**
      * @param args the command line arguments
      */

@@ -880,6 +880,10 @@ public class mainMenu extends javax.swing.JFrame {
         jBtnNext8.hide();
         
         JOptionPane.showMessageDialog(this, "Setup successfully created !");
+        
+        this.dispose();
+        mainMenu menu = new mainMenu();
+        menu.show();
     }//GEN-LAST:event_jBtnNext8ActionPerformed
 
     /**

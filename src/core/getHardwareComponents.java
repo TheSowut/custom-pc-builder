@@ -161,6 +161,7 @@ public class getHardwareComponents {
             conn = DriverManager.getConnection(fullPath);
             String queryBrowseModels = ("SELECT DISTINCT Model FROM " + table + " WHERE " + col + " = " + "'" + manufacturer + "'"
                     + " AND Socket = " + "'" + socket + "'");
+            System.out.println(queryBrowseModels);
             try (Connection openConn = conn;
                 Statement stmt  = openConn.createStatement();
                 ResultSet rs    = stmt.executeQuery(queryBrowseModels)){
@@ -196,6 +197,7 @@ public class getHardwareComponents {
             
             conn = DriverManager.getConnection(fullPath);
             String queryBrowseModels = ("SELECT DISTINCT Brand FROM " + table + " WHERE Socket = " + "'" + socket + "'");
+            System.out.println(queryBrowseModels);
             try (Connection openConn = conn;
                 Statement stmt  = openConn.createStatement();
                 ResultSet rs    = stmt.executeQuery(queryBrowseModels)){

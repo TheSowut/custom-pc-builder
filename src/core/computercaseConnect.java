@@ -100,6 +100,76 @@ public class computercaseConnect {
         }
         return result;
     }
+    
+        public ArrayList<String> getComputerCase(String term) {
+        ArrayList<String> result = new ArrayList<String>();
+        Connection conn = null;
+        try {
+            String filePath = new File("").getAbsolutePath();
+            String filePathChanged = filePath.replaceAll("\\\\", "/");
+            String path = "/db/cpb-db.db";
+            String fullPath = "jdbc:sqlite:" + filePathChanged + path;
+            
+            conn = DriverManager.getConnection(fullPath);
+            String queryBrowseModels = ("SELECT DISTINCT Manufacturer FROM computercases");
+            try (Connection openConn = conn;
+                Statement stmt  = openConn.createStatement();
+                ResultSet rs    = stmt.executeQuery(queryBrowseModels)){
+                while (rs.next()) {
+                    result.add(rs.getString("Manufacturer"));
+                }
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+            
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return result;
+    }
+        
+    public ArrayList<String> getComputerCaseModel(String manufacturer) {
+        ArrayList<String> result = new ArrayList<String>();
+        Connection conn = null;
+        try {
+            String filePath = new File("").getAbsolutePath();
+            String filePathChanged = filePath.replaceAll("\\\\", "/");
+            String path = "/db/cpb-db.db";
+            String fullPath = "jdbc:sqlite:" + filePathChanged + path;
+            
+            conn = DriverManager.getConnection(fullPath);
+            String queryBrowseModels = ("SELECT DISTINCT Model FROM computercases WHERE Manufacturer = " + "'" + manufacturer + "'");
+            try (Connection openConn = conn;
+                Statement stmt  = openConn.createStatement();
+                ResultSet rs    = stmt.executeQuery(queryBrowseModels)){
+                while (rs.next()) {
+                    result.add(rs.getString("Model"));
+                }
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+            
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return result;
+    }
     /**
      * @param args the command line arguments
      */

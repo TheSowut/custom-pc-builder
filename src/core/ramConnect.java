@@ -100,6 +100,7 @@ public class ramConnect {
         }
         return result;
     }
+        
     /**
      * @param args the command line arguments
      */

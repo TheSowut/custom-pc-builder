@@ -29,6 +29,40 @@ public class mainMenu extends javax.swing.JFrame {
     /**
      * Creates new form mainMenu
      */
+    public static String chosenMotherboardManufacturer = "";
+    public static String chosenMotherboardModel = "";
+    public static String chosenMotheboard = "";
+    
+    public static String chosenGraphicsCardManufacturer = "";
+    public static String chosenGraphicsCardModel = "";
+    public static String chosenGraphicsCard = "";
+    
+    public static String chosenProcessorManufacturer = "";
+    public static String chosenProcessorModel = "";
+    public static String chosenProcessor = "";
+    
+    public static String chosenPsuManufacturer = "";
+    public static String chosenPsuModel = "";
+    public static String chosenPsu = "";
+    
+    public static String chosenRamManufacturer = "";
+    public static String chosenRamModel = "";
+    public static String chosenRam = "";
+
+    public static String chosenComputerCaseManufacturer = "";
+    public static String chosenComputerCaseModel = "";
+    public static String chosenComputerCase = "";
+    
+    public static String chosenHddManufacturer = "";
+    public static String chosenHddModel = "";
+    public static String chosenHdd = "";
+    
+    public static String chosenSsdManufacturer = "";
+    public static String chosenSsdModel = "";
+    public static String chosenSsd = "";
+    
+    public static Double fullPrice = 0.0;
+    
     public mainMenu() {
         initComponents();
         setLocationRelativeTo(null);
@@ -39,7 +73,7 @@ public class mainMenu extends javax.swing.JFrame {
         
         jLblMotherboard.hide();
         jComboMotherboards.hide();
-        jLblMotherboardModel.hide();
+        jLblMotherboardModels.hide();
         jComboMotherboardModels.hide();
         
         jLblGraphicsCardManufacturers.hide();
@@ -47,10 +81,44 @@ public class mainMenu extends javax.swing.JFrame {
         jLblGraphicsCardsModels.hide();
         jComboGraphicsCardsModels.hide();
         
+        jLblProcessorManufacturer.hide();
+        jComboProcessors.hide();
+        jLblProcessorModels.hide();
+        jComboProcessorModels.hide();
+        
+        jLblPsuManufacturers.hide();
+        jComboPsus.hide();
+        jLblPsuModels.hide();
+        jComboPsuModels.hide();
+        
+        jLblRamManufacturers.hide();
+        jComboRam.hide();
+        jLblRamModels.hide();
+        jComboRamModels.hide();
+        
+        jLblCaseManufacturer.hide();
+        jComboCases.hide();
+        jLblCasesModels.hide();
+        jComboCaseModels.hide();
+        
+        jLblHddManufacturer.hide();
+        jComboHdds.hide();
+        jLblHddModels.hide();
+        jComboHddModels.hide();
+        
+        jLblSsdManufacturer.hide();
+        jComboSsds.hide();
+        jLblSsdModels.hide();
+        jComboSsdModels.hide();
         
         jBtnNext1.hide();
-        
-        
+        jBtnNext2.hide();
+        jBtnNext3.hide();
+        jBtnNext4.hide();
+        jBtnNext5.hide();
+        jBtnNext6.hide();
+        jBtnNext7.hide();
+        jBtnNext8.hide();
     }
 
     /**
@@ -66,13 +134,44 @@ public class mainMenu extends javax.swing.JFrame {
         jLblLogoSmall = new javax.swing.JLabel();
         jLblMotherboard = new javax.swing.JLabel();
         jComboMotherboards = new javax.swing.JComboBox<>();
-        jLblMotherboardModel = new javax.swing.JLabel();
+        jLblMotherboardModels = new javax.swing.JLabel();
+        jComboMotherboardModels = new javax.swing.JComboBox<>();
+        jBtnNext1 = new javax.swing.JButton();
         jLblGraphicsCardManufacturers = new javax.swing.JLabel();
         jComboGraphicsCards = new javax.swing.JComboBox<>();
         jLblGraphicsCardsModels = new javax.swing.JLabel();
         jComboGraphicsCardsModels = new javax.swing.JComboBox<>();
-        jBtnNext1 = new javax.swing.JButton();
-        jComboMotherboardModels = new javax.swing.JComboBox<>();
+        jBtnNext2 = new javax.swing.JButton();
+        jLblProcessorManufacturer = new javax.swing.JLabel();
+        jComboProcessors = new javax.swing.JComboBox<>();
+        jLblProcessorModels = new javax.swing.JLabel();
+        jComboProcessorModels = new javax.swing.JComboBox<>();
+        jBtnNext3 = new javax.swing.JButton();
+        jLblPsuManufacturers = new javax.swing.JLabel();
+        jComboPsus = new javax.swing.JComboBox<>();
+        jLblPsuModels = new javax.swing.JLabel();
+        jComboPsuModels = new javax.swing.JComboBox<>();
+        jBtnNext4 = new javax.swing.JButton();
+        jLblRamManufacturers = new javax.swing.JLabel();
+        jComboRam = new javax.swing.JComboBox<>();
+        jLblRamModels = new javax.swing.JLabel();
+        jComboRamModels = new javax.swing.JComboBox<>();
+        jBtnNext5 = new javax.swing.JButton();
+        jLblCaseManufacturer = new javax.swing.JLabel();
+        jComboCases = new javax.swing.JComboBox<>();
+        jLblCasesModels = new javax.swing.JLabel();
+        jComboCaseModels = new javax.swing.JComboBox<>();
+        jBtnNext6 = new javax.swing.JButton();
+        jLblHddManufacturer = new javax.swing.JLabel();
+        jComboHdds = new javax.swing.JComboBox<>();
+        jLblHddModels = new javax.swing.JLabel();
+        jComboHddModels = new javax.swing.JComboBox<>();
+        jBtnNext7 = new javax.swing.JButton();
+        jLblSsdManufacturer = new javax.swing.JLabel();
+        jComboSsds = new javax.swing.JComboBox<>();
+        jLblSsdModels = new javax.swing.JLabel();
+        jComboSsdModels = new javax.swing.JComboBox<>();
+        jBtnNext8 = new javax.swing.JButton();
         jLblBackground = new javax.swing.JLabel();
         jMenu = new javax.swing.JMenuBar();
         jMenuSetups = new javax.swing.JMenu();
@@ -104,7 +203,7 @@ public class mainMenu extends javax.swing.JFrame {
         jLblMotherboard.setText("Motherboard Manufacturer:");
         jLblMotherboard.setToolTipText("");
         jPanel1.add(jLblMotherboard);
-        jLblMotherboard.setBounds(60, 40, 160, 30);
+        jLblMotherboard.setBounds(260, 110, 160, 20);
 
         jComboMotherboards.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -112,28 +211,15 @@ public class mainMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jComboMotherboards);
-        jComboMotherboards.setBounds(50, 90, 170, 26);
+        jComboMotherboards.setBounds(260, 150, 150, 26);
 
-        jLblMotherboardModel.setForeground(new java.awt.Color(255, 255, 255));
-        jLblMotherboardModel.setText("Motherboard Model:");
-        jPanel1.add(jLblMotherboardModel);
-        jLblMotherboardModel.setBounds(70, 160, 120, 16);
+        jLblMotherboardModels.setForeground(new java.awt.Color(255, 255, 255));
+        jLblMotherboardModels.setText("Motherboard Model:");
+        jPanel1.add(jLblMotherboardModels);
+        jLblMotherboardModels.setBounds(270, 220, 120, 16);
 
-        jLblGraphicsCardManufacturers.setForeground(new java.awt.Color(255, 255, 255));
-        jLblGraphicsCardManufacturers.setText("Graphics Card Manufacturer:");
-        jPanel1.add(jLblGraphicsCardManufacturers);
-        jLblGraphicsCardManufacturers.setBounds(260, 120, 170, 16);
-
-        jPanel1.add(jComboGraphicsCards);
-        jComboGraphicsCards.setBounds(260, 150, 160, 26);
-
-        jLblGraphicsCardsModels.setForeground(new java.awt.Color(255, 255, 255));
-        jLblGraphicsCardsModels.setText("Graphics Card Model:");
-        jPanel1.add(jLblGraphicsCardsModels);
-        jLblGraphicsCardsModels.setBounds(270, 200, 130, 16);
-
-        jPanel1.add(jComboGraphicsCardsModels);
-        jComboGraphicsCardsModels.setBounds(270, 230, 120, 26);
+        jPanel1.add(jComboMotherboardModels);
+        jComboMotherboardModels.setBounds(260, 260, 150, 26);
 
         jBtnNext1.setText("Next");
         jBtnNext1.addActionListener(new java.awt.event.ActionListener() {
@@ -142,10 +228,223 @@ public class mainMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnNext1);
-        jBtnNext1.setBounds(310, 400, 56, 32);
+        jBtnNext1.setBounds(300, 350, 56, 32);
 
-        jPanel1.add(jComboMotherboardModels);
-        jComboMotherboardModels.setBounds(60, 190, 140, 26);
+        jLblGraphicsCardManufacturers.setForeground(new java.awt.Color(255, 255, 255));
+        jLblGraphicsCardManufacturers.setText("Graphics Card Manufacturer:");
+        jPanel1.add(jLblGraphicsCardManufacturers);
+        jLblGraphicsCardManufacturers.setBounds(260, 110, 170, 16);
+
+        jComboGraphicsCards.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboGraphicsCardsItemStateChanged(evt);
+            }
+        });
+        jPanel1.add(jComboGraphicsCards);
+        jComboGraphicsCards.setBounds(260, 150, 150, 26);
+
+        jLblGraphicsCardsModels.setForeground(new java.awt.Color(255, 255, 255));
+        jLblGraphicsCardsModels.setText("Graphics Card Model:");
+        jPanel1.add(jLblGraphicsCardsModels);
+        jLblGraphicsCardsModels.setBounds(270, 220, 130, 16);
+
+        jPanel1.add(jComboGraphicsCardsModels);
+        jComboGraphicsCardsModels.setBounds(260, 260, 150, 26);
+
+        jBtnNext2.setText("Next");
+        jBtnNext2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnNext2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBtnNext2);
+        jBtnNext2.setBounds(300, 350, 56, 32);
+
+        jLblProcessorManufacturer.setForeground(new java.awt.Color(255, 255, 255));
+        jLblProcessorManufacturer.setText("Processor Manufacturer:");
+        jLblProcessorManufacturer.setToolTipText("");
+        jPanel1.add(jLblProcessorManufacturer);
+        jLblProcessorManufacturer.setBounds(260, 110, 160, 20);
+
+        jComboProcessors.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboProcessorsItemStateChanged(evt);
+            }
+        });
+        jPanel1.add(jComboProcessors);
+        jComboProcessors.setBounds(260, 150, 150, 26);
+
+        jLblProcessorModels.setForeground(new java.awt.Color(255, 255, 255));
+        jLblProcessorModels.setText("Processor Model:");
+        jPanel1.add(jLblProcessorModels);
+        jLblProcessorModels.setBounds(270, 220, 120, 16);
+
+        jPanel1.add(jComboProcessorModels);
+        jComboProcessorModels.setBounds(260, 260, 150, 26);
+
+        jBtnNext3.setText("Next");
+        jBtnNext3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnNext3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBtnNext3);
+        jBtnNext3.setBounds(300, 350, 56, 32);
+
+        jLblPsuManufacturers.setForeground(new java.awt.Color(255, 255, 255));
+        jLblPsuManufacturers.setText("PSU Manufacturer:");
+        jLblPsuManufacturers.setToolTipText("");
+        jPanel1.add(jLblPsuManufacturers);
+        jLblPsuManufacturers.setBounds(260, 110, 160, 20);
+
+        jComboPsus.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboPsusItemStateChanged(evt);
+            }
+        });
+        jPanel1.add(jComboPsus);
+        jComboPsus.setBounds(260, 150, 150, 26);
+
+        jLblPsuModels.setForeground(new java.awt.Color(255, 255, 255));
+        jLblPsuModels.setText("PSU Model:");
+        jPanel1.add(jLblPsuModels);
+        jLblPsuModels.setBounds(270, 220, 120, 16);
+
+        jPanel1.add(jComboPsuModels);
+        jComboPsuModels.setBounds(260, 260, 150, 26);
+
+        jBtnNext4.setText("Next");
+        jBtnNext4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnNext4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBtnNext4);
+        jBtnNext4.setBounds(300, 350, 56, 32);
+
+        jLblRamManufacturers.setForeground(new java.awt.Color(255, 255, 255));
+        jLblRamManufacturers.setText("RAM Manufacturer:");
+        jLblRamManufacturers.setToolTipText("");
+        jPanel1.add(jLblRamManufacturers);
+        jLblRamManufacturers.setBounds(260, 110, 160, 20);
+
+        jComboRam.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboRamItemStateChanged(evt);
+            }
+        });
+        jPanel1.add(jComboRam);
+        jComboRam.setBounds(260, 150, 150, 26);
+
+        jLblRamModels.setForeground(new java.awt.Color(255, 255, 255));
+        jLblRamModels.setText("RAM Model:");
+        jPanel1.add(jLblRamModels);
+        jLblRamModels.setBounds(270, 220, 120, 16);
+
+        jPanel1.add(jComboRamModels);
+        jComboRamModels.setBounds(260, 260, 150, 26);
+
+        jBtnNext5.setText("Next");
+        jBtnNext5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnNext5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBtnNext5);
+        jBtnNext5.setBounds(300, 350, 56, 32);
+
+        jLblCaseManufacturer.setForeground(new java.awt.Color(255, 255, 255));
+        jLblCaseManufacturer.setText("Computer Case Manufacturer:");
+        jLblCaseManufacturer.setToolTipText("");
+        jPanel1.add(jLblCaseManufacturer);
+        jLblCaseManufacturer.setBounds(260, 110, 180, 20);
+
+        jComboCases.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboCasesItemStateChanged(evt);
+            }
+        });
+        jPanel1.add(jComboCases);
+        jComboCases.setBounds(260, 150, 150, 26);
+
+        jLblCasesModels.setForeground(new java.awt.Color(255, 255, 255));
+        jLblCasesModels.setText("Computer Cases Models:");
+        jPanel1.add(jLblCasesModels);
+        jLblCasesModels.setBounds(270, 220, 150, 16);
+
+        jPanel1.add(jComboCaseModels);
+        jComboCaseModels.setBounds(260, 260, 150, 26);
+
+        jBtnNext6.setText("Next");
+        jBtnNext6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnNext6ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBtnNext6);
+        jBtnNext6.setBounds(300, 350, 56, 32);
+
+        jLblHddManufacturer.setForeground(new java.awt.Color(255, 255, 255));
+        jLblHddManufacturer.setText("HDD Manufacturer:");
+        jLblHddManufacturer.setToolTipText("");
+        jPanel1.add(jLblHddManufacturer);
+        jLblHddManufacturer.setBounds(260, 110, 180, 20);
+
+        jComboHdds.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboHddsItemStateChanged(evt);
+            }
+        });
+        jPanel1.add(jComboHdds);
+        jComboHdds.setBounds(260, 150, 150, 26);
+
+        jLblHddModels.setForeground(new java.awt.Color(255, 255, 255));
+        jLblHddModels.setText("HDD Models:");
+        jPanel1.add(jLblHddModels);
+        jLblHddModels.setBounds(270, 220, 150, 16);
+
+        jPanel1.add(jComboHddModels);
+        jComboHddModels.setBounds(260, 260, 150, 26);
+
+        jBtnNext7.setText("Next");
+        jBtnNext7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnNext7ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBtnNext7);
+        jBtnNext7.setBounds(300, 350, 56, 32);
+
+        jLblSsdManufacturer.setForeground(new java.awt.Color(255, 255, 255));
+        jLblSsdManufacturer.setText("SSD Manufacturer:");
+        jLblSsdManufacturer.setToolTipText("");
+        jPanel1.add(jLblSsdManufacturer);
+        jLblSsdManufacturer.setBounds(260, 110, 180, 20);
+
+        jComboSsds.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboSsdsItemStateChanged(evt);
+            }
+        });
+        jPanel1.add(jComboSsds);
+        jComboSsds.setBounds(260, 150, 150, 26);
+
+        jLblSsdModels.setForeground(new java.awt.Color(255, 255, 255));
+        jLblSsdModels.setText("SSD Models:");
+        jPanel1.add(jLblSsdModels);
+        jLblSsdModels.setBounds(270, 220, 150, 16);
+
+        jPanel1.add(jComboSsdModels);
+        jComboSsdModels.setBounds(260, 260, 150, 26);
+
+        jBtnNext8.setText("Next");
+        jBtnNext8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnNext8ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBtnNext8);
+        jBtnNext8.setBounds(300, 350, 56, 32);
 
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\menuBackground.jpg")); // NOI18N
         jPanel1.add(jLblBackground);
@@ -236,7 +535,7 @@ public class mainMenu extends javax.swing.JFrame {
 
     private void jMenuSetupsBrowseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSetupsBrowseActionPerformed
         // TODO add your handling code here:
-        
+        JOptionPane.showMessageDialog(this, "Coming soon !", "To be added", 2);
     }//GEN-LAST:event_jMenuSetupsBrowseActionPerformed
 
     private void jMenuHardwareMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuHardwareMouseClicked
@@ -257,24 +556,63 @@ public class mainMenu extends javax.swing.JFrame {
         jLblMotherboard.show();
         jComboMotherboards.show();
         jBtnNext1.show();
-        jLblGraphicsCardManufacturers.show();
-        jLblGraphicsCardsModels.show();
-        jComboGraphicsCards.show();
-        jComboGraphicsCardsModels.show();
         
-        motherboardConnect connmoth = new motherboardConnect();
-        ArrayList<String> output = new ArrayList<String>();
-        output = connmoth.getMotherboard("");
-        for (int i = 0; i < output.size(); i++) {
-            jComboMotherboards.addItem(output.get(i));
+        getHardwareComponents connmoth = new getHardwareComponents();
+        ArrayList<String> outputmoth = new ArrayList<String>();
+        outputmoth = connmoth.getManufacturer("", "motherboards", "Manufacturer");
+        for (int i = 0; i < outputmoth.size(); i++) {
+            jComboMotherboards.addItem(outputmoth.get(i));
         }
         
-        graphicsCardConnect conngrap = new graphicsCardConnect();
+        getHardwareComponents conngrap = new getHardwareComponents();
         ArrayList<String> outputGraphics = new ArrayList<String>();
-        outputGraphics = conngrap.getGraphicsCard("");
+        outputGraphics = conngrap.getManufacturer("", "graphicscards", "Manufacturer");
         for (int i = 0; i < outputGraphics.size(); i++) {
             jComboGraphicsCards.addItem(outputGraphics.get(i));
         }
+        
+        getHardwareComponents connproc = new getHardwareComponents();
+        ArrayList<String> outputProcessors = new ArrayList<String>();
+        outputProcessors = connproc.getManufacturer("", "processors", "Brand");
+        for (int i = 0; i < outputProcessors.size(); i++) {
+            jComboProcessors.addItem(outputProcessors.get(i));
+        }
+        
+        getHardwareComponents connpsu = new getHardwareComponents();
+        ArrayList<String> outputpsus = new ArrayList<String>();
+        outputpsus = connpsu.getManufacturer("", "psus", "Manufacturer");
+        for (int i = 0; i < outputpsus.size(); i++) {
+            jComboPsus.addItem(outputpsus.get(i));
+        }
+        
+        getHardwareComponents connram = new getHardwareComponents();
+        ArrayList<String> outputram = new ArrayList<String>();
+        outputram = connram.getManufacturer("", "ram", "Manufacturer");
+        for (int i = 0; i < outputram.size(); i++) {
+            jComboRam.addItem(outputram.get(i));
+        }
+        
+        getHardwareComponents conncase = new getHardwareComponents();
+        ArrayList<String> outputcase = new ArrayList<String>();
+        outputcase = conncase.getManufacturer("", "computercases", "Manufacturer");
+        for (int i = 0; i < outputcase.size(); i++) {
+            jComboCases.addItem(outputcase.get(i));
+        }
+
+        getHardwareComponents connhdd = new getHardwareComponents();
+        ArrayList<String> outputhdd = new ArrayList<String>();
+        outputhdd = connhdd.getManufacturer("", "hdds", "Manufacturer");
+        for (int i = 0; i < outputhdd.size(); i++) {
+            jComboHdds.addItem(outputhdd.get(i));
+        }
+        
+        getHardwareComponents connssd = new getHardwareComponents();
+        ArrayList<String> outputssd = new ArrayList<String>();
+        outputssd = connssd.getManufacturer("", "ssds", "Manufacturer");
+        for (int i = 0; i < outputssd.size(); i++) {
+            jComboSsds.addItem(outputssd.get(i));
+        }
+        
     }//GEN-LAST:event_jMenuSetupsCreateActionPerformed
 
     private void jMenuAboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuAboutMouseClicked
@@ -286,12 +624,12 @@ public class mainMenu extends javax.swing.JFrame {
     private void jComboMotherboardsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboMotherboardsItemStateChanged
         // TODO add your handling code here:
         jComboMotherboardModels.removeAllItems();
-        jLblMotherboardModel.show();
+        jLblMotherboardModels.show();
         jComboMotherboardModels.show();
         String manufacturer = jComboMotherboards.getSelectedItem().toString();
-        motherboardConnect connmoth = new motherboardConnect();
+        getHardwareComponents connmoth = new getHardwareComponents();
         ArrayList<String> output = new ArrayList<String>();
-        output = connmoth.getMotherboardModel(manufacturer);
+        output = connmoth.getModel(manufacturer, "motherboards", "Manufacturer");
         for (int i = 0; i < output.size(); i++) {
             jComboMotherboardModels.addItem(output.get(i));
         }
@@ -299,23 +637,243 @@ public class mainMenu extends javax.swing.JFrame {
 
     private void jBtnNext1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnNext1ActionPerformed
         // TODO add your handling code here:
-        String chosenMotherboardManufacturer = jComboMotherboards.getSelectedItem().toString();
-        String chosenMotherboardModel = jComboMotherboardModels.getSelectedItem().toString();
-        String chosenMotheboard = chosenMotherboardManufacturer + " " + chosenMotherboardModel;
+        chosenMotherboardManufacturer = jComboMotherboards.getSelectedItem().toString();
+        chosenMotherboardModel = jComboMotherboardModels.getSelectedItem().toString();
+        chosenMotheboard = chosenMotherboardManufacturer + "___" + chosenMotherboardModel;
+        System.out.println(chosenMotheboard);
         
-        String chosenGraphicsCardManufacturer = jComboGraphicsCards.getSelectedItem().toString();
-        String chosenGraphicsCardModel = jComboGraphicsCardsModels.getSelectedItem().toString();
-        String chosenGraphicsCard = chosenGraphicsCardManufacturer + " " + chosenGraphicsCardModel;
+        jLblGraphicsCardManufacturers.show();
+        jLblGraphicsCardsModels.show();
+        jComboGraphicsCards.show();
+        jComboGraphicsCardsModels.show();
+        jBtnNext2.show();
         
-        
-        
-        
-        ArrayList<String> data = new ArrayList<String>();
-        createSetupConnect conn = new createSetupConnect();
-        
-        //data = conn.createSetup(chosenMotheboard, chosenGraphicsCard, );
-        conn.close();
+        jLblMotherboard.hide();
+        jComboMotherboards.hide();
+        jLblMotherboardModels.hide();
+        jComboMotherboardModels.hide();
+        jBtnNext1.hide();
     }//GEN-LAST:event_jBtnNext1ActionPerformed
+
+    private void jComboGraphicsCardsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboGraphicsCardsItemStateChanged
+        // TODO add your handling code here:
+        jComboGraphicsCardsModels.removeAllItems();
+        String manufacturer = jComboGraphicsCards.getSelectedItem().toString();
+        getHardwareComponents connmoth = new getHardwareComponents();
+        ArrayList<String> output = new ArrayList<String>();
+        output = connmoth.getModel(manufacturer, "graphicscards", "Manufacturer");
+        for (int i = 0; i < output.size(); i++) {
+            jComboGraphicsCardsModels.addItem(output.get(i));
+        }
+    }//GEN-LAST:event_jComboGraphicsCardsItemStateChanged
+
+    private void jBtnNext2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnNext2ActionPerformed
+        // TODO add your handling code here:
+        chosenGraphicsCardManufacturer = jComboGraphicsCards.getSelectedItem().toString();
+        chosenGraphicsCardModel = jComboGraphicsCardsModels.getSelectedItem().toString();
+        chosenGraphicsCard = chosenGraphicsCardManufacturer + "___" +chosenGraphicsCardModel;
+        System.out.println(chosenGraphicsCard);
+        
+        jLblProcessorManufacturer.show();
+        jComboProcessors.show();
+        jLblProcessorModels.show();
+        jComboProcessorModels.show();
+        jBtnNext3.show();
+        
+        jLblGraphicsCardManufacturers.hide();
+        jComboGraphicsCards.hide();
+        jLblGraphicsCardsModels.hide();
+        jComboGraphicsCardsModels.hide();
+        jBtnNext2.hide();
+    }//GEN-LAST:event_jBtnNext2ActionPerformed
+
+    private void jComboProcessorsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboProcessorsItemStateChanged
+        // TODO add your handling code here:
+        jComboProcessorModels.removeAllItems();
+        String brand = jComboProcessors.getSelectedItem().toString();
+        getHardwareComponents connproc = new getHardwareComponents();
+        ArrayList<String> output = new ArrayList<String>();
+        output = connproc.getModel(brand, "processors", "Brand");
+        for (int i = 0; i < output.size(); i++) {
+            jComboProcessorModels.addItem(output.get(i));
+        }
+    }//GEN-LAST:event_jComboProcessorsItemStateChanged
+
+    private void jBtnNext3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnNext3ActionPerformed
+        // TODO add your handling code here:
+        chosenProcessorManufacturer = jComboProcessors.getSelectedItem().toString();
+        chosenProcessorModel = jComboProcessorModels.getSelectedItem().toString();
+        chosenProcessor = chosenProcessorManufacturer + "___" + chosenProcessorModel;
+        System.out.println(chosenProcessor);
+        
+        jLblPsuManufacturers.show();
+        jComboPsus.show();
+        jLblPsuModels.show();
+        jComboPsuModels.show();
+        jBtnNext4.show();
+        
+        jLblProcessorManufacturer.hide();
+        jComboProcessors.hide();
+        jLblProcessorModels.hide();
+        jComboProcessorModels.hide();
+        jBtnNext3.hide();
+    }//GEN-LAST:event_jBtnNext3ActionPerformed
+
+    private void jBtnNext4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnNext4ActionPerformed
+        // TODO add your handling code here:
+        chosenPsuManufacturer = jComboPsus.getSelectedItem().toString();
+        chosenPsuModel = jComboPsuModels.getSelectedItem().toString();
+        chosenPsu = chosenPsuManufacturer + "___" + chosenPsuModel;
+        System.out.println(chosenPsu);
+        
+        jLblRamManufacturers.show();
+        jComboRam.show();
+        jLblRamModels.show(); 
+        jComboRamModels.show();
+        jBtnNext5.show();
+        
+        jLblPsuManufacturers.hide();
+        jComboPsus.hide();
+        jLblPsuModels.hide();
+        jComboPsuModels.hide();
+        jBtnNext4.hide();
+    }//GEN-LAST:event_jBtnNext4ActionPerformed
+
+    private void jComboPsusItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboPsusItemStateChanged
+        // TODO add your handling code here:
+        jComboPsuModels.removeAllItems();
+        String manufacturer = jComboPsus.getSelectedItem().toString();
+        getHardwareComponents connpsu = new getHardwareComponents();
+        ArrayList<String> output = new ArrayList<String>();
+        output = connpsu.getModel(manufacturer, "psus", "Manufacturer");
+        for (int i = 0; i < output.size(); i++) {
+            jComboPsuModels.addItem(output.get(i));
+        }
+    }//GEN-LAST:event_jComboPsusItemStateChanged
+
+    private void jComboRamItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboRamItemStateChanged
+        // TODO add your handling code here:
+        jComboRamModels.removeAllItems();
+        String manufacturer = jComboRam.getSelectedItem().toString();
+        getHardwareComponents connram = new getHardwareComponents();
+        ArrayList<String> output = new ArrayList<String>();
+        output = connram.getModel(manufacturer, "ram", "Manufacturer");
+        for (int i = 0; i < output.size(); i++) {
+            jComboRamModels.addItem(output.get(i));
+        }
+    }//GEN-LAST:event_jComboRamItemStateChanged
+
+    private void jBtnNext5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnNext5ActionPerformed
+        // TODO add your handling code here:
+        chosenRamManufacturer = jComboRam.getSelectedItem().toString();
+        chosenRamModel = jComboRamModels.getSelectedItem().toString();
+        chosenRam = chosenRamManufacturer + "___" + chosenRamModel;
+        System.out.println(chosenRam);
+        
+        jLblCaseManufacturer.show();
+        jComboCases.show();
+        jLblCasesModels.show(); 
+        jComboCaseModels.show();
+        jBtnNext6.show();
+        
+        jLblRamManufacturers.hide();
+        jComboRam.hide();
+        jLblRamModels.hide();
+        jComboRamModels.hide();
+        jBtnNext5.hide();
+    }//GEN-LAST:event_jBtnNext5ActionPerformed
+
+    private void jComboCasesItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboCasesItemStateChanged
+        // TODO add your handling code here:
+        jComboCaseModels.removeAllItems();
+        String manufacturer = jComboCases.getSelectedItem().toString();
+        getHardwareComponents conncase = new getHardwareComponents();
+        ArrayList<String> output = new ArrayList<String>();
+        output = conncase.getModel(manufacturer, "computercases", "Manufacturer");
+        for (int i = 0; i < output.size(); i++) {
+            jComboCaseModels.addItem(output.get(i));
+        }
+    }//GEN-LAST:event_jComboCasesItemStateChanged
+
+    private void jBtnNext6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnNext6ActionPerformed
+        // TODO add your handling code here:
+        chosenComputerCaseManufacturer = jComboCases.getSelectedItem().toString();
+        chosenComputerCaseModel = jComboCaseModels.getSelectedItem().toString();
+        chosenComputerCase = chosenComputerCaseManufacturer + "___" + chosenComputerCaseModel;
+        System.out.println(chosenComputerCase);
+        
+        jLblHddManufacturer.show();
+        jComboHdds.show();
+        jLblHddModels.show(); 
+        jComboHddModels.show();
+        jBtnNext7.show();
+        
+        jLblCaseManufacturer.hide();
+        jComboCases.hide();
+        jLblCasesModels.hide();
+        jComboCaseModels.hide();
+        jBtnNext6.hide();
+    }//GEN-LAST:event_jBtnNext6ActionPerformed
+
+    private void jBtnNext7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnNext7ActionPerformed
+        // TODO add your handling code here:
+        chosenHddManufacturer = jComboHdds.getSelectedItem().toString();
+        chosenHddModel = jComboHddModels.getSelectedItem().toString();
+        chosenHdd = chosenHddManufacturer + "___" + chosenHddModel;
+        System.out.println(chosenHdd);
+        
+        jLblSsdManufacturer.show();
+        jComboSsds.show();
+        jLblSsdModels.show(); 
+        jComboSsdModels.show();
+        jBtnNext8.show();
+        
+        jLblHddManufacturer.hide();
+        jComboHdds.hide();
+        jLblHddModels.hide();
+        jComboHddModels.hide();
+        jBtnNext7.hide();
+    }//GEN-LAST:event_jBtnNext7ActionPerformed
+
+    private void jComboHddsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboHddsItemStateChanged
+        // TODO add your handling code here:
+        jComboHddModels.removeAllItems();
+        String manufacturer = jComboHdds.getSelectedItem().toString();
+        getHardwareComponents connhdd = new getHardwareComponents();
+        ArrayList<String> output = new ArrayList<String>();
+        output = connhdd.getModel(manufacturer, "hdds", "Manufacturer");
+        for (int i = 0; i < output.size(); i++) {
+            jComboHddModels.addItem(output.get(i));
+        }
+    }//GEN-LAST:event_jComboHddsItemStateChanged
+
+    private void jComboSsdsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboSsdsItemStateChanged
+        // TODO add your handling code here:
+        jComboSsdModels.removeAllItems();
+        String manufacturer = jComboSsds.getSelectedItem().toString();
+        getHardwareComponents connssd = new getHardwareComponents();
+        ArrayList<String> output = new ArrayList<String>();
+        output = connssd.getModel(manufacturer, "ssds", "Manufacturer");
+        for (int i = 0; i < output.size(); i++) {
+            jComboSsdModels.addItem(output.get(i));
+        }
+    }//GEN-LAST:event_jComboSsdsItemStateChanged
+
+    private void jBtnNext8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnNext8ActionPerformed
+        // TODO add your handling code here:
+        chosenSsdManufacturer = jComboSsds.getSelectedItem().toString();
+        chosenSsdModel = jComboSsdModels.getSelectedItem().toString();
+        chosenSsd = chosenSsdManufacturer + "___" + chosenSsdModel;
+        System.out.println(chosenSsd);
+        
+        jLblSsdManufacturer.hide();
+        jComboSsds.hide();
+        jLblSsdModels.hide();
+        jComboSsdModels.hide();
+        jBtnNext8.hide();
+        
+        JOptionPane.showMessageDialog(this, "Setup successfully created !");
+    }//GEN-LAST:event_jBtnNext8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -353,16 +911,47 @@ public class mainMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnNext1;
+    private javax.swing.JButton jBtnNext2;
+    private javax.swing.JButton jBtnNext3;
+    private javax.swing.JButton jBtnNext4;
+    private javax.swing.JButton jBtnNext5;
+    private javax.swing.JButton jBtnNext6;
+    private javax.swing.JButton jBtnNext7;
+    private javax.swing.JButton jBtnNext8;
+    private javax.swing.JComboBox<String> jComboCaseModels;
+    private javax.swing.JComboBox<String> jComboCases;
     private javax.swing.JComboBox<String> jComboGraphicsCards;
     private javax.swing.JComboBox<String> jComboGraphicsCardsModels;
+    private javax.swing.JComboBox<String> jComboHddModels;
+    private javax.swing.JComboBox<String> jComboHdds;
     private javax.swing.JComboBox<String> jComboMotherboardModels;
     private javax.swing.JComboBox<String> jComboMotherboards;
+    private javax.swing.JComboBox<String> jComboProcessorModels;
+    private javax.swing.JComboBox<String> jComboProcessors;
+    private javax.swing.JComboBox<String> jComboPsuModels;
+    private javax.swing.JComboBox<String> jComboPsus;
+    private javax.swing.JComboBox<String> jComboRam;
+    private javax.swing.JComboBox<String> jComboRamModels;
+    private javax.swing.JComboBox<String> jComboSsdModels;
+    private javax.swing.JComboBox<String> jComboSsds;
     private javax.swing.JLabel jLblBackground;
+    private javax.swing.JLabel jLblCaseManufacturer;
+    private javax.swing.JLabel jLblCasesModels;
     private javax.swing.JLabel jLblGraphicsCardManufacturers;
     private javax.swing.JLabel jLblGraphicsCardsModels;
+    private javax.swing.JLabel jLblHddManufacturer;
+    private javax.swing.JLabel jLblHddModels;
     private javax.swing.JLabel jLblLogoSmall;
     private javax.swing.JLabel jLblMotherboard;
-    private javax.swing.JLabel jLblMotherboardModel;
+    private javax.swing.JLabel jLblMotherboardModels;
+    private javax.swing.JLabel jLblProcessorManufacturer;
+    private javax.swing.JLabel jLblProcessorModels;
+    private javax.swing.JLabel jLblPsuManufacturers;
+    private javax.swing.JLabel jLblPsuModels;
+    private javax.swing.JLabel jLblRamManufacturers;
+    private javax.swing.JLabel jLblRamModels;
+    private javax.swing.JLabel jLblSsdManufacturer;
+    private javax.swing.JLabel jLblSsdModels;
     private javax.swing.JMenuBar jMenu;
     private javax.swing.JMenu jMenuAbout;
     private javax.swing.JMenu jMenuHardware;

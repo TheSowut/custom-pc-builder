@@ -126,6 +126,9 @@ public class mainMenu extends javax.swing.JFrame {
         jBtnSetupsClose.hide();
         jBtnSetupCreationCancel.hide();
         
+        jLblId.hide();
+        jTxtId.hide();
+        jBtnDeleteSetup.hide();
         jTableSetups.hide();
     }
 
@@ -181,15 +184,17 @@ public class mainMenu extends javax.swing.JFrame {
         jComboSsdModels = new javax.swing.JComboBox<>();
         jBtnNext8 = new javax.swing.JButton();
         jBtnSetupCreationCancel = new javax.swing.JButton();
+        jLblId = new javax.swing.JLabel();
         jTableSetups = new javax.swing.JScrollPane();
         jTblSetups = new javax.swing.JTable();
         jBtnSetupsClose = new javax.swing.JButton();
+        jTxtId = new javax.swing.JTextField();
+        jBtnDeleteSetup = new javax.swing.JButton();
         jLblBackground = new javax.swing.JLabel();
         jMenu = new javax.swing.JMenuBar();
         jMenuSetups = new javax.swing.JMenu();
         jMenuSetupsCreate = new javax.swing.JMenuItem();
         jMenuSetupsBrowse = new javax.swing.JMenuItem();
-        jMenuSetupsDelete = new javax.swing.JMenuItem();
         jMenuHardware = new javax.swing.JMenu();
         jMenuAbout = new javax.swing.JMenu();
         jMenuHelp = new javax.swing.JMenu();
@@ -467,6 +472,11 @@ public class mainMenu extends javax.swing.JFrame {
         jPanel1.add(jBtnSetupCreationCancel);
         jBtnSetupCreationCancel.setBounds(250, 420, 170, 32);
 
+        jLblId.setForeground(new java.awt.Color(255, 255, 255));
+        jLblId.setText("Enter ID:");
+        jPanel1.add(jLblId);
+        jLblId.setBounds(310, 350, 110, 16);
+
         jTblSetups.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -478,7 +488,7 @@ public class mainMenu extends javax.swing.JFrame {
         jTableSetups.setViewportView(jTblSetups);
 
         jPanel1.add(jTableSetups);
-        jTableSetups.setBounds(10, 80, 670, 320);
+        jTableSetups.setBounds(10, 20, 670, 320);
 
         jBtnSetupsClose.setText("Close");
         jBtnSetupsClose.addActionListener(new java.awt.event.ActionListener() {
@@ -487,7 +497,18 @@ public class mainMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnSetupsClose);
-        jBtnSetupsClose.setBounds(300, 430, 77, 32);
+        jBtnSetupsClose.setBounds(180, 420, 100, 32);
+        jPanel1.add(jTxtId);
+        jTxtId.setBounds(280, 370, 120, 24);
+
+        jBtnDeleteSetup.setText("Delete Setup");
+        jBtnDeleteSetup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnDeleteSetupActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBtnDeleteSetup);
+        jBtnDeleteSetup.setBounds(400, 420, 110, 30);
 
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\menuBackground.jpg")); // NOI18N
         jPanel1.add(jLblBackground);
@@ -517,17 +538,6 @@ public class mainMenu extends javax.swing.JFrame {
             }
         });
         jMenuSetups.add(jMenuSetupsBrowse);
-
-        jMenuSetupsDelete.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, 0));
-        jMenuSetupsDelete.setText("Delete a setup");
-        jMenuSetupsDelete.setContentAreaFilled(false);
-        jMenuSetupsDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenuSetupsDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuSetupsDeleteActionPerformed(evt);
-            }
-        });
-        jMenuSetups.add(jMenuSetupsDelete);
 
         jMenu.add(jMenuSetups);
 
@@ -585,6 +595,9 @@ public class mainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         jTableSetups.show();
         jBtnSetupsClose.show();
+        jLblId.show();
+        jTxtId.show();
+        jBtnDeleteSetup.show();
         
         t = (DefaultTableModel) jTblSetups.getModel();
         t.setRowCount(0);
@@ -986,6 +999,9 @@ public class mainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         jTableSetups.hide();
         jBtnSetupsClose.hide();
+        jLblId.hide();
+        jTxtId.hide();
+        jBtnDeleteSetup.hide();
     }//GEN-LAST:event_jBtnSetupsCloseActionPerformed
 
     private void jBtnSetupCreationCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSetupCreationCancelActionPerformed
@@ -995,10 +1011,32 @@ public class mainMenu extends javax.swing.JFrame {
         menu.show();
     }//GEN-LAST:event_jBtnSetupCreationCancelActionPerformed
 
-    private void jMenuSetupsDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSetupsDeleteActionPerformed
+    private void jBtnDeleteSetupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnDeleteSetupActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Coming soon.");
-    }//GEN-LAST:event_jMenuSetupsDeleteActionPerformed
+        String stringId = jTxtId.getText();
+        if (stringId.equals ("") || stringId.equals(" ")){
+            JOptionPane.showMessageDialog(this, "Please enter a valid ID.", "Try again", 0);
+        }
+        else{
+        connectSetup conn = new connectSetup();
+        int id = Integer.parseInt(stringId);
+        Object[] options = {"Delete", "Cancel"};
+        final ImageIcon imgUser = new ImageIcon(".\\images\\icons\\setupRemoval.png");
+        int choice = JOptionPane.showOptionDialog(this, "Are you sure you would like to delete setup ?", "Confirm removal",
+        JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, imgUser, options, options[0]);
+        if (choice == 0){
+            conn.deleteWhere("setups", "id", id);
+            JOptionPane.showMessageDialog(this, "Setup has been deleted.", "Removal successful.", 1);
+            t = (DefaultTableModel) jTblSetups.getModel();
+            t.setRowCount(0);
+            tableSelect();
+            jTxtId.setText("");
+        }
+        else{
+            this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        }
+        }
+    }//GEN-LAST:event_jBtnDeleteSetupActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1035,6 +1073,7 @@ public class mainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnDeleteSetup;
     private javax.swing.JButton jBtnNext1;
     private javax.swing.JButton jBtnNext2;
     private javax.swing.JButton jBtnNext3;
@@ -1068,6 +1107,7 @@ public class mainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLblGraphicsCardsModels;
     private javax.swing.JLabel jLblHddManufacturer;
     private javax.swing.JLabel jLblHddModels;
+    private javax.swing.JLabel jLblId;
     private javax.swing.JLabel jLblLogoSmall;
     private javax.swing.JLabel jLblMotherboard;
     private javax.swing.JLabel jLblMotherboardModels;
@@ -1086,9 +1126,9 @@ public class mainMenu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuSetups;
     private javax.swing.JMenuItem jMenuSetupsBrowse;
     private javax.swing.JMenuItem jMenuSetupsCreate;
-    private javax.swing.JMenuItem jMenuSetupsDelete;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jTableSetups;
     private javax.swing.JTable jTblSetups;
+    private javax.swing.JTextField jTxtId;
     // End of variables declaration//GEN-END:variables
 }

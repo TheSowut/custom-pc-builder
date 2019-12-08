@@ -84,18 +84,18 @@ public class registerForm extends javax.swing.JFrame {
         jLblUsername.setBounds(147, 186, 162, 24);
 
         jLblPassword.setForeground(new java.awt.Color(255, 255, 255));
-        jLblPassword.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\passwd.png")); // NOI18N
+        jLblPassword.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\password.png")); // NOI18N
         jLblPassword.setLabelFor(jLblPassword);
         jLblPassword.setText("Enter a  new password: ");
         jPanel1.add(jLblPassword);
         jLblPassword.setBounds(147, 256, 164, 24);
 
         jLblPasswordConfirm.setForeground(new java.awt.Color(255, 255, 255));
-        jLblPasswordConfirm.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\passwd.png")); // NOI18N
+        jLblPasswordConfirm.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\password.png")); // NOI18N
         jLblPasswordConfirm.setLabelFor(jLblPasswordConfirm);
         jLblPasswordConfirm.setText("Reenter the password:");
         jPanel1.add(jLblPasswordConfirm);
-        jLblPasswordConfirm.setBounds(147, 326, 157, 24);
+        jLblPasswordConfirm.setBounds(147, 326, 155, 22);
 
         jBtnSubmit.setText("Submit");
         jBtnSubmit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));

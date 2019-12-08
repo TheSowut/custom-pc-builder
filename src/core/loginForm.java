@@ -110,11 +110,11 @@ public class loginForm extends javax.swing.JFrame {
 
         jLblPassword.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLblPassword.setForeground(new java.awt.Color(255, 255, 255));
-        jLblPassword.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\passwd.png")); // NOI18N
+        jLblPassword.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\password.png")); // NOI18N
         jLblPassword.setLabelFor(jLblPassword);
         jLblPassword.setText("Password:");
         jPanel1.add(jLblPassword);
-        jLblPassword.setBounds(150, 299, 104, 24);
+        jLblPassword.setBounds(150, 299, 104, 22);
 
         jLblLogo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLblLogo.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\loginLogo.png")); // NOI18N

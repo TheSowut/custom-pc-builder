@@ -18,8 +18,9 @@
 <div><img src="images/demo/addComponentCropped.JPG" width="300">
 <img src="images/demo/browseComponentCropped.JPG" width="309.5"></div>
 
-- Create and Browse Setups.
-<div><img src="images/demo/createNewSetup.png" width="650"></div>
+- Create new Setups and Browse Existing ones.
+<div><img src="images/demo/createSetup.JPG" width="300">
+<img src="images/demo/browseSetups.JPG" width="300"></div>
 
 ## ☁ Planned Features:
 - Option for Component removal and updating.

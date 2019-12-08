@@ -475,7 +475,7 @@ public class mainMenu extends javax.swing.JFrame {
         jLblId.setForeground(new java.awt.Color(255, 255, 255));
         jLblId.setText("Enter ID:");
         jPanel1.add(jLblId);
-        jLblId.setBounds(310, 350, 110, 16);
+        jLblId.setBounds(310, 370, 90, 16);
 
         jTblSetups.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -488,7 +488,7 @@ public class mainMenu extends javax.swing.JFrame {
         jTableSetups.setViewportView(jTblSetups);
 
         jPanel1.add(jTableSetups);
-        jTableSetups.setBounds(10, 20, 670, 320);
+        jTableSetups.setBounds(10, 50, 670, 320);
 
         jBtnSetupsClose.setText("Close");
         jBtnSetupsClose.addActionListener(new java.awt.event.ActionListener() {
@@ -499,7 +499,7 @@ public class mainMenu extends javax.swing.JFrame {
         jPanel1.add(jBtnSetupsClose);
         jBtnSetupsClose.setBounds(180, 420, 100, 32);
         jPanel1.add(jTxtId);
-        jTxtId.setBounds(280, 370, 120, 24);
+        jTxtId.setBounds(280, 390, 110, 24);
 
         jBtnDeleteSetup.setText("Delete Setup");
         jBtnDeleteSetup.addActionListener(new java.awt.event.ActionListener() {
@@ -508,7 +508,7 @@ public class mainMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnDeleteSetup);
-        jBtnDeleteSetup.setBounds(400, 420, 110, 30);
+        jBtnDeleteSetup.setBounds(390, 420, 110, 30);
 
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\menuBackground.jpg")); // NOI18N
         jPanel1.add(jLblBackground);

@@ -55,12 +55,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Changed
 - The queries for data obtaining used for the setup creation
 
-## [1.0.0] - DATE
+## [1.0.0] - 08.12.2019
 ### Added
--
+- Setup removal
 
 ### Changed
--
+- Some of the pictures used in the readme
+- The password icon
 
 ### Removed
--
+- Unnecessary and unused pictures.

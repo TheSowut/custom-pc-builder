@@ -22,4 +22,4 @@
 <div><img src="images/demo/createNewSetup.png" width="650"></div>
 
 ## ☁ Planned Features:
-- Option for Setup & Components removal.
+- Option for Component removal and updating.

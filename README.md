@@ -19,7 +19,7 @@
 <img src="images/demo/browseComponentCropped.JPG" width="309.5"></div>
 
 - Create and Browse Setups.
-<div><img src="images/demo/createNewSetup.png" width="650"></div>
+<div><img src="images/demo/createNewSetup.JPG" width="650"></div>
 
 ## ☁ Planned Features:
 - Option for Component removal and updating.

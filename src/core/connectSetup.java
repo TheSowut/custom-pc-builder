@@ -74,7 +74,6 @@ public class connectSetup {
     
     public void checkIfPresent(String table, String column, int id) {
         String sql = "SELECT 1 FROM " + table + " WHERE " + column + " LIKE " + id;
-        System.out.println(sql);
         try {
             Connection openConn = conn;
             Statement stmt  = openConn.createStatement();
@@ -87,7 +86,6 @@ public class connectSetup {
     
     public void deleteWhere(String table, String column, int id) {
         String sql = "DELETE FROM " + table + " WHERE " + column + " LIKE " + id;
-        System.out.println(sql);
         try {
             Connection openConn = conn;
             Statement stmt  = openConn.createStatement();
@@ -101,6 +99,37 @@ public class connectSetup {
         ArrayList<String> result = new ArrayList<String>();        
         String cols = String.join(", ", columns);
         String sql = "SELECT " + cols + " FROM " + table;
+        try {
+            Connection openConn = conn;
+            Statement stmt  = openConn.createStatement();
+            ResultSet rs    = stmt.executeQuery(sql);
+            ResultSetMetaData rsMetaData = rs.getMetaData();
+            
+            while (rs.next()) {
+                String data = "";
+                for (int i = 0; i < columns.length; i++) {
+                    int index = rsMetaData.getColumnType(i+1);
+                    switch(index){
+                        case 12: data = data + rs.getString(columns[i]) + " "; break;
+                        case 4: data = data + rs.getInt(columns[i])  + " "; break;
+                        case 8: data = data + rs.getDouble(columns[i])  + " "; break;
+                        case 91: data = data + rs.getDate(columns[i])  + " "; break;
+                        // https://www.tutorialspoint.com/java-resultsetmetadata-getcolumntype-method-with-example
+                        default: break;
+                    }
+                }
+                result.add(data);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
+    }
+    
+        public ArrayList<String> fillTableParticular(String[] columns, String table, String id) {
+        ArrayList<String> result = new ArrayList<String>();        
+        String cols = String.join(", ", columns);
+        String sql = "SELECT " + cols + " FROM " + table + " WHERE ID = " + id;
         try {
             Connection openConn = conn;
             Statement stmt  = openConn.createStatement();

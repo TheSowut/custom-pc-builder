@@ -498,6 +498,12 @@ public class mainMenu extends javax.swing.JFrame {
         });
         jPanel1.add(jBtnSetupsClose);
         jBtnSetupsClose.setBounds(180, 420, 100, 32);
+
+        jTxtId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTxtIdKeyReleased(evt);
+            }
+        });
         jPanel1.add(jTxtId);
         jTxtId.setBounds(280, 390, 110, 24);
 
@@ -634,6 +640,35 @@ public class mainMenu extends javax.swing.JFrame {
         }
     }
     
+        private void tableSelectFilter(String id) {
+        ArrayList<String> data = new ArrayList<String>();
+            String[] columns = {"ID",
+            "Motherboard",
+            "Graphics_Card",
+            "Processor",
+            "PSU",
+            "RAM",
+            "Computer_Case",
+            "HDD",
+            "SSD",
+            "Price"}; 
+            connectSetup conn = new connectSetup();
+            data = conn.fillTableParticular(columns, "setups", id);
+        for (int i = 0; i < data.size(); i++) {
+            String[] row = data.get(i).split(" ");
+            t.addRow(new Object[]{row[0],
+                                  row[1],
+                                  row[2],
+                                  row[3],
+                                  row[4],
+                                  row[5],
+                                  row[6],
+                                  row[7],
+                                  row[8],
+                                  row[9]});
+        }
+    }
+    
     private void jMenuHardwareMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuHardwareMouseClicked
         // TODO add your handling code here:
         this.dispose(); 
@@ -655,6 +690,12 @@ public class mainMenu extends javax.swing.JFrame {
         jComboMotherboardModels.show();
         jBtnNext1.show();
         jBtnSetupCreationCancel.show();
+        
+        jTblSetups.hide();
+        jLblId.hide();
+        jTxtId.hide();
+        jBtnDeleteSetup.hide();
+        jBtnSetupsClose.hide();
         
         getHardwareComponents connmoth = new getHardwareComponents();
         ArrayList<String> outputmoth = new ArrayList<String>();
@@ -1037,6 +1078,19 @@ public class mainMenu extends javax.swing.JFrame {
         }
         }
     }//GEN-LAST:event_jBtnDeleteSetupActionPerformed
+
+    private void jTxtIdKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTxtIdKeyReleased
+        // TODO add your handling code here:
+        String id = jTxtId.getText();
+        t = (DefaultTableModel) jTblSetups.getModel();
+        t.setRowCount(0);
+        if (!id.equals("")){
+            tableSelectFilter(id);
+        }
+        else{
+            tableSelect();
+        }
+    }//GEN-LAST:event_jTxtIdKeyReleased
 
     /**
      * @param args the command line arguments

@@ -598,7 +598,7 @@ public class mainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosing
 
     private void jMenuSetupsBrowseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSetupsBrowseActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:        
         jTableSetups.show();
         jBtnSetupsClose.show();
         jLblId.show();
@@ -696,6 +696,7 @@ public class mainMenu extends javax.swing.JFrame {
         jTxtId.hide();
         jBtnDeleteSetup.hide();
         jBtnSetupsClose.hide();
+        
         
         getHardwareComponents connmoth = new getHardwareComponents();
         ArrayList<String> outputmoth = new ArrayList<String>();

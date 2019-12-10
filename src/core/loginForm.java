@@ -16,6 +16,7 @@
 
 package core;
 
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -97,6 +98,12 @@ public class loginForm extends javax.swing.JFrame {
         });
         jPanel1.add(jBtnRegister);
         jBtnRegister.setBounds(380, 420, 91, 32);
+
+        jPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPasswordKeyPressed(evt);
+            }
+        });
         jPanel1.add(jPassword);
         jPassword.setBounds(363, 301, 125, 22);
 
@@ -154,9 +161,8 @@ public class loginForm extends javax.swing.JFrame {
         register.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jBtnRegisterActionPerformed
-
-    private void jBtnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnLoginActionPerformed
-        // TODO add your handling code here:
+    
+    private void tryLogin(){
         String username = jComboUsername.getSelectedItem().toString();
         String password = jPassword.getText();
         
@@ -179,7 +185,18 @@ public class loginForm extends javax.swing.JFrame {
             jPassword.setText("");
             System.out.println("User failed to login.");
         }
+    }
+    private void jBtnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnLoginActionPerformed
+        // TODO add your handling code here:
+        tryLogin();
     }//GEN-LAST:event_jBtnLoginActionPerformed
+
+    private void jPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            tryLogin();
+        }
+    }//GEN-LAST:event_jPasswordKeyPressed
 
     /**
  * @param args the command line arguments
@@ -215,7 +232,6 @@ public class loginForm extends javax.swing.JFrame {
                 new loginForm().setVisible(true);
             }
         });
-        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -17,6 +17,7 @@
 package core;
 
 import java.awt.Image;
+import java.awt.event.KeyEvent;
 import java.beans.Statement;
 import java.util.ArrayList;
 import javax.swing.*;
@@ -88,7 +89,7 @@ public class registerForm extends javax.swing.JFrame {
         jLblPassword.setLabelFor(jLblPassword);
         jLblPassword.setText("Enter a  new password: ");
         jPanel1.add(jLblPassword);
-        jLblPassword.setBounds(147, 256, 164, 24);
+        jLblPassword.setBounds(147, 256, 164, 22);
 
         jLblPasswordConfirm.setForeground(new java.awt.Color(255, 255, 255));
         jLblPasswordConfirm.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\password.png")); // NOI18N
@@ -122,6 +123,11 @@ public class registerForm extends javax.swing.JFrame {
         jPassword.setBounds(389, 257, 125, 22);
 
         jPasswordConfirm.setToolTipText("");
+        jPasswordConfirm.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPasswordConfirmKeyPressed(evt);
+            }
+        });
         jPanel1.add(jPasswordConfirm);
         jPasswordConfirm.setBounds(389, 327, 125, 22);
 
@@ -180,15 +186,11 @@ public class registerForm extends javax.swing.JFrame {
             this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         }
     }//GEN-LAST:event_jBtnCancelActionPerformed
-
-    private void jBtnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSubmitActionPerformed
-        // TODO add your handling code here:
+    
+    private void tryRegister(){
         String username = jTxtUsername.getText();
         String password = jPassword.getText();
         String passwordConfirm = jPasswordConfirm.getText();
-
-        //        connectRegister conn = new connectRegister();
-        //        ArrayList<String> output = new ArrayList<String>();
 
         final ImageIcon imgDoor = new ImageIcon(".\\images\\icons\\loginSmall.png");
         
@@ -211,14 +213,12 @@ public class registerForm extends javax.swing.JFrame {
         // check if the username is invalid
         if (!usernameCheck){
             JOptionPane.showMessageDialog(null, "Username taken or too short !", "Error while registering", 0);
-            System.out.println("User failed to register !");
             successfulRegistration = false;
         }
         
         // check if the password is invalid
         if (!passwordCheck){
             JOptionPane.showMessageDialog(null, "Passwords too short or not matching !", "Error while registering", 0);
-            System.out.println("User failed to register !");
             successfulRegistration = false;
         }
         
@@ -255,7 +255,18 @@ public class registerForm extends javax.swing.JFrame {
                 jPasswordConfirm.setText("");
             }
         }
+    }
+    private void jBtnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSubmitActionPerformed
+        // TODO add your handling code here:
+        tryRegister();
     }//GEN-LAST:event_jBtnSubmitActionPerformed
+
+    private void jPasswordConfirmKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordConfirmKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            tryRegister();
+        }
+    }//GEN-LAST:event_jPasswordConfirmKeyPressed
 
     /**
      * @param args the command line arguments

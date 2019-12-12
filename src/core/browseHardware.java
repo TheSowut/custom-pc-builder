@@ -278,7 +278,7 @@ public class browseHardware extends javax.swing.JFrame {
         Object[] options = {"Add",
                     "Browse",
                     "Cancel"};
-        int n = JOptionPane.showOptionDialog(this, "Would you like to add or check current components of the type ?", "Add or Browse Graphics Cards",
+        int n = JOptionPane.showOptionDialog(this, "Would you like to add or check current components of the type ?", "Add or Browse Processors",
         JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
         if (n == 0){
             this.dispose();
@@ -300,7 +300,7 @@ public class browseHardware extends javax.swing.JFrame {
         Object[] options = {"Add",
                     "Browse",
                     "Cancel"};
-        int n = JOptionPane.showOptionDialog(this, "Would you like to add or check current components of the type ?", "Add or Browse Processors",
+        int n = JOptionPane.showOptionDialog(this, "Would you like to add or check current components of the type ?", "Add or Browse Motherboards",
         JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
         if (n == 0){
             this.dispose();
@@ -344,7 +344,7 @@ public class browseHardware extends javax.swing.JFrame {
         Object[] options = {"Add",
                     "Browse",
                     "Cancel"};
-        int n = JOptionPane.showOptionDialog(this, "Would you like to add or check current components of the type ?", "Add or Browse PSU",
+        int n = JOptionPane.showOptionDialog(this, "Would you like to add or check current components of the type ?", "Add or Browse SSDs",
         JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
         if (n == 0){
             this.dispose();
@@ -371,7 +371,7 @@ public class browseHardware extends javax.swing.JFrame {
         Object[] options = {"Add",
                     "Browse",
                     "Cancel"};
-        int n = JOptionPane.showOptionDialog(this, "Would you like to add or check current components of the type ?", "Add or Browse PSU",
+        int n = JOptionPane.showOptionDialog(this, "Would you like to add or check current components of the type ?", "Add or Browse PSUs",
         JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[2]);
         if (n == 0){
             this.dispose();

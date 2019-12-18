@@ -33,6 +33,7 @@ public class loginForm extends javax.swing.JFrame {
     /**
      * Creates new form registerForm
      */
+    public boolean eyeClicked = false;
     public loginForm(){
         initComponents();
         setLocationRelativeTo(null);
@@ -44,8 +45,10 @@ public class loginForm extends javax.swing.JFrame {
         }
         final ImageIcon logoMedium = new ImageIcon(".\\images\\icons\\loginLogo.png");
         final ImageIcon background = new ImageIcon(".\\images\\backgrounds\\loginScreen.jpg");
+        final ImageIcon showPwd = new ImageIcon(".\\images\\icons\\showPassword.png");
         jLblLogo.setIcon(logoMedium);
         jLblBackground.setIcon(background);
+        jLblShowPassword.setIcon(showPwd);
     }
     
     /**
@@ -63,6 +66,7 @@ public class loginForm extends javax.swing.JFrame {
         jPassword = new javax.swing.JPasswordField();
         jLblUsername = new javax.swing.JLabel();
         jLblPassword = new javax.swing.JLabel();
+        jLblShowPassword = new javax.swing.JLabel();
         jLblLogo = new javax.swing.JLabel();
         jComboUsername = new javax.swing.JComboBox<>();
         jLblBackground = new javax.swing.JLabel();
@@ -122,6 +126,14 @@ public class loginForm extends javax.swing.JFrame {
         jLblPassword.setText("Password:");
         jPanel1.add(jLblPassword);
         jLblPassword.setBounds(150, 299, 104, 22);
+
+        jLblShowPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLblShowPasswordMouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLblShowPassword);
+        jLblShowPassword.setBounds(500, 300, 30, 20);
 
         jLblLogo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLblLogo.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\loginLogo.png")); // NOI18N
@@ -198,6 +210,25 @@ public class loginForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jPasswordKeyPressed
 
+    private void jLblShowPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLblShowPasswordMouseClicked
+        // TODO add your handling code here:
+        ImageIcon hidePwd = new ImageIcon(".\\images\\icons\\hidePassword.png");
+        ImageIcon showPwd = new ImageIcon(".\\images\\icons\\showPassword.png");
+        if (!eyeClicked){
+            jPassword.setEchoChar((char)0);
+            jLblShowPassword.setIcon(hidePwd);
+            eyeClicked = true;
+            System.out.println("false");
+        }
+        else
+        {
+            jPassword.setEchoChar('*');
+            jLblShowPassword.setIcon((showPwd));
+            eyeClicked = false;
+            System.out.println("true");
+        }
+    }//GEN-LAST:event_jLblShowPasswordMouseClicked
+
     /**
  * @param args the command line arguments
      */
@@ -241,6 +272,7 @@ public class loginForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLblBackground;
     private javax.swing.JLabel jLblLogo;
     private javax.swing.JLabel jLblPassword;
+    private javax.swing.JLabel jLblShowPassword;
     private javax.swing.JLabel jLblUsername;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPassword;

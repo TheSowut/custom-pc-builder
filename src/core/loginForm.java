@@ -127,6 +127,7 @@ public class loginForm extends javax.swing.JFrame {
         jPanel1.add(jLblPassword);
         jLblPassword.setBounds(150, 299, 104, 22);
 
+        jLblShowPassword.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\showPassword.png")); // NOI18N
         jLblShowPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLblShowPasswordMouseClicked(evt);
@@ -218,14 +219,12 @@ public class loginForm extends javax.swing.JFrame {
             jPassword.setEchoChar((char)0);
             jLblShowPassword.setIcon(hidePwd);
             eyeClicked = true;
-            System.out.println("false");
         }
         else
         {
             jPassword.setEchoChar('*');
             jLblShowPassword.setIcon((showPwd));
             eyeClicked = false;
-            System.out.println("true");
         }
     }//GEN-LAST:event_jLblShowPasswordMouseClicked
 

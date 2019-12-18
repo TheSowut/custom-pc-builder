@@ -33,15 +33,18 @@ public class registerForm extends javax.swing.JFrame {
     /**
      * Creates new form registerForm
      */
+    public boolean showPwds = false;
     public registerForm() {
         initComponents();
         setLocationRelativeTo(null);
         final ImageIcon registration = new ImageIcon(".\\images\\icons\\registerAccount.png");
         final ImageIcon logoSmall = new ImageIcon(".\\images\\icons\\cpblogoSmallFull.png");
         final ImageIcon background = new ImageIcon(".\\images\\backgrounds\\registrationScreen.png");
+        final ImageIcon showPasswords = new ImageIcon(".\\images\\icons\\showPassword.png");
         jLblRegistration.setIcon(registration);
         jLblLogoSmall.setIcon(logoSmall);
         jLblBackground.setIcon(background);
+        jLblShowPwds.setIcon(showPasswords);
     }
 
     /**
@@ -57,6 +60,7 @@ public class registerForm extends javax.swing.JFrame {
         jLblUsername = new javax.swing.JLabel();
         jLblPassword = new javax.swing.JLabel();
         jLblPasswordConfirm = new javax.swing.JLabel();
+        jLblShowPwds = new javax.swing.JLabel();
         jBtnSubmit = new javax.swing.JButton();
         jBtnCancel = new javax.swing.JButton();
         jTxtUsername = new javax.swing.JTextField();
@@ -98,6 +102,15 @@ public class registerForm extends javax.swing.JFrame {
         jPanel1.add(jLblPasswordConfirm);
         jLblPasswordConfirm.setBounds(147, 326, 155, 22);
 
+        jLblShowPwds.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\showPassword.png")); // NOI18N
+        jLblShowPwds.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLblShowPwdsMouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLblShowPwds);
+        jLblShowPwds.setBounds(530, 330, 30, 20);
+
         jBtnSubmit.setText("Submit");
         jBtnSubmit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBtnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -120,7 +133,7 @@ public class registerForm extends javax.swing.JFrame {
         jPanel1.add(jTxtUsername);
         jTxtUsername.setBounds(389, 186, 125, 24);
         jPanel1.add(jPassword);
-        jPassword.setBounds(389, 257, 125, 22);
+        jPassword.setBounds(390, 260, 125, 22);
 
         jPasswordConfirm.setToolTipText("");
         jPasswordConfirm.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -129,7 +142,7 @@ public class registerForm extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jPasswordConfirm);
-        jPasswordConfirm.setBounds(389, 327, 125, 22);
+        jPasswordConfirm.setBounds(390, 330, 125, 22);
 
         jLblRegistration.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\icons\\registerAccount.png")); // NOI18N
         jPanel1.add(jLblRegistration);
@@ -268,6 +281,24 @@ public class registerForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jPasswordConfirmKeyPressed
 
+    private void jLblShowPwdsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLblShowPwdsMouseClicked
+        // TODO add your handling code here:
+        ImageIcon hidePwd = new ImageIcon(".\\images\\icons\\hidePassword.png");
+        ImageIcon showPwd = new ImageIcon(".\\images\\icons\\showPassword.png");
+        if (!showPwds){
+            jPassword.setEchoChar((char)0);
+            jPasswordConfirm.setEchoChar((char)0);
+            jLblShowPwds.setIcon(hidePwd);
+            showPwds = true;
+        }
+        else{
+            jPassword.setEchoChar('*');
+            jPasswordConfirm.setEchoChar('*');
+            jLblShowPwds.setIcon((showPwd));
+            showPwds = false;
+        }
+    }//GEN-LAST:event_jLblShowPwdsMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -311,6 +342,7 @@ public class registerForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLblPassword;
     private javax.swing.JLabel jLblPasswordConfirm;
     private javax.swing.JLabel jLblRegistration;
+    private javax.swing.JLabel jLblShowPwds;
     private javax.swing.JLabel jLblUsername;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPassword;

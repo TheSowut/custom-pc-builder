@@ -8,7 +8,7 @@
 ## ✔ Current Features:
 - Create and Login with an Account on a Local DB.
 
-<div><img src="images/demo/loginScreenCropped.JPG" width="304">
+<div><img src="images/demo/loginScreenCropped.JPG" width="301">
 <img src="images/demo/registrationScreenCropped.JPG" width="300"></div>
 
 - Browse a Variety of Hardware Components used in Setup Creation.
@@ -16,7 +16,7 @@
 
 - Browse and Add new Hardware Components of your choice.
 <div><img src="images/demo/addComponentCropped.JPG" width="300">
-<img src="images/demo/browseComponentCropped.JPG" width="309.5"></div>
+<img src="images/demo/browseComponentCropped.JPG" width="310"></div>
 
 - Create new Setups and Browse Existing ones.
 <div><img src="images/demo/createSetup.JPG" width="300">

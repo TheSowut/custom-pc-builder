@@ -64,7 +64,7 @@ public class registerForm extends javax.swing.JFrame {
         jBtnSubmit = new javax.swing.JButton();
         jBtnCancel = new javax.swing.JButton();
         jTxtUsername = new javax.swing.JTextField();
-        jPassword = new javax.swing.JPasswordField();
+        jPasswordConfirm1 = new javax.swing.JPasswordField();
         jPasswordConfirm = new javax.swing.JPasswordField();
         jLblRegistration = new javax.swing.JLabel();
         jLblLogoSmall = new javax.swing.JLabel();
@@ -130,12 +130,16 @@ public class registerForm extends javax.swing.JFrame {
         });
         jPanel1.add(jBtnCancel);
         jBtnCancel.setBounds(402, 434, 94, 32);
+
+        jTxtUsername.setToolTipText("Must be over 3 characters.");
         jPanel1.add(jTxtUsername);
         jTxtUsername.setBounds(389, 186, 125, 24);
-        jPanel1.add(jPassword);
-        jPassword.setBounds(390, 260, 125, 22);
 
-        jPasswordConfirm.setToolTipText("");
+        jPasswordConfirm1.setToolTipText("Must be over 5 characters.");
+        jPanel1.add(jPasswordConfirm1);
+        jPasswordConfirm1.setBounds(390, 260, 125, 22);
+
+        jPasswordConfirm.setToolTipText("Reenter the password.");
         jPasswordConfirm.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jPasswordConfirmKeyPressed(evt);
@@ -202,7 +206,7 @@ public class registerForm extends javax.swing.JFrame {
     
     private void tryRegister(){
         String username = jTxtUsername.getText();
-        String password = jPassword.getText();
+        String password = jPasswordConfirm1.getText();
         String passwordConfirm = jPasswordConfirm.getText();
 
         final ImageIcon imgDoor = new ImageIcon(".\\images\\icons\\loginSmall.png");
@@ -264,7 +268,7 @@ public class registerForm extends javax.swing.JFrame {
             // delete all invalid fields
             else{
                 jTxtUsername.setText("");
-                jPassword.setText("");
+                jPasswordConfirm1.setText("");
                 jPasswordConfirm.setText("");
             }
         }
@@ -286,13 +290,13 @@ public class registerForm extends javax.swing.JFrame {
         ImageIcon hidePwd = new ImageIcon(".\\images\\icons\\hidePassword.png");
         ImageIcon showPwd = new ImageIcon(".\\images\\icons\\showPassword.png");
         if (!showPwds){
-            jPassword.setEchoChar((char)0);
+            jPasswordConfirm1.setEchoChar((char)0);
             jPasswordConfirm.setEchoChar((char)0);
             jLblShowPwds.setIcon(hidePwd);
             showPwds = true;
         }
         else{
-            jPassword.setEchoChar('*');
+            jPasswordConfirm1.setEchoChar('*');
             jPasswordConfirm.setEchoChar('*');
             jLblShowPwds.setIcon((showPwd));
             showPwds = false;
@@ -345,8 +349,8 @@ public class registerForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLblShowPwds;
     private javax.swing.JLabel jLblUsername;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPassword;
     private javax.swing.JPasswordField jPasswordConfirm;
+    private javax.swing.JPasswordField jPasswordConfirm1;
     private javax.swing.JTextField jTxtUsername;
     // End of variables declaration//GEN-END:variables
 }

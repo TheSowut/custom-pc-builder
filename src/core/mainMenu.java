@@ -609,6 +609,13 @@ public class mainMenu extends javax.swing.JFrame {
         t.setRowCount(0);
         tableSelect();
         jTableSetups.setEnabled(false);
+        
+        jLblMotherboard.hide();
+        jComboMotherboards.hide();
+        jLblMotherboardModels.hide();
+        jComboMotherboardModels.hide();
+        jBtnNext1.hide();
+        jBtnSetupCreationCancel.hide();
     }//GEN-LAST:event_jMenuSetupsBrowseActionPerformed
 
     private void tableSelect() {
@@ -691,12 +698,16 @@ public class mainMenu extends javax.swing.JFrame {
         jBtnNext1.show();
         jBtnSetupCreationCancel.show();
         
-        jTblSetups.hide();
+        jTblSetups.setSize(0, 0);
+        jTblSetups.setBounds(0, 0, 0, 0);
+        
+        /* Otherwise when the Create Setup button is pressed and directly afterward the Browse setups one
+        the Table won't load any data into it, until the form is restarted. */
+        
         jLblId.hide();
         jTxtId.hide();
         jBtnDeleteSetup.hide();
         jBtnSetupsClose.hide();
-        
         
         getHardwareComponents connmoth = new getHardwareComponents();
         ArrayList<String> outputmoth = new ArrayList<String>();

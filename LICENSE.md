@@ -1,5 +1,5 @@
-Copyright (c) 2019, Petar Gavazov(sowutmail@gmail.com)
-Software Website: https://github.com/TheSowut/custom-pc-builder
+Copyright (c) 2019, Petar Gavazov(p.gavazov@protonmail.com)<br>
+Software Website: https://github.com/TheSowut/custom-pc-builder<br>
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:

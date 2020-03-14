@@ -1,4 +1,4 @@
-//  Copyright (c) 2019, Petar Gavazov(sowutmail@gmail.com)
+//  Copyright (c) 2019, Petar Gavazov(p.gavazov@protonmail.com)
 //  Software Website: https://github.com/TheSowut/custom-pc-builder
 //  All rights reserved.
 //
@@ -497,7 +497,7 @@ public class mainMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnSetupsClose);
-        jBtnSetupsClose.setBounds(180, 420, 100, 32);
+        jBtnSetupsClose.setBounds(400, 420, 100, 32);
 
         jTxtId.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -514,7 +514,7 @@ public class mainMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBtnDeleteSetup);
-        jBtnDeleteSetup.setBounds(390, 420, 110, 30);
+        jBtnDeleteSetup.setBounds(160, 420, 110, 30);
 
         jLblBackground.setIcon(new javax.swing.ImageIcon("D:\\Codes\\Github\\custom-pc-builder\\images\\backgrounds\\menuBackground.jpg")); // NOI18N
         jPanel1.add(jLblBackground);

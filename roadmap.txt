@@ -7,17 +7,16 @@
 --------I. Working login form (Check if the password is the correct one for the username)
 --------II. Link it with the same file/db as the registrationForm.
 	
-Additional Features:
-	I. All the forms should have a confirm dialog, whether the user wants to exit the app or not.
-	II. Key shortcuts for buttons.
+✔️Additional Features:
+--------I. All the forms should have a confirm dialog, whether the user wants to exit the app or not.
+--------II. Key shortcuts for buttons.
 --------III. Key shortctuts for the menu.
 
-Create a menu
-	I.Panels
-	   1. Setups
-	      1. Browse setups.
-	      2. Create a new setup.
-	      3. Delete an existing setup.
+✔️Create a menu
+	 ✔️1. Setups
+---------------1. Browse setups.
+---------------2. Create a new setup.
+---------------3. Delete an existing setup.
 	 ✔️2. Hardware
 ---------------1. Check a component.
 ---------------2. Add new component.
@@ -26,9 +25,9 @@ Create a menu
 	 ✔️4.Help:
 ---------------2. Add instructions on how to use the program.
 	
-Bugtest:
-	I. All buttons, methods, invalid input (parsing).
-	II. Distribute for feedback.
+✔️Bugtest:
+--------I. All buttons, methods, invalid input (parsing).
+--------II. Distribute for feedback.
 
 ✔️Style the app:
 --------I. Backgrounds.

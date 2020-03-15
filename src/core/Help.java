@@ -17,7 +17,7 @@ public class Help {
                     + "To add or browse hardware components,\n"
                     + "Press the Hardware Menu and either choose to add or browse components.\n\n"
                     + "To read more about the program, use the About menu.\n\n"
-                    + "For more info or questions, contact sowutmail@gmail.com",
+                    + "For more info or questions, contact p.gavazov@protonmail.com",
                     "Help", 1);
     }
 }
